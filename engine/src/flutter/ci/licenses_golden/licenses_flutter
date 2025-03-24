@@ -3502,6 +3502,7 @@ ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutt
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/blake2/blake2b256_tests.txt
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bn/bn_asn1.cc
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bn/convert.cc
+ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bn/exponentiation.cc
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/buf/buf.cc
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bytestring/asn1_compat.cc
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bytestring/ber.cc
@@ -4851,6 +4852,7 @@ FILE: ../../../flutter/third_party/boringssl/src/crypto/blake2/blake2.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/blake2/blake2b256_tests.txt
 FILE: ../../../flutter/third_party/boringssl/src/crypto/bn/bn_asn1.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/bn/convert.cc
+FILE: ../../../flutter/third_party/boringssl/src/crypto/bn/exponentiation.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/buf/buf.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/bytestring/asn1_compat.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/bytestring/ber.cc
@@ -5048,7 +5050,9 @@ FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/intcheck3.png
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/keccak/internal.h
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/keccak/keccak.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/keccak/keccak_tests.txt
+FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/mldsa/fips_known_values.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/mldsa/mldsa.cc.inc
+FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/mlkem/fips_known_values.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/mlkem/mlkem.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/policydocs/BoringCrypto-Android-Security-Policy-20191020.docx!/[Content_Types].xml
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/policydocs/BoringCrypto-Android-Security-Policy-20191020.docx!/_rels/.rels
@@ -5180,6 +5184,7 @@ FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/sha/sha1.cc.i
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/sha/sha256.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/sha/sha512.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/address.h
+FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/fips_known_values.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/fors.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/fors.h
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/merkle.cc.inc
@@ -38455,12 +38460,12 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEAL
 ====================================================================================================
 
 ====================================================================================================
-LIBRARY: vulkan_memory_allocator
-ORIGIN: ../../../flutter/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
+LIBRARY: vulkan-validation-layers
+ORIGIN: ../../../flutter/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
 TYPE: LicenseType.mit
-FILE: ../../../flutter/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
+FILE: ../../../flutter/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
 ----------------------------------------------------------------------------------------------------
-Copyright (c) 2017-2022 Advanced Micro Devices, Inc. All rights reserved.
+Copyright (c) 2017-2024 Advanced Micro Devices, Inc. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -38482,12 +38487,12 @@ THE SOFTWARE.
 ====================================================================================================
 
 ====================================================================================================
-LIBRARY: vulkan-validation-layers
-ORIGIN: ../../../flutter/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
+LIBRARY: vulkan_memory_allocator
+ORIGIN: ../../../flutter/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
 TYPE: LicenseType.mit
-FILE: ../../../flutter/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
+FILE: ../../../flutter/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
 ----------------------------------------------------------------------------------------------------
-Copyright (c) 2017-2024 Advanced Micro Devices, Inc. All rights reserved.
+Copyright (c) 2017-2025 Advanced Micro Devices, Inc. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -39039,6 +39044,27 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+====================================================================================================
+
+====================================================================================================
+LIBRARY: boringssl
+ORIGIN: ../../../flutter/third_party/boringssl/src/crypto/cipher/e_aeseax.cc
+TYPE: LicenseType.unknown
+FILE: ../../../flutter/third_party/boringssl/src/crypto/cipher/e_aeseax.cc
+----------------------------------------------------------------------------------------------------
+Copyright (c) 2025, Google Inc.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ====================================================================================================
 
 ====================================================================================================
@@ -41534,6 +41560,7 @@ ORIGIN: ../../../flutter/impeller/base/backend_cast.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/base/comparable.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/base/comparable.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/base/config.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/impeller/base/flags.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/base/mask.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/base/promise.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/base/promise.h + ../../../flutter/LICENSE
@@ -41859,6 +41886,8 @@ ORIGIN: ../../../flutter/impeller/geometry/point.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/point.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/quaternion.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/quaternion.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/impeller/geometry/rational.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/impeller/geometry/rational.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/rect.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/rect.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/round_rect.cc + ../../../flutter/LICENSE
@@ -42610,7 +42639,9 @@ ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/scene_painting.dart + ../../.
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/scene_view.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/accessibility.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/alert.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/checkable.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/disable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/expandable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/focusable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/header.dart + ../../../flutter/LICENSE
@@ -42619,8 +42650,11 @@ ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/image.dart + ../../
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/incrementable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/label_and_value.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/link.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/list.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/live_region.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/menus.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/platform_view.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/requirable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/route.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/scrollable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/semantics.dart + ../../../flutter/LICENSE
@@ -44499,6 +44533,7 @@ FILE: ../../../flutter/impeller/base/backend_cast.h
 FILE: ../../../flutter/impeller/base/comparable.cc
 FILE: ../../../flutter/impeller/base/comparable.h
 FILE: ../../../flutter/impeller/base/config.h
+FILE: ../../../flutter/impeller/base/flags.h
 FILE: ../../../flutter/impeller/base/mask.h
 FILE: ../../../flutter/impeller/base/promise.cc
 FILE: ../../../flutter/impeller/base/promise.h
@@ -44824,6 +44859,8 @@ FILE: ../../../flutter/impeller/geometry/point.cc
 FILE: ../../../flutter/impeller/geometry/point.h
 FILE: ../../../flutter/impeller/geometry/quaternion.cc
 FILE: ../../../flutter/impeller/geometry/quaternion.h
+FILE: ../../../flutter/impeller/geometry/rational.cc
+FILE: ../../../flutter/impeller/geometry/rational.h
 FILE: ../../../flutter/impeller/geometry/rect.cc
 FILE: ../../../flutter/impeller/geometry/rect.h
 FILE: ../../../flutter/impeller/geometry/round_rect.cc
@@ -45580,7 +45617,9 @@ FILE: ../../../flutter/lib/web_ui/lib/src/engine/scene_painting.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/scene_view.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/accessibility.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/alert.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/checkable.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/disable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/expandable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/focusable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/header.dart
@@ -45589,8 +45628,11 @@ FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/image.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/incrementable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/label_and_value.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/link.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/list.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/live_region.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/menus.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/platform_view.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/requirable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/route.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/scrollable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/semantics.dart
@@ -69344,4 +69386,4 @@ freely, subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 ====================================================================================================
 
-Total license count: 840
+Total license count: 841
