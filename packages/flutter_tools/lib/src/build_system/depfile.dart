@@ -8,11 +8,9 @@ import '../base/logger.dart';
 
 /// A service for creating and parsing [Depfile]s.
 class DepfileService {
-  DepfileService({
-    required Logger logger,
-    required FileSystem fileSystem,
-  }) : _logger = logger,
-       _fileSystem = fileSystem;
+  DepfileService({required Logger logger, required FileSystem fileSystem})
+    : _logger = logger,
+      _fileSystem = fileSystem;
 
   final Logger _logger;
   final FileSystem _fileSystem;
@@ -52,58 +50,53 @@ class DepfileService {
     return Depfile(inputs, outputs);
   }
 
-
   /// Parse the output of dart2js's used dependencies.
   ///
   /// The [file] contains a list of newline separated file URIs. The output
   /// file must be manually specified.
   Depfile parseDart2js(File file, File output) {
-    final List<File> inputs = <File>[];
-    for (final String rawUri in file.readAsLinesSync()) {
-      if (rawUri.trim().isEmpty) {
-        continue;
-      }
-      final Uri? fileUri = Uri.tryParse(rawUri);
-      if (fileUri == null) {
-        continue;
-      }
-      if (fileUri.scheme != 'file') {
-        continue;
-      }
-      inputs.add(_fileSystem.file(fileUri));
-    }
+    final List<File> inputs = <File>[
+      for (final String rawUri in file.readAsLinesSync())
+        if (rawUri.trim().isNotEmpty)
+          if (Uri.tryParse(rawUri) case final Uri fileUri when fileUri.scheme == 'file')
+            _fileSystem.file(fileUri),
+    ];
     return Depfile(inputs, <File>[output]);
   }
 
   void _writeFilesToBuffer(List<File> files, StringBuffer buffer) {
+    final bool backslash = _fileSystem.path.style.separator == r'\';
     for (final File outputFile in files) {
-      if (_fileSystem.path.style.separator == r'\') {
-        // backslashes and spaces in a depfile have to be escaped if the
-        // platform separator is a backslash.
-        final String path = outputFile.path
-          .replaceAll(r'\', r'\\')
-          .replaceAll(r' ', r'\ ');
-        buffer.write(' $path');
+      String path = _fileSystem.path.normalize(outputFile.path);
+      if (backslash) {
+        // Backslashes in a depfile have to be escaped if the platform separator is a backslash.
+        path = path.replaceAll(r'\', r'\\');
       } else {
-        final String path = outputFile.path
-          .replaceAll(r' ', r'\ ');
-        buffer.write(' $path');
+        // Convert all path separators to forward slashes.
+        path = path.replaceAll(r'\', r'/');
       }
+      // Escape spaces.
+      path = path.replaceAll(r' ', r'\ ');
+      buffer.write(' $path');
     }
   }
 
   List<File> _processList(String rawText) {
     return rawText
-    // Put every file on right-hand side on the separate line
+        // Put every file on right-hand side on the separate line
         .replaceAllMapped(_separatorExpr, (Match match) => '${match.group(1)}\n')
         .split('\n')
-    // Expand escape sequences, so that '\ ', for example,ß becomes ' '
-        .map<String>((String path) => path.replaceAllMapped(_escapeExpr, (Match match) => match.group(1)!).trim())
+        // Expand escape sequences, so that '\ ', for example,ß becomes ' '
+        .map<String>(
+          (String path) =>
+              path.replaceAllMapped(_escapeExpr, (Match match) => match.group(1)!).trim(),
+        )
         .where((String path) => path.isNotEmpty)
-    // The tool doesn't write duplicates to these lists. This call is an attempt to
-    // be resilient to the outputs of other tools which write or user edits to depfiles.
+        // The tool doesn't write duplicates to these lists. This call is an attempt to
+        // be resilient to the outputs of other tools which write or user edits to depfiles.
         .toSet()
-        .map(_fileSystem.file)
+        // Normalize the path before creating a file object.
+        .map((String path) => _fileSystem.file(_fileSystem.path.normalize(path)))
         .toList();
   }
 }

@@ -26,5 +26,8 @@
   "menuDismissLabel": "Փակել ընտրացանկը",
   "lookUpButtonLabel": "Փնտրել",
   "searchWebButtonLabel": "Որոնել համացանցում",
-  "shareButtonLabel": "Կիսվել..."
+  "shareButtonLabel": "Կիսվել...",
+  "clearButtonLabel": "Մաքրել",
+  "cancelButtonLabel": "Չեղարկել",
+  "backButtonLabel": "Հետ"
 }

@@ -36,5 +36,8 @@
   "menuDismissLabel": "Закрыть меню",
   "lookUpButtonLabel": "Найти",
   "searchWebButtonLabel": "Искать в интернете",
-  "shareButtonLabel": "Поделиться"
+  "shareButtonLabel": "Поделиться",
+  "clearButtonLabel": "Очистить",
+  "cancelButtonLabel": "Отмена",
+  "backButtonLabel": "Назад"
 }

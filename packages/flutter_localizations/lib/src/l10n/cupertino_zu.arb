@@ -26,5 +26,8 @@
   "menuDismissLabel": "Chitha imenyu",
   "lookUpButtonLabel": "Bheka Phezulu",
   "searchWebButtonLabel": "Sesha Iwebhu",
-  "shareButtonLabel": "Yabelana..."
+  "shareButtonLabel": "Yabelana...",
+  "clearButtonLabel": "Sula",
+  "cancelButtonLabel": "Khansela",
+  "backButtonLabel": "Emuva"
 }

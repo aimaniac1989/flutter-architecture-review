@@ -26,5 +26,8 @@
   "menuDismissLabel": "Menu sluiten",
   "lookUpButtonLabel": "Opzoeken",
   "searchWebButtonLabel": "Op internet zoeken",
-  "shareButtonLabel": "Delen..."
+  "shareButtonLabel": "Delen...",
+  "clearButtonLabel": "Wissen",
+  "cancelButtonLabel": "Annuleren",
+  "backButtonLabel": "Terug"
 }

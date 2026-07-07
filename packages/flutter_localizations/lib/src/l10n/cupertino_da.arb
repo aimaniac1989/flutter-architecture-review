@@ -18,6 +18,7 @@
   "cutButtonLabel": "Klip",
   "copyButtonLabel": "Kopiér",
   "pasteButtonLabel": "Indsæt",
+  "clearButtonLabel": "Ryd",
   "selectAllButtonLabel": "Vælg alt",
   "tabSemanticsLabel": "Fane $tabIndex af $tabCount",
   "modalBarrierDismissLabel": "Afvis",
@@ -26,5 +27,7 @@
   "menuDismissLabel": "Luk menu",
   "lookUpButtonLabel": "Slå op",
   "searchWebButtonLabel": "Søg på nettet",
-  "shareButtonLabel": "Del…"
+  "shareButtonLabel": "Del…",
+  "cancelButtonLabel": "Annuller",
+  "backButtonLabel": "Tilbage"
 }

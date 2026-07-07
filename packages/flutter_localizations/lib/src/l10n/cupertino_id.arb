@@ -26,5 +26,8 @@
   "menuDismissLabel": "Tutup menu",
   "lookUpButtonLabel": "Cari",
   "searchWebButtonLabel": "Telusuri di Web",
-  "shareButtonLabel": "Bagikan..."
+  "shareButtonLabel": "Bagikan...",
+  "clearButtonLabel": "Hapus",
+  "cancelButtonLabel": "Batal",
+  "backButtonLabel": "Kembali"
 }

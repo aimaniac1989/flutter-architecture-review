@@ -1,4 +1,6 @@
 {
+  "cancelButtonLabel": "Cancel",
+  "backButtonLabel": "Back",
   "searchWebButtonLabel": "Search Web",
   "shareButtonLabel": "Share...",
   "lookUpButtonLabel": "Look up",
@@ -25,6 +27,7 @@
   "cutButtonLabel": "Cut",
   "copyButtonLabel": "Copy",
   "pasteButtonLabel": "Paste",
+  "clearButtonLabel": "Clear",
   "selectAllButtonLabel": "Select all",
   "modalBarrierDismissLabel": "Dismiss"
 }

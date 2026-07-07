@@ -31,5 +31,8 @@
   "menuDismissLabel": "Одбаците мени",
   "lookUpButtonLabel": "Поглед нагоре",
   "searchWebButtonLabel": "Претражи веб",
-  "shareButtonLabel": "Дели…"
+  "shareButtonLabel": "Дели…",
+  "clearButtonLabel": "Обриши",
+  "cancelButtonLabel": "Откажи",
+  "backButtonLabel": "Назад"
 }

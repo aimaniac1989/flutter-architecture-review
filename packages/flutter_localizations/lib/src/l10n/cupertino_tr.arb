@@ -26,5 +26,8 @@
   "menuDismissLabel": "Menüyü kapat",
   "lookUpButtonLabel": "Ara",
   "searchWebButtonLabel": "Web'de Ara",
-  "shareButtonLabel": "Paylaş..."
+  "shareButtonLabel": "Paylaş...",
+  "clearButtonLabel": "Temizle",
+  "cancelButtonLabel": "İptal",
+  "backButtonLabel": "Geri"
 }

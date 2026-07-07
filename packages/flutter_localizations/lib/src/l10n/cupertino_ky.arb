@@ -26,5 +26,8 @@
   "menuDismissLabel": "Менюну жабуу",
   "lookUpButtonLabel": "Издөө",
   "searchWebButtonLabel": "Интернеттен издөө",
-  "shareButtonLabel": "Бөлүшүү…"
+  "shareButtonLabel": "Бөлүшүү…",
+  "clearButtonLabel": "Тазалоо",
+  "cancelButtonLabel": "Токтотуу",
+  "backButtonLabel": "Артка"
 }

@@ -31,5 +31,8 @@
   "menuDismissLabel": "Nerādīt izvēlni",
   "lookUpButtonLabel": "Meklēt",
   "searchWebButtonLabel": "Meklēt tīmeklī",
-  "shareButtonLabel": "Kopīgot…"
+  "shareButtonLabel": "Kopīgot…",
+  "clearButtonLabel": "Notīrīt",
+  "cancelButtonLabel": "Atcelt",
+  "backButtonLabel": "Atpakaļ"
 }

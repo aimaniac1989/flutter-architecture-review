@@ -36,5 +36,8 @@
   "menuDismissLabel": "Atsisakyti meniu",
   "lookUpButtonLabel": "Ieškoti",
   "searchWebButtonLabel": "Ieškoti žiniatinklyje",
-  "shareButtonLabel": "Bendrinti..."
+  "shareButtonLabel": "Bendrinti...",
+  "clearButtonLabel": "Išvalyti",
+  "cancelButtonLabel": "Atšaukti",
+  "backButtonLabel": "Atgal"
 }

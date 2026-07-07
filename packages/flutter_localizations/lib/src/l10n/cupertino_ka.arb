@@ -26,5 +26,8 @@
   "menuDismissLabel": "მენიუს უარყოფა",
   "lookUpButtonLabel": "აიხედეთ ზემოთ",
   "searchWebButtonLabel": "ვებში ძიება",
-  "shareButtonLabel": "გაზიარება..."
+  "shareButtonLabel": "გაზიარება...",
+  "clearButtonLabel": "გასუფთავება",
+  "cancelButtonLabel": "გაუქმება",
+  "backButtonLabel": "უკან"
 }

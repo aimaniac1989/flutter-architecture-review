@@ -26,5 +26,8 @@
   "menuDismissLabel": "Baztertu menua",
   "lookUpButtonLabel": "Bilatu",
   "searchWebButtonLabel": "Bilatu sarean",
-  "shareButtonLabel": "Partekatu..."
+  "shareButtonLabel": "Partekatu...",
+  "clearButtonLabel": "Garbitu",
+  "cancelButtonLabel": "Utzi",
+  "backButtonLabel": "Atzera"
 }

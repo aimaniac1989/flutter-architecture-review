@@ -26,5 +26,8 @@
   "menuDismissLabel": "मेन्यू खारिज करें",
   "lookUpButtonLabel": "लुक अप बटन",
   "searchWebButtonLabel": "वेब पर खोजें",
-  "shareButtonLabel": "शेयर करें…"
+  "shareButtonLabel": "शेयर करें…",
+  "clearButtonLabel": "मिटाएं",
+  "cancelButtonLabel": "रद्द करें",
+  "backButtonLabel": "वापस जाएं"
 }
