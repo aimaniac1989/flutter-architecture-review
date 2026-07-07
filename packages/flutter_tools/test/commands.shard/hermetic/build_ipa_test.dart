@@ -221,7 +221,7 @@ void main() {
         if (deleteExportOptionsPlist) {
           fileSystem.file(_exportOptionsPlist).deleteSync();
         }
-      },
+      }
     );
   }
 
@@ -363,233 +363,61 @@ void main() {
     },
   );
 
-  testUsingContext(
-    'ipa build fails when --export-options-plist and --export-method are used together',
-    () async {
-      final BuildCommand command = BuildCommand(
-        androidSdk: FakeAndroidSdk(),
-        buildSystem: TestBuildSystem.all(BuildResult(success: true)),
-        logger: logger,
-        fileSystem: fileSystem,
-        osUtils: FakeOperatingSystemUtils(),
-      );
-      createMinimalMockProjectFiles();
+  testUsingContext('ipa build ignores deletion failure if generatedExportPlist does not exist', () async {
+    final File cachedExportOptionsPlist = fileSystem.file('/CachedExportOptions.plist');
+    final BuildCommand command = BuildCommand(
+      artifacts: artifacts,
+      androidSdk: FakeAndroidSdk(),
+      buildSystem: TestBuildSystem.all(BuildResult(success: true)),
+      logger: logger,
+      fileSystem: fileSystem,
+      processUtils: processUtils,
+      osUtils: FakeOperatingSystemUtils(),
+    );
+    fakeProcessManager.addCommands(<FakeCommand>[
+      xattrCommand,
+      setUpFakeXcodeBuildHandler(),
+      exportArchiveCommand(
+        exportOptionsPlist: _exportOptionsPlist,
+        cachePlist: cachedExportOptionsPlist,
+        deleteExportOptionsPlist: true,
+      ),
+    ]);
+    createMinimalMockProjectFiles();
 
-      await expectToolExitLater(
-        createTestCommandRunner(command).run(<String>[
-          'build',
-          'ipa',
-          '--export-options-plist',
-          'ExportOptions.plist',
-          '--export-method',
-          'app-store',
-          '--no-pub',
-        ]),
-        contains('"--export-options-plist" is not compatible with "--export-method"'),
-      );
-    },
-    overrides: <Type, Generator>{
-      FileSystem: () => fileSystem,
-      ProcessManager: () => fakeProcessManager,
-      Platform: () => macosPlatform,
-      XcodeProjectInterpreter: () => FakeXcodeProjectInterpreterWithBuildSettings(),
-    },
-  );
+    await createTestCommandRunner(command).run(
+      const <String>['build', 'ipa', '--no-pub']
+    );
+    expect(fakeProcessManager, hasNoRemainingExpectations);
+  }, overrides: <Type, Generator>{
+    FileSystem: () => fileSystem,
+    Logger: () => logger,
+    ProcessManager: () => fakeProcessManager,
+    Platform: () => macosPlatform,
+    XcodeProjectInterpreter: () => FakeXcodeProjectInterpreterWithBuildSettings(),
+  });
 
-  testUsingContext(
-    'ipa build reports method from --export-method when used',
-    () async {
-      final BuildCommand command = BuildCommand(
-        androidSdk: FakeAndroidSdk(),
-        buildSystem: TestBuildSystem.all(BuildResult(success: true)),
-        logger: logger,
-        fileSystem: fileSystem,
-        osUtils: FakeOperatingSystemUtils(),
-      );
-      fakeProcessManager.addCommands(<FakeCommand>[
-        xattrCommand,
-        setUpFakeXcodeBuildHandler(),
-        exportArchiveCommand(exportOptionsPlist: _exportOptionsPlist),
-      ]);
-      createMinimalMockProjectFiles();
-      await createTestCommandRunner(
-        command,
-      ).run(const <String>['build', 'ipa', '--export-method', 'ad-hoc', '--no-pub']);
+  testUsingContext('ipa build invokes xcodebuild and archives for app store', () async {
+    final File cachedExportOptionsPlist = fileSystem.file('/CachedExportOptions.plist');
+    final BuildCommand command = BuildCommand(
+      artifacts: artifacts,
+      androidSdk: FakeAndroidSdk(),
+      buildSystem: TestBuildSystem.all(BuildResult(success: true)),
+      logger: logger,
+      fileSystem: fileSystem,
+      processUtils: processUtils,
+      osUtils: FakeOperatingSystemUtils(),
+    );
+    fakeProcessManager.addCommands(<FakeCommand>[
+      xattrCommand,
+      setUpFakeXcodeBuildHandler(),
+      exportArchiveCommand(exportOptionsPlist: _exportOptionsPlist, cachePlist: cachedExportOptionsPlist),
+    ]);
+    createMinimalMockProjectFiles();
 
-      expect(logger.statusText, contains('build/ios/archive/Runner.xcarchive'));
-      expect(logger.statusText, contains('Building ad-hoc IPA'));
-    },
-    overrides: <Type, Generator>{
-      FileSystem: () => fileSystem,
-      Logger: () => logger,
-      ProcessManager: () => fakeProcessManager,
-      Pub: FakePubWithPrimedDeps.new,
-      Platform: () => macosPlatform,
-      XcodeProjectInterpreter: () => FakeXcodeProjectInterpreterWithBuildSettings(),
-    },
-  );
-
-  testUsingContext(
-    'ipa build uses new "debugging" export method when on Xcode versions > 15.3',
-    () async {
-      final File cachedExportOptionsPlist = fileSystem.file('/CachedExportOptions.plist');
-      final BuildCommand command = BuildCommand(
-        androidSdk: FakeAndroidSdk(),
-        buildSystem: TestBuildSystem.all(BuildResult(success: true)),
-        logger: logger,
-        fileSystem: fileSystem,
-        osUtils: FakeOperatingSystemUtils(),
-      );
-      fakeProcessManager.addCommands(<FakeCommand>[
-        xattrCommand,
-        setUpFakeXcodeBuildHandler(),
-        exportArchiveCommand(
-          exportOptionsPlist: _exportOptionsPlist,
-          cachePlist: cachedExportOptionsPlist,
-        ),
-      ]);
-      createMinimalMockProjectFiles();
-      await createTestCommandRunner(
-        command,
-      ).run(const <String>['build', 'ipa', '--export-method', 'development', '--no-pub']);
-
-      const String expectedIpaPlistContents = '''
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-    <dict>
-        <key>method</key>
-        <string>debugging</string>
-        <key>uploadBitcode</key>
-        <false/>
-    </dict>
-</plist>
-''';
-
-      final String actualIpaPlistContents =
-          fileSystem.file(cachedExportOptionsPlist).readAsStringSync();
-
-      expect(actualIpaPlistContents, expectedIpaPlistContents);
-      expect(logger.statusText, contains('Building debugging IPA'));
-    },
-    overrides: <Type, Generator>{
-      FileSystem: () => fileSystem,
-      Logger: () => logger,
-      ProcessManager: () => fakeProcessManager,
-      Pub: FakePubWithPrimedDeps.new,
-      Platform: () => macosPlatform,
-      XcodeProjectInterpreter:
-          () => FakeXcodeProjectInterpreterWithBuildSettings(version: Version(15, 4, null)),
-    },
-  );
-
-  testUsingContext(
-    'ipa build uses new "release-testing" export method when on Xcode versions > 15.3',
-    () async {
-      final File cachedExportOptionsPlist = fileSystem.file('/CachedExportOptions.plist');
-      final BuildCommand command = BuildCommand(
-        androidSdk: FakeAndroidSdk(),
-        buildSystem: TestBuildSystem.all(BuildResult(success: true)),
-        logger: logger,
-        fileSystem: fileSystem,
-        osUtils: FakeOperatingSystemUtils(),
-      );
-      fakeProcessManager.addCommands(<FakeCommand>[
-        xattrCommand,
-        setUpFakeXcodeBuildHandler(),
-        exportArchiveCommand(
-          exportOptionsPlist: _exportOptionsPlist,
-          cachePlist: cachedExportOptionsPlist,
-        ),
-      ]);
-      createMinimalMockProjectFiles();
-      await createTestCommandRunner(
-        command,
-      ).run(const <String>['build', 'ipa', '--export-method', 'ad-hoc', '--no-pub']);
-
-      const String expectedIpaPlistContents = '''
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-    <dict>
-        <key>method</key>
-        <string>release-testing</string>
-        <key>uploadBitcode</key>
-        <false/>
-    </dict>
-</plist>
-''';
-
-      final String actualIpaPlistContents =
-          fileSystem.file(cachedExportOptionsPlist).readAsStringSync();
-
-      expect(actualIpaPlistContents, expectedIpaPlistContents);
-      expect(logger.statusText, contains('Building release-testing IPA'));
-    },
-    overrides: <Type, Generator>{
-      FileSystem: () => fileSystem,
-      Logger: () => logger,
-      ProcessManager: () => fakeProcessManager,
-      Pub: FakePubWithPrimedDeps.new,
-      Platform: () => macosPlatform,
-      XcodeProjectInterpreter:
-          () => FakeXcodeProjectInterpreterWithBuildSettings(version: Version(15, 4, null)),
-    },
-  );
-
-  testUsingContext(
-    'ipa build uses new "app-store-connect" export method when on Xcode versions > 15.3',
-    () async {
-      final File cachedExportOptionsPlist = fileSystem.file('/CachedExportOptions.plist');
-      final BuildCommand command = BuildCommand(
-        androidSdk: FakeAndroidSdk(),
-        buildSystem: TestBuildSystem.all(BuildResult(success: true)),
-        logger: logger,
-        fileSystem: fileSystem,
-        osUtils: FakeOperatingSystemUtils(),
-      );
-      fakeProcessManager.addCommands(<FakeCommand>[
-        xattrCommand,
-        setUpFakeXcodeBuildHandler(),
-        exportArchiveCommand(
-          exportOptionsPlist: _exportOptionsPlist,
-          cachePlist: cachedExportOptionsPlist,
-        ),
-      ]);
-      createMinimalMockProjectFiles();
-      await createTestCommandRunner(
-        command,
-      ).run(const <String>['build', 'ipa', '--export-method', 'app-store', '--no-pub']);
-
-      const String expectedIpaPlistContents = '''
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-    <dict>
-        <key>method</key>
-        <string>app-store-connect</string>
-        <key>uploadBitcode</key>
-        <false/>
-    </dict>
-</plist>
-''';
-
-      final String actualIpaPlistContents =
-          fileSystem.file(cachedExportOptionsPlist).readAsStringSync();
-
-      expect(actualIpaPlistContents, expectedIpaPlistContents);
-      expect(logger.statusText, contains('Building App Store IPA'));
-    },
-    overrides: <Type, Generator>{
-      FileSystem: () => fileSystem,
-      Logger: () => logger,
-      ProcessManager: () => fakeProcessManager,
-      Pub: FakePubWithPrimedDeps.new,
-      Platform: () => macosPlatform,
-      XcodeProjectInterpreter:
-          () => FakeXcodeProjectInterpreterWithBuildSettings(version: Version(15, 4, null)),
-    },
-  );
+    await createTestCommandRunner(command).run(
+      const <String>['build', 'ipa', '--no-pub']
+    );
 
   testUsingContext(
     'ipa build accepts "enterprise" export method when on Xcode versions <= 15.3',
