@@ -959,7 +959,6 @@ LIBRARY: perfetto
 LIBRARY: shaderc
 LIBRARY: spirv-cross
 LIBRARY: swiftshader
-LIBRARY: txt
 LIBRARY: vulkan-headers
 LIBRARY: vulkan-utility-libraries
 LIBRARY: vulkan-validation-layers
@@ -2319,42 +2318,6 @@ ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutte
 ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/swiftshader/src/WSI/libWaylandClient.hpp
 ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/swiftshader/src/WSI/libXCB.cpp
 ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/swiftshader/src/WSI/libXCB.hpp
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/benchmarks/skparagraph_benchmarks.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/benchmarks/txt_run_all_benchmarks.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/skia/paragraph_builder_skia.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/skia/paragraph_builder_skia.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/skia/paragraph_skia.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/skia/paragraph_skia.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/asset_font_manager.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/asset_font_manager.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/font_asset_provider.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/font_asset_provider.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/font_collection.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/font_collection.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/font_features.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/font_features.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/font_style.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/font_weight.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/line_metrics.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/paragraph.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/paragraph_builder.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/paragraph_builder.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/paragraph_style.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/paragraph_style.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/placeholder_run.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/placeholder_run.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/run_metrics.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/test_font_manager.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/test_font_manager.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/text_baseline.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/text_decoration.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/text_decoration.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/text_shadow.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/text_shadow.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/text_style.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/text_style.h
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/typeface_font_asset_provider.cc
-ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/txt/src/txt/typeface_font_asset_provider.h
 ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/vulkan-deps/glslang/src/SPIRV/bitutils.h
 ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/vulkan-deps/glslang/src/SPIRV/hex_float.h
 ORIGIN: http://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/vulkan-deps/glslang/src/gtests/Common.cpp
@@ -3539,6 +3502,7 @@ ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutt
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/blake2/blake2b256_tests.txt
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bn/bn_asn1.cc
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bn/convert.cc
+ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bn/exponentiation.cc
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/buf/buf.cc
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bytestring/asn1_compat.cc
 ORIGIN: https://www.apache.org/licenses/LICENSE-2.0 referenced by ../../../flutter/third_party/boringssl/src/crypto/bytestring/ber.cc
@@ -4888,6 +4852,7 @@ FILE: ../../../flutter/third_party/boringssl/src/crypto/blake2/blake2.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/blake2/blake2b256_tests.txt
 FILE: ../../../flutter/third_party/boringssl/src/crypto/bn/bn_asn1.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/bn/convert.cc
+FILE: ../../../flutter/third_party/boringssl/src/crypto/bn/exponentiation.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/buf/buf.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/bytestring/asn1_compat.cc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/bytestring/ber.cc
@@ -5085,7 +5050,9 @@ FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/intcheck3.png
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/keccak/internal.h
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/keccak/keccak.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/keccak/keccak_tests.txt
+FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/mldsa/fips_known_values.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/mldsa/mldsa.cc.inc
+FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/mlkem/fips_known_values.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/mlkem/mlkem.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/policydocs/BoringCrypto-Android-Security-Policy-20191020.docx!/[Content_Types].xml
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/policydocs/BoringCrypto-Android-Security-Policy-20191020.docx!/_rels/.rels
@@ -5217,6 +5184,7 @@ FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/sha/sha1.cc.i
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/sha/sha256.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/sha/sha512.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/address.h
+FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/fips_known_values.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/fors.cc.inc
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/fors.h
 FILE: ../../../flutter/third_party/boringssl/src/crypto/fipsmodule/slhdsa/merkle.cc.inc
@@ -7079,42 +7047,6 @@ FILE: ../../../flutter/third_party/swiftshader/src/WSI/libWaylandClient.cpp
 FILE: ../../../flutter/third_party/swiftshader/src/WSI/libWaylandClient.hpp
 FILE: ../../../flutter/third_party/swiftshader/src/WSI/libXCB.cpp
 FILE: ../../../flutter/third_party/swiftshader/src/WSI/libXCB.hpp
-FILE: ../../../flutter/third_party/txt/benchmarks/skparagraph_benchmarks.cc
-FILE: ../../../flutter/third_party/txt/benchmarks/txt_run_all_benchmarks.cc
-FILE: ../../../flutter/third_party/txt/src/skia/paragraph_builder_skia.cc
-FILE: ../../../flutter/third_party/txt/src/skia/paragraph_builder_skia.h
-FILE: ../../../flutter/third_party/txt/src/skia/paragraph_skia.cc
-FILE: ../../../flutter/third_party/txt/src/skia/paragraph_skia.h
-FILE: ../../../flutter/third_party/txt/src/txt/asset_font_manager.cc
-FILE: ../../../flutter/third_party/txt/src/txt/asset_font_manager.h
-FILE: ../../../flutter/third_party/txt/src/txt/font_asset_provider.cc
-FILE: ../../../flutter/third_party/txt/src/txt/font_asset_provider.h
-FILE: ../../../flutter/third_party/txt/src/txt/font_collection.cc
-FILE: ../../../flutter/third_party/txt/src/txt/font_collection.h
-FILE: ../../../flutter/third_party/txt/src/txt/font_features.cc
-FILE: ../../../flutter/third_party/txt/src/txt/font_features.h
-FILE: ../../../flutter/third_party/txt/src/txt/font_style.h
-FILE: ../../../flutter/third_party/txt/src/txt/font_weight.h
-FILE: ../../../flutter/third_party/txt/src/txt/line_metrics.h
-FILE: ../../../flutter/third_party/txt/src/txt/paragraph.h
-FILE: ../../../flutter/third_party/txt/src/txt/paragraph_builder.cc
-FILE: ../../../flutter/third_party/txt/src/txt/paragraph_builder.h
-FILE: ../../../flutter/third_party/txt/src/txt/paragraph_style.cc
-FILE: ../../../flutter/third_party/txt/src/txt/paragraph_style.h
-FILE: ../../../flutter/third_party/txt/src/txt/placeholder_run.cc
-FILE: ../../../flutter/third_party/txt/src/txt/placeholder_run.h
-FILE: ../../../flutter/third_party/txt/src/txt/run_metrics.h
-FILE: ../../../flutter/third_party/txt/src/txt/test_font_manager.cc
-FILE: ../../../flutter/third_party/txt/src/txt/test_font_manager.h
-FILE: ../../../flutter/third_party/txt/src/txt/text_baseline.h
-FILE: ../../../flutter/third_party/txt/src/txt/text_decoration.cc
-FILE: ../../../flutter/third_party/txt/src/txt/text_decoration.h
-FILE: ../../../flutter/third_party/txt/src/txt/text_shadow.cc
-FILE: ../../../flutter/third_party/txt/src/txt/text_shadow.h
-FILE: ../../../flutter/third_party/txt/src/txt/text_style.cc
-FILE: ../../../flutter/third_party/txt/src/txt/text_style.h
-FILE: ../../../flutter/third_party/txt/src/txt/typeface_font_asset_provider.cc
-FILE: ../../../flutter/third_party/txt/src/txt/typeface_font_asset_provider.h
 FILE: ../../../flutter/third_party/vulkan-deps/glslang/src/SPIRV/bitutils.h
 FILE: ../../../flutter/third_party/vulkan-deps/glslang/src/SPIRV/hex_float.h
 FILE: ../../../flutter/third_party/vulkan-deps/glslang/src/gtests/Common.cpp
@@ -38528,12 +38460,12 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEAL
 ====================================================================================================
 
 ====================================================================================================
-LIBRARY: vulkan_memory_allocator
-ORIGIN: ../../../flutter/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
+LIBRARY: vulkan-validation-layers
+ORIGIN: ../../../flutter/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
 TYPE: LicenseType.mit
-FILE: ../../../flutter/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
+FILE: ../../../flutter/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
 ----------------------------------------------------------------------------------------------------
-Copyright (c) 2017-2022 Advanced Micro Devices, Inc. All rights reserved.
+Copyright (c) 2017-2024 Advanced Micro Devices, Inc. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -38555,12 +38487,12 @@ THE SOFTWARE.
 ====================================================================================================
 
 ====================================================================================================
-LIBRARY: vulkan-validation-layers
-ORIGIN: ../../../flutter/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
+LIBRARY: vulkan_memory_allocator
+ORIGIN: ../../../flutter/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
 TYPE: LicenseType.mit
-FILE: ../../../flutter/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
+FILE: ../../../flutter/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
 ----------------------------------------------------------------------------------------------------
-Copyright (c) 2017-2024 Advanced Micro Devices, Inc. All rights reserved.
+Copyright (c) 2017-2025 Advanced Micro Devices, Inc. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -39112,6 +39044,27 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+====================================================================================================
+
+====================================================================================================
+LIBRARY: boringssl
+ORIGIN: ../../../flutter/third_party/boringssl/src/crypto/cipher/e_aeseax.cc
+TYPE: LicenseType.unknown
+FILE: ../../../flutter/third_party/boringssl/src/crypto/cipher/e_aeseax.cc
+----------------------------------------------------------------------------------------------------
+Copyright (c) 2025, Google Inc.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ====================================================================================================
 
 ====================================================================================================
@@ -41215,7 +41168,6 @@ LIBRARY: accessibility
 LIBRARY: engine
 LIBRARY: spring_animation
 LIBRARY: tonic
-LIBRARY: txt
 LIBRARY: web_test_fonts
 LIBRARY: web_unicode
 ORIGIN: ../../../flutter/LICENSE
@@ -41933,6 +41885,8 @@ ORIGIN: ../../../flutter/impeller/geometry/point.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/point.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/quaternion.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/quaternion.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/impeller/geometry/rational.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/impeller/geometry/rational.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/rect.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/rect.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/impeller/geometry/round_rect.cc + ../../../flutter/LICENSE
@@ -42684,7 +42638,9 @@ ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/scene_painting.dart + ../../.
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/scene_view.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/accessibility.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/alert.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/checkable.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/disable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/expandable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/focusable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/header.dart + ../../../flutter/LICENSE
@@ -42693,8 +42649,11 @@ ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/image.dart + ../../
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/incrementable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/label_and_value.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/link.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/list.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/live_region.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/menus.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/platform_view.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/requirable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/route.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/scrollable.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/lib/web_ui/lib/src/engine/semantics/semantics.dart + ../../../flutter/LICENSE
@@ -44093,18 +44052,54 @@ ORIGIN: ../../../flutter/third_party/tonic/typed_data/typed_list.cc + ../../../f
 ORIGIN: ../../../flutter/third_party/tonic/typed_data/typed_list.h + ../../../flutter/third_party/tonic/LICENSE
 ORIGIN: ../../../flutter/third_party/tonic/typed_data/uint16_list.h + ../../../flutter/third_party/tonic/LICENSE
 ORIGIN: ../../../flutter/third_party/tonic/typed_data/uint8_list.h + ../../../flutter/third_party/tonic/LICENSE
-ORIGIN: ../../../flutter/third_party/txt/src/txt/platform.cc + ../../../flutter/LICENSE
-ORIGIN: ../../../flutter/third_party/txt/src/txt/platform.h + ../../../flutter/LICENSE
-ORIGIN: ../../../flutter/third_party/txt/src/txt/platform_android.cc + ../../../flutter/LICENSE
-ORIGIN: ../../../flutter/third_party/txt/src/txt/platform_fuchsia.cc + ../../../flutter/LICENSE
-ORIGIN: ../../../flutter/third_party/txt/src/txt/platform_linux.cc + ../../../flutter/LICENSE
-ORIGIN: ../../../flutter/third_party/txt/src/txt/platform_mac.h + ../../../flutter/LICENSE
-ORIGIN: ../../../flutter/third_party/txt/src/txt/platform_mac.mm + ../../../flutter/LICENSE
-ORIGIN: ../../../flutter/third_party/txt/src/txt/platform_windows.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/third_party/web_test_fonts/lib/web_test_fonts.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/third_party/web_test_fonts/lib/web_test_fonts/web_test_fonts.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/third_party/web_unicode/lib/web_unicode.dart + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/third_party/web_unicode/tool/unicode_sync_script.dart + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/benchmarks/skparagraph_benchmarks.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/benchmarks/txt_run_all_benchmarks.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/skia/paragraph_builder_skia.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/skia/paragraph_builder_skia.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/skia/paragraph_skia.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/skia/paragraph_skia.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/asset_font_manager.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/asset_font_manager.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/font_asset_provider.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/font_asset_provider.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/font_collection.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/font_collection.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/font_features.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/font_features.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/font_style.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/font_weight.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/line_metrics.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/paragraph.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/paragraph_builder.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/paragraph_builder.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/paragraph_style.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/paragraph_style.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/placeholder_run.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/placeholder_run.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/platform.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/platform.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/platform_android.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/platform_fuchsia.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/platform_linux.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/platform_mac.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/platform_mac.mm + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/platform_windows.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/run_metrics.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/test_font_manager.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/test_font_manager.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/text_baseline.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/text_decoration.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/text_decoration.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/text_shadow.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/text_shadow.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/text_style.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/text_style.h + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/typeface_font_asset_provider.cc + ../../../flutter/LICENSE
+ORIGIN: ../../../flutter/txt/src/txt/typeface_font_asset_provider.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/vulkan/procs/vulkan_handle.cc + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/vulkan/procs/vulkan_handle.h + ../../../flutter/LICENSE
 ORIGIN: ../../../flutter/vulkan/procs/vulkan_interface.cc + ../../../flutter/LICENSE
@@ -44862,6 +44857,8 @@ FILE: ../../../flutter/impeller/geometry/point.cc
 FILE: ../../../flutter/impeller/geometry/point.h
 FILE: ../../../flutter/impeller/geometry/quaternion.cc
 FILE: ../../../flutter/impeller/geometry/quaternion.h
+FILE: ../../../flutter/impeller/geometry/rational.cc
+FILE: ../../../flutter/impeller/geometry/rational.h
 FILE: ../../../flutter/impeller/geometry/rect.cc
 FILE: ../../../flutter/impeller/geometry/rect.h
 FILE: ../../../flutter/impeller/geometry/round_rect.cc
@@ -45618,7 +45615,9 @@ FILE: ../../../flutter/lib/web_ui/lib/src/engine/scene_painting.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/scene_view.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/accessibility.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/alert.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/checkable.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/disable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/expandable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/focusable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/header.dart
@@ -45627,8 +45626,11 @@ FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/image.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/incrementable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/label_and_value.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/link.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/list.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/live_region.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/menus.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/platform_view.dart
+FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/requirable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/route.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/scrollable.dart
 FILE: ../../../flutter/lib/web_ui/lib/src/engine/semantics/semantics.dart
@@ -47053,18 +47055,54 @@ FILE: ../../../flutter/third_party/tonic/typed_data/typed_list.cc
 FILE: ../../../flutter/third_party/tonic/typed_data/typed_list.h
 FILE: ../../../flutter/third_party/tonic/typed_data/uint16_list.h
 FILE: ../../../flutter/third_party/tonic/typed_data/uint8_list.h
-FILE: ../../../flutter/third_party/txt/src/txt/platform.cc
-FILE: ../../../flutter/third_party/txt/src/txt/platform.h
-FILE: ../../../flutter/third_party/txt/src/txt/platform_android.cc
-FILE: ../../../flutter/third_party/txt/src/txt/platform_fuchsia.cc
-FILE: ../../../flutter/third_party/txt/src/txt/platform_linux.cc
-FILE: ../../../flutter/third_party/txt/src/txt/platform_mac.h
-FILE: ../../../flutter/third_party/txt/src/txt/platform_mac.mm
-FILE: ../../../flutter/third_party/txt/src/txt/platform_windows.cc
 FILE: ../../../flutter/third_party/web_test_fonts/lib/web_test_fonts.dart
 FILE: ../../../flutter/third_party/web_test_fonts/lib/web_test_fonts/web_test_fonts.dart
 FILE: ../../../flutter/third_party/web_unicode/lib/web_unicode.dart
 FILE: ../../../flutter/third_party/web_unicode/tool/unicode_sync_script.dart
+FILE: ../../../flutter/txt/benchmarks/skparagraph_benchmarks.cc
+FILE: ../../../flutter/txt/benchmarks/txt_run_all_benchmarks.cc
+FILE: ../../../flutter/txt/src/skia/paragraph_builder_skia.cc
+FILE: ../../../flutter/txt/src/skia/paragraph_builder_skia.h
+FILE: ../../../flutter/txt/src/skia/paragraph_skia.cc
+FILE: ../../../flutter/txt/src/skia/paragraph_skia.h
+FILE: ../../../flutter/txt/src/txt/asset_font_manager.cc
+FILE: ../../../flutter/txt/src/txt/asset_font_manager.h
+FILE: ../../../flutter/txt/src/txt/font_asset_provider.cc
+FILE: ../../../flutter/txt/src/txt/font_asset_provider.h
+FILE: ../../../flutter/txt/src/txt/font_collection.cc
+FILE: ../../../flutter/txt/src/txt/font_collection.h
+FILE: ../../../flutter/txt/src/txt/font_features.cc
+FILE: ../../../flutter/txt/src/txt/font_features.h
+FILE: ../../../flutter/txt/src/txt/font_style.h
+FILE: ../../../flutter/txt/src/txt/font_weight.h
+FILE: ../../../flutter/txt/src/txt/line_metrics.h
+FILE: ../../../flutter/txt/src/txt/paragraph.h
+FILE: ../../../flutter/txt/src/txt/paragraph_builder.cc
+FILE: ../../../flutter/txt/src/txt/paragraph_builder.h
+FILE: ../../../flutter/txt/src/txt/paragraph_style.cc
+FILE: ../../../flutter/txt/src/txt/paragraph_style.h
+FILE: ../../../flutter/txt/src/txt/placeholder_run.cc
+FILE: ../../../flutter/txt/src/txt/placeholder_run.h
+FILE: ../../../flutter/txt/src/txt/platform.cc
+FILE: ../../../flutter/txt/src/txt/platform.h
+FILE: ../../../flutter/txt/src/txt/platform_android.cc
+FILE: ../../../flutter/txt/src/txt/platform_fuchsia.cc
+FILE: ../../../flutter/txt/src/txt/platform_linux.cc
+FILE: ../../../flutter/txt/src/txt/platform_mac.h
+FILE: ../../../flutter/txt/src/txt/platform_mac.mm
+FILE: ../../../flutter/txt/src/txt/platform_windows.cc
+FILE: ../../../flutter/txt/src/txt/run_metrics.h
+FILE: ../../../flutter/txt/src/txt/test_font_manager.cc
+FILE: ../../../flutter/txt/src/txt/test_font_manager.h
+FILE: ../../../flutter/txt/src/txt/text_baseline.h
+FILE: ../../../flutter/txt/src/txt/text_decoration.cc
+FILE: ../../../flutter/txt/src/txt/text_decoration.h
+FILE: ../../../flutter/txt/src/txt/text_shadow.cc
+FILE: ../../../flutter/txt/src/txt/text_shadow.h
+FILE: ../../../flutter/txt/src/txt/text_style.cc
+FILE: ../../../flutter/txt/src/txt/text_style.h
+FILE: ../../../flutter/txt/src/txt/typeface_font_asset_provider.cc
+FILE: ../../../flutter/txt/src/txt/typeface_font_asset_provider.h
 FILE: ../../../flutter/vulkan/procs/vulkan_handle.cc
 FILE: ../../../flutter/vulkan/procs/vulkan_handle.h
 FILE: ../../../flutter/vulkan/procs/vulkan_interface.cc
@@ -69346,4 +69384,4 @@ freely, subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 ====================================================================================================
 
-Total license count: 840
+Total license count: 841
