@@ -2,161 +2,240 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:io';
-
 import 'package:args/command_runner.dart';
+import 'package:file/memory.dart';
 import 'package:flutter_tools/src/android/android_builder.dart';
 import 'package:flutter_tools/src/android/android_sdk.dart';
-import 'package:flutter_tools/src/base/context.dart';
+import 'package:flutter_tools/src/android/gradle_utils.dart'
+    show templateAndroidGradlePluginVersion;
 import 'package:flutter_tools/src/base/file_system.dart';
+import 'package:flutter_tools/src/base/io.dart';
+import 'package:flutter_tools/src/base/logger.dart';
 import 'package:flutter_tools/src/cache.dart';
 import 'package:flutter_tools/src/commands/build_appbundle.dart';
 import 'package:flutter_tools/src/globals.dart' as globals;
 import 'package:flutter_tools/src/project.dart';
-import 'package:flutter_tools/src/reporting/reporting.dart';
-import 'package:mockito/mockito.dart';
-import 'package:process/process.dart';
+import 'package:test/fake.dart';
+import 'package:unified_analytics/unified_analytics.dart';
 
 import '../../src/android_common.dart';
 import '../../src/common.dart';
 import '../../src/context.dart';
-import '../../src/mocks.dart';
+import '../../src/fakes.dart' show FakeFlutterVersion;
+import '../../src/test_flutter_command_runner.dart';
 
 void main() {
   Cache.disableLocking();
 
-  group('Usage', () {
-    Directory tempDir;
-    Usage mockUsage;
+  group('analytics', () {
+    late Directory tempDir;
+    late FakeAnalytics fakeAnalytics;
+    late FakeProcessInfo processInfo;
 
     setUp(() {
       tempDir = globals.fs.systemTempDirectory.createTempSync('flutter_tools_packages_test.');
-      mockUsage = MockUsage();
+      fakeAnalytics = getInitializedFakeAnalyticsInstance(
+        fs: MemoryFileSystem.test(),
+        fakeFlutterVersion: FakeFlutterVersion(),
+      );
+      processInfo = FakeProcessInfo();
     });
 
     tearDown(() {
       tryToDelete(tempDir);
     });
 
-    testUsingContext('indicate the default target platforms', () async {
-      final String projectPath = await createProject(tempDir,
-          arguments: <String>['--no-pub', '--template=app']);
-      final BuildAppBundleCommand command = await runBuildAppBundleCommand(projectPath);
+    testUsingContext(
+      'indicate the default target platforms',
+      () async {
+        final String projectPath = await createProject(
+          tempDir,
+          arguments: <String>['--no-pub', '--template=app'],
+        );
 
-      expect(await command.usageValues,
-          containsPair(CustomDimensions.commandBuildAppBundleTargetPlatform, 'android-arm,android-arm64,android-x64'));
+        await runBuildAppBundleCommand(projectPath);
 
-    }, overrides: <Type, Generator>{
-      AndroidBuilder: () => FakeAndroidBuilder(),
+        expect(
+          fakeAnalytics.sentEvents,
+          contains(
+            Event.commandUsageValues(
+              workflow: 'appbundle',
+              commandHasTerminal: false,
+              buildAppBundleTargetPlatform: 'android-arm,android-arm64,android-x64',
+              buildAppBundleBuildMode: 'release',
+            ),
+          ),
+        );
+      },
+      overrides: <Type, Generator>{
+        AndroidBuilder: () => FakeAndroidBuilder(),
+        Analytics: () => fakeAnalytics,
+      },
+    );
+
+    testUsingContext('alias aab', () async {
+      final BuildAppBundleCommand command = BuildAppBundleCommand(logger: BufferLogger.test());
+      expect(command.aliases, contains('aab'));
     });
 
-    testUsingContext('build type', () async {
-      final String projectPath = await createProject(tempDir,
-          arguments: <String>['--no-pub', '--template=app']);
+    testUsingContext(
+      'build type',
+      () async {
+        final String projectPath = await createProject(
+          tempDir,
+          arguments: <String>['--no-pub', '--template=app'],
+        );
 
-      final BuildAppBundleCommand commandDefault = await runBuildAppBundleCommand(projectPath);
-      expect(await commandDefault.usageValues,
-          containsPair(CustomDimensions.commandBuildAppBundleBuildMode, 'release'));
+        await runBuildAppBundleCommand(projectPath);
+        expect(
+          fakeAnalytics.sentEvents,
+          contains(
+            Event.commandUsageValues(
+              workflow: 'appbundle',
+              commandHasTerminal: false,
+              buildAppBundleTargetPlatform: 'android-arm,android-arm64,android-x64',
+              buildAppBundleBuildMode: 'release',
+            ),
+          ),
+        );
 
-      final BuildAppBundleCommand commandInRelease = await runBuildAppBundleCommand(projectPath,
-          arguments: <String>['--release']);
-      expect(await commandInRelease.usageValues,
-          containsPair(CustomDimensions.commandBuildAppBundleBuildMode, 'release'));
+        fakeAnalytics.sentEvents.clear();
+        await runBuildAppBundleCommand(projectPath, arguments: <String>['--release']);
+        expect(
+          fakeAnalytics.sentEvents,
+          contains(
+            Event.commandUsageValues(
+              workflow: 'appbundle',
+              commandHasTerminal: false,
+              buildAppBundleTargetPlatform: 'android-arm,android-arm64,android-x64',
+              buildAppBundleBuildMode: 'release',
+            ),
+          ),
+        );
 
-      final BuildAppBundleCommand commandInDebug = await runBuildAppBundleCommand(projectPath,
-          arguments: <String>['--debug']);
-      expect(await commandInDebug.usageValues,
-          containsPair(CustomDimensions.commandBuildAppBundleBuildMode, 'debug'));
+        fakeAnalytics.sentEvents.clear();
+        await runBuildAppBundleCommand(projectPath, arguments: <String>['--debug']);
+        expect(
+          fakeAnalytics.sentEvents,
+          contains(
+            Event.commandUsageValues(
+              workflow: 'appbundle',
+              commandHasTerminal: false,
+              buildAppBundleTargetPlatform: 'android-arm,android-arm64,android-x64',
+              buildAppBundleBuildMode: 'debug',
+            ),
+          ),
+        );
 
-      final BuildAppBundleCommand commandInProfile = await runBuildAppBundleCommand(projectPath,
-          arguments: <String>['--profile']);
-      expect(await commandInProfile.usageValues,
-          containsPair(CustomDimensions.commandBuildAppBundleBuildMode, 'profile'));
+        fakeAnalytics.sentEvents.clear();
+        await runBuildAppBundleCommand(projectPath, arguments: <String>['--profile']);
 
-    }, overrides: <Type, Generator>{
-      AndroidBuilder: () => FakeAndroidBuilder(),
-    });
+        expect(
+          fakeAnalytics.sentEvents,
+          contains(
+            Event.commandUsageValues(
+              workflow: 'appbundle',
+              commandHasTerminal: false,
+              buildAppBundleTargetPlatform: 'android-arm,android-arm64,android-x64',
+              buildAppBundleBuildMode: 'profile',
+            ),
+          ),
+        );
+      },
+      overrides: <Type, Generator>{
+        AndroidBuilder: () => FakeAndroidBuilder(),
+        Analytics: () => fakeAnalytics,
+      },
+    );
 
-    testUsingContext('logs success', () async {
-      final String projectPath = await createProject(tempDir,
-          arguments: <String>['--no-pub', '--template=app']);
+    testUsingContext(
+      'logs success',
+      () async {
+        final String projectPath = await createProject(
+          tempDir,
+          arguments: <String>['--no-pub', '--template=app'],
+        );
 
-      await runBuildAppBundleCommand(projectPath);
+        await runBuildAppBundleCommand(projectPath);
 
-      verify(mockUsage.sendEvent(
-        'tool-command-result',
-        'appbundle',
-        label: 'success',
-        value: anyNamed('value'),
-        parameters: anyNamed('parameters'),
-      )).called(1);
-    },
-    overrides: <Type, Generator>{
-      AndroidBuilder: () => FakeAndroidBuilder(),
-      Usage: () => mockUsage,
-    });
+        expect(
+          fakeAnalytics.sentEvents,
+          contains(
+            Event.flutterCommandResult(
+              commandPath: 'create',
+              result: 'success',
+              commandHasTerminal: false,
+              maxRss: processInfo.maxRss,
+            ),
+          ),
+        );
+      },
+      overrides: <Type, Generator>{
+        AndroidBuilder: () => FakeAndroidBuilder(),
+        Analytics: () => fakeAnalytics,
+        ProcessInfo: () => processInfo,
+      },
+    );
+
+    testUsingContext(
+      'use of the deferred components feature sends a build info event indicating so',
+      () async {
+        final String projectPath = await createProject(
+          tempDir,
+          arguments: <String>['--empty', '--no-pub', '--template=app'],
+        );
+
+        // Add deferred manifest.
+        final File pubspec = globals.localFileSystem
+            .directory(projectPath)
+            .childFile('pubspec.yaml');
+        final String modifiedContents = pubspec.readAsStringSync().replaceAll(
+          'flutter:',
+          'flutter:\n  deferred-components:',
+        );
+        pubspec.writeAsStringSync(modifiedContents);
+        printOnFailure(pubspec.readAsStringSync());
+
+        final Directory oldCwd = globals.localFileSystem.currentDirectory;
+        try {
+          globals.localFileSystem.currentDirectory = globals.localFileSystem.directory(projectPath);
+          await runBuildAppBundleCommand(projectPath);
+        } finally {
+          globals.localFileSystem.currentDirectory = oldCwd;
+        }
+
+        expect(
+          fakeAnalytics.sentEvents,
+          contains(
+            Event.flutterBuildInfo(
+              label: 'build-appbundle-deferred-components',
+              buildType: 'android',
+            ),
+          ),
+        );
+      },
+      overrides: <Type, Generator>{
+        AndroidBuilder: () => FakeAndroidBuilder(),
+        Analytics: () => fakeAnalytics,
+        ProcessInfo: () => processInfo,
+      },
+    );
   });
 
   group('Gradle', () {
-    Directory tempDir;
-    ProcessManager mockProcessManager;
-    MockAndroidSdk mockAndroidSdk;
-    String gradlew;
-    Usage mockUsage;
+    late Directory tempDir;
+    late FakeProcessManager processManager;
+    late FakeAndroidSdk androidSdk;
+    late FakeAnalytics analytics;
 
     setUp(() {
-      mockUsage = MockUsage();
+      analytics = getInitializedFakeAnalyticsInstance(
+        fs: MemoryFileSystem.test(),
+        fakeFlutterVersion: FakeFlutterVersion(),
+      );
       tempDir = globals.fs.systemTempDirectory.createTempSync('flutter_tools_packages_test.');
-      gradlew = globals.fs.path.join(tempDir.path, 'flutter_project', 'android',
-          globals.platform.isWindows ? 'gradlew.bat' : 'gradlew');
-
-      mockProcessManager = MockProcessManager();
-      when(mockProcessManager.run(<String>[gradlew, '-v'],
-          environment: anyNamed('environment')))
-        .thenAnswer((_) => Future<ProcessResult>.value(ProcessResult(0, 0, '', '')));
-
-      when(mockProcessManager.run(<String>[gradlew, 'app:properties'],
-          workingDirectory: anyNamed('workingDirectory'),
-          environment: anyNamed('environment')))
-        .thenAnswer((_) => Future<ProcessResult>.value(ProcessResult(0, 0, 'buildDir: irrelevant', '')));
-
-      when(mockProcessManager.run(<String>[gradlew, 'app:tasks', '--all', '--console=auto'],
-          workingDirectory: anyNamed('workingDirectory'),
-          environment: anyNamed('environment')))
-        .thenAnswer((_) => Future<ProcessResult>.value(ProcessResult(0, 0, 'assembleRelease', '')));
-      // Fallback with error.
-      final Process process = createMockProcess(exitCode: 1);
-      when(mockProcessManager.start(any,
-          workingDirectory: anyNamed('workingDirectory'),
-          environment: anyNamed('environment')))
-        .thenAnswer((_) => Future<Process>.value(process));
-      when(mockProcessManager.canRun(any)).thenReturn(false);
-
-      when(mockProcessManager.runSync(
-        argThat(contains(contains('gen_snapshot'))),
-        workingDirectory: anyNamed('workingDirectory'),
-        environment: anyNamed('environment'),
-      )).thenReturn(ProcessResult(0, 255, '', ''));
-
-      when(mockProcessManager.runSync(
-        <String>['/usr/bin/xcode-select', '--print-path'],
-        workingDirectory: anyNamed('workingDirectory'),
-        environment: anyNamed('environment'),
-      )).thenReturn(ProcessResult(0, 0, '', ''));
-
-      when(mockProcessManager.run(
-        <String>['which', 'pod'],
-        workingDirectory: anyNamed('workingDirectory'),
-        environment: anyNamed('environment'),
-      )).thenAnswer((_) {
-        return Future<ProcessResult>.value(ProcessResult(0, 0, '', ''));
-      });
-
-      mockAndroidSdk = MockAndroidSdk();
-      when(mockAndroidSdk.licensesAvailable).thenReturn(true);
-      when(mockAndroidSdk.platformToolsAvailable).thenReturn(true);
-      when(mockAndroidSdk.validateSdkWellFormed()).thenReturn(const <String>[]);
-      when(mockAndroidSdk.directory).thenReturn('irrelevant');
+      processManager = FakeProcessManager.any();
+      androidSdk = FakeAndroidSdk(globals.fs.directory('irrelevant'));
     });
 
     tearDown(() {
@@ -164,171 +243,131 @@ void main() {
     });
 
     group('AndroidSdk', () {
-      testUsingContext('validateSdkWellFormed() not called, sdk reinitialized', () async {
-        final String projectPath = await createProject(tempDir,
-            arguments: <String>['--no-pub', '--template=app']);
-
-        await expectLater(
-          runBuildAppBundleCommand(
-            projectPath,
-            arguments: <String>['--no-pub'],
-          ),
-          throwsToolExit(message: 'Gradle task bundleRelease failed with exit code 1'),
-        );
-
-        verifyNever(mockAndroidSdk.validateSdkWellFormed());
-        verify(mockAndroidSdk.reinitialize()).called(1);
-      },
-      overrides: <Type, Generator>{
-        AndroidSdk: () => mockAndroidSdk,
-        FlutterProjectFactory: () => FakeFlutterProjectFactory(tempDir),
-        ProcessManager: () => mockProcessManager,
-      });
-
-      testUsingContext('throws throwsToolExit if AndroidSdk is null', () async {
-        final String projectPath = await createProject(tempDir,
-            arguments: <String>['--no-pub', '--template=app']);
-
-        await expectLater(() async {
-          await runBuildAppBundleCommand(
-            projectPath,
-            arguments: <String>['--no-pub'],
+      testUsingContext(
+        'throws throwsToolExit if AndroidSdk is null',
+        () async {
+          final String projectPath = await createProject(
+            tempDir,
+            arguments: <String>['--no-pub', '--template=app'],
           );
-        }, throwsToolExit(
-          message: 'No Android SDK found. Try setting the ANDROID_SDK_ROOT environment variable',
-        ));
-      },
-      overrides: <Type, Generator>{
-        AndroidSdk: () => null,
-        FlutterProjectFactory: () => FakeFlutterProjectFactory(tempDir),
-        ProcessManager: () => mockProcessManager,
-      });
+
+          await expectLater(
+            () async {
+              await runBuildAppBundleCommand(projectPath, arguments: <String>['--no-pub']);
+            },
+            throwsToolExit(
+              message: 'No Android SDK found. Try setting the ANDROID_HOME environment variable',
+            ),
+          );
+        },
+        overrides: <Type, Generator>{
+          AndroidSdk: () => null,
+          FlutterProjectFactory: () => FakeFlutterProjectFactory(tempDir),
+          ProcessManager: () => processManager,
+        },
+      );
     });
 
-    testUsingContext("reports when the app isn't using AndroidX", () async {
-      final String projectPath = await createProject(tempDir,
-          arguments: <String>['--no-pub', '--template=app']);
-      // Simulate a non-androidx project.
-      tempDir
-        .childDirectory('flutter_project')
-        .childDirectory('android')
-        .childFile('gradle.properties')
-        .writeAsStringSync('android.useAndroidX=false');
-
-      when(mockProcessManager.start(
-        <String>[
-          gradlew,
-          '-q',
-          '-Ptarget-platform=android-arm,android-arm64,android-x64',
-          '-Ptarget=${globals.fs.path.join(tempDir.path, 'flutter_project', 'lib', 'main.dart')}',
-          '-Ptrack-widget-creation=true',
-          'assembleRelease',
-        ],
-        workingDirectory: anyNamed('workingDirectory'),
-        environment: anyNamed('environment'),
-      )).thenAnswer((_) {
-        return Future<Process>.value(
-          createMockProcess(
-            exitCode: 0,
-            stdout: '',
-          ),
+    testUsingContext(
+      "reports when the app isn't using AndroidX",
+      () async {
+        final String projectPath = await createProject(
+          tempDir,
+          arguments: <String>['--no-pub', '--template=app'],
         );
-      });
-      // The command throws a [ToolExit] because it expects an AAB in the file system.
-      await expectLater(() async {
-        await runBuildAppBundleCommand(
-          projectPath,
-        );
-      }, throwsToolExit());
+        // Simulate a non-androidx project.
+        tempDir
+            .childDirectory('flutter_project')
+            .childDirectory('android')
+            .childFile('gradle.properties')
+            .writeAsStringSync('android.useAndroidX=false');
 
-      expect(
-        testLogger.statusText,
-        containsIgnoringWhitespace("Your app isn't using AndroidX"),
-      );
-      expect(
-        testLogger.statusText,
-        containsIgnoringWhitespace(
-        'To avoid potential build failures, you can quickly migrate your app by '
-        'following the steps on https://goo.gl/CP92wY'
-        ),
-      );
-      verify(mockUsage.sendEvent(
-        'build',
-        'appbundle',
-        label: 'app-not-using-android-x',
-        parameters: anyNamed('parameters'),
-      )).called(1);
-    },
-    overrides: <Type, Generator>{
-      AndroidSdk: () => mockAndroidSdk,
-      FlutterProjectFactory: () => FakeFlutterProjectFactory(tempDir),
-      ProcessManager: () => mockProcessManager,
-      Usage: () => mockUsage,
-    });
+        // The command throws a [ToolExit] because it expects an AAB in the file system.
+        await expectLater(() async {
+          await runBuildAppBundleCommand(projectPath);
+        }, throwsToolExit());
 
-    testUsingContext('reports when the app is using AndroidX', () async {
-      final String projectPath = await createProject(tempDir,
-          arguments: <String>['--no-pub', '--template=app']);
-
-      when(mockProcessManager.start(
-        <String>[
-          gradlew,
-          '-q',
-          '-Ptarget-platform=android-arm,android-arm64,android-x64',
-          '-Ptarget=${globals.fs.path.join(tempDir.path, 'flutter_project', 'lib', 'main.dart')}',
-          '-Ptrack-widget-creation=true',
-          'assembleRelease',
-        ],
-        workingDirectory: anyNamed('workingDirectory'),
-        environment: anyNamed('environment'),
-      )).thenAnswer((_) {
-        return Future<Process>.value(
-          createMockProcess(
-            exitCode: 0,
-            stdout: '',
-          ),
-        );
-      });
-      // The command throws a [ToolExit] because it expects an AAB in the file system.
-      await expectLater(() async {
-        await runBuildAppBundleCommand(
-          projectPath,
-        );
-      }, throwsToolExit());
-
-      expect(
-        testLogger.statusText,
-        not(containsIgnoringWhitespace("Your app isn't using AndroidX")),
-      );
-      expect(
-        testLogger.statusText,
-        not(
+        expect(testLogger.statusText, containsIgnoringWhitespace("Your app isn't using AndroidX"));
+        expect(
+          testLogger.statusText,
           containsIgnoringWhitespace(
             'To avoid potential build failures, you can quickly migrate your app by '
-            'following the steps on https://goo.gl/CP92wY'),
-        )
-      );
-      verify(mockUsage.sendEvent(
-        'build',
-        'appbundle',
-        label: 'app-using-android-x',
-        parameters: anyNamed('parameters'),
-      )).called(1);
-    },
-    overrides: <Type, Generator>{
-      AndroidSdk: () => mockAndroidSdk,
-      FlutterProjectFactory: () => FakeFlutterProjectFactory(tempDir),
-      ProcessManager: () => mockProcessManager,
-      Usage: () => mockUsage,
-    });
+            'following the steps on https://goo.gl/CP92wY',
+          ),
+        );
+
+        expect(
+          analytics.sentEvents,
+          contains(
+            Event.flutterBuildInfo(
+              label: 'app-not-using-android-x',
+              buildType: 'gradle',
+              settings: 'androidGradlePluginVersion: $templateAndroidGradlePluginVersion',
+            ),
+          ),
+        );
+      },
+      overrides: <Type, Generator>{
+        AndroidSdk: () => androidSdk,
+        FlutterProjectFactory: () => FakeFlutterProjectFactory(tempDir),
+        ProcessManager: () => processManager,
+        Analytics: () => analytics,
+      },
+    );
+
+    testUsingContext(
+      'reports when the app is using AndroidX',
+      () async {
+        final String projectPath = await createProject(
+          tempDir,
+          arguments: <String>['--no-pub', '--template=app'],
+        );
+
+        // The command throws a [ToolExit] because it expects an AAB in the file system.
+        await expectLater(() async {
+          await runBuildAppBundleCommand(projectPath);
+        }, throwsToolExit());
+
+        expect(
+          testLogger.statusText,
+          isNot(containsIgnoringWhitespace("Your app isn't using AndroidX")),
+        );
+        expect(
+          testLogger.statusText,
+          isNot(
+            containsIgnoringWhitespace(
+              'To avoid potential build failures, you can quickly migrate your app by '
+              'following the steps on https://goo.gl/CP92wY',
+            ),
+          ),
+        );
+
+        expect(
+          analytics.sentEvents,
+          contains(
+            Event.flutterBuildInfo(
+              label: 'app-using-android-x',
+              buildType: 'gradle',
+              settings: 'androidGradlePluginVersion: $templateAndroidGradlePluginVersion',
+            ),
+          ),
+        );
+      },
+      overrides: <Type, Generator>{
+        AndroidSdk: () => androidSdk,
+        FlutterProjectFactory: () => FakeFlutterProjectFactory(tempDir),
+        ProcessManager: () => processManager,
+        Analytics: () => analytics,
+      },
+    );
   });
 }
 
 Future<BuildAppBundleCommand> runBuildAppBundleCommand(
   String target, {
-  List<String> arguments,
+  List<String>? arguments,
 }) async {
-  final BuildAppBundleCommand command = BuildAppBundleCommand();
+  final BuildAppBundleCommand command = BuildAppBundleCommand(logger: BufferLogger.test());
   final CommandRunner<void> runner = createTestCommandRunner(command);
   await runner.run(<String>[
     'appbundle',
@@ -339,11 +378,14 @@ Future<BuildAppBundleCommand> runBuildAppBundleCommand(
   return command;
 }
 
-Matcher not(Matcher target){
-  return isNot(target);
+class FakeAndroidSdk extends Fake implements AndroidSdk {
+  FakeAndroidSdk(this.directory);
+
+  @override
+  final Directory directory;
 }
 
-class MockAndroidSdk extends Mock implements AndroidSdk {}
-class MockProcessManager extends Mock implements ProcessManager {}
-class MockProcess extends Mock implements Process {}
-class MockUsage extends Mock implements Usage {}
+class FakeProcessInfo extends Fake implements ProcessInfo {
+  @override
+  int maxRss = 123456789;
+}

@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 import 'logic.dart';
 
 class Calculator extends StatefulWidget {
-  const Calculator({Key? key}) : super(key: key);
+  const Calculator({super.key});
 
   @override
-  _CalculatorState createState() => _CalculatorState();
+  State<Calculator> createState() => CalculatorState();
 }
 
-class _CalculatorState extends State<Calculator> {
+class CalculatorState extends State<Calculator> {
   /// As the user taps keys we update the current `_expression` and we also
   /// keep a stack of previous expressions so we can return to earlier states
   /// when the user hits the DEL key.
@@ -114,23 +114,14 @@ class _CalculatorState extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).canvasColor,
-        elevation: 0.0,
-      ),
+      appBar: AppBar(backgroundColor: Theme.of(context).canvasColor, elevation: 0.0),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           // Give the key-pad 3/5 of the vertical space and the display 2/5.
-          Expanded(
-            flex: 2,
-            child: CalcDisplay(content: _expression.toString()),
-          ),
+          Expanded(flex: 2, child: CalcDisplay(content: _expression.toString())),
           const Divider(height: 1.0),
-          Expanded(
-            flex: 3,
-            child: KeyPad(calcState: this),
-          ),
+          Expanded(flex: 3, child: KeyPad(calcState: this)),
         ],
       ),
     );
@@ -138,25 +129,20 @@ class _CalculatorState extends State<Calculator> {
 }
 
 class CalcDisplay extends StatelessWidget {
-  const CalcDisplay({ this.content });
+  const CalcDisplay({super.key, this.content});
 
   final String? content;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        content!,
-        style: const TextStyle(fontSize: 24.0),
-      ),
-    );
+    return Center(child: Text(content!, style: const TextStyle(fontSize: 24.0)));
   }
 }
 
 class KeyPad extends StatelessWidget {
-  const KeyPad({ this.calcState });
+  const KeyPad({super.key, this.calcState});
 
-  final _CalculatorState? calcState;
+  final CalculatorState? calcState;
 
   @override
   Widget build(BuildContext context) {
@@ -202,7 +188,7 @@ class KeyPad extends StatelessWidget {
             ),
             Expanded(
               child: Material(
-                color: themeData.backgroundColor,
+                color: themeData.colorScheme.surface,
                 child: Column(
                   children: <Widget>[
                     CalcKey('\u232B', calcState!.handleDelTap),
@@ -222,23 +208,18 @@ class KeyPad extends StatelessWidget {
 }
 
 class KeyRow extends StatelessWidget {
-  const KeyRow(this.keys);
+  const KeyRow(this.keys, {super.key});
 
   final List<Widget> keys;
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: keys,
-      ),
-    );
+    return Expanded(child: Row(mainAxisAlignment: MainAxisAlignment.center, children: keys));
   }
 }
 
 class CalcKey extends StatelessWidget {
-  const CalcKey(this.text, this.onTap);
+  const CalcKey(this.text, this.onTap, {super.key});
 
   final String text;
   final GestureTapCallback onTap;
@@ -255,7 +236,7 @@ class CalcKey extends StatelessWidget {
             style: TextStyle(
               // This line is used as a sentinel in the hot reload tests: hot_mode_test.dart
               // in the devicelab.
-              fontSize: (orientation == Orientation.portrait) ? 32.0 : 24.0
+              fontSize: (orientation == Orientation.portrait) ? 32.0 : 24.0,
             ),
           ),
         ),
@@ -265,8 +246,8 @@ class CalcKey extends StatelessWidget {
 }
 
 class NumberKey extends CalcKey {
-  NumberKey(int value, _CalculatorState? calcState)
+  NumberKey(int value, CalculatorState? calcState, {Key? key})
     : super('$value', () {
         calcState!.handleNumberTap(value);
-      });
+      }, key: key);
 }

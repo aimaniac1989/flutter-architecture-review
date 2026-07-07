@@ -5,14 +5,14 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import 'package:flutter_gallery/demo/shrine/backdrop.dart';
-import 'package:flutter_gallery/demo/shrine/expanding_bottom_sheet.dart';
-import 'package:flutter_gallery/demo/shrine/model/app_state_model.dart';
-import 'package:flutter_gallery/demo/shrine/model/product.dart';
-import 'package:flutter_gallery/demo/shrine/supplemental/asymmetric_view.dart';
+import 'backdrop.dart';
+import 'expanding_bottom_sheet.dart';
+import 'model/app_state_model.dart';
+import 'model/product.dart';
+import 'supplemental/asymmetric_view.dart';
 
 class ProductPage extends StatelessWidget {
-  const ProductPage({this.category = Category.all});
+  const ProductPage({super.key, this.category = Category.all});
 
   final Category category;
 
@@ -21,16 +21,13 @@ class ProductPage extends StatelessWidget {
     return ScopedModelDescendant<AppStateModel>(
       builder: (BuildContext context, Widget? child, AppStateModel model) {
         return AsymmetricView(products: model.getProducts());
-      });
+      },
+    );
   }
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({
-    this.expandingBottomSheet,
-    this.backdrop,
-    Key? key,
-  }) : super(key: key);
+  const HomePage({this.expandingBottomSheet, this.backdrop, super.key});
 
   final ExpandingBottomSheet? expandingBottomSheet;
   final Backdrop? backdrop;
@@ -39,9 +36,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        if (backdrop != null)
-          backdrop!,
-        Align(child: expandingBottomSheet, alignment: Alignment.bottomRight),
+        if (backdrop != null) backdrop!,
+        Align(alignment: Alignment.bottomRight, child: expandingBottomSheet),
       ],
     );
   }

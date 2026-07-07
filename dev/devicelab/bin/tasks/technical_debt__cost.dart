@@ -14,7 +14,8 @@ import 'package:path/path.dart' as path;
 const double todoCost = 1009.0; // about two average SWE days, in dollars
 const double ignoreCost = 2003.0; // four average SWE days, in dollars
 const double pythonCost = 3001.0; // six average SWE days, in dollars
-const double skipCost = 2473.0; // 20 hours: 5 to fix the issue we're ignoring, 15 to fix the bugs we missed because the test was off
+const double skipCost =
+    2473.0; // 20 hours: 5 to fix the issue we're ignoring, 15 to fix the bugs we missed because the test was off
 const double ignoreForFileCost = 2477.0; // similar thinking as skipCost
 const double asDynamicCost = 2011.0; // a few days to refactor the code.
 const double deprecationCost = 233.0; // a few hours to remove the old code.
@@ -26,74 +27,95 @@ final RegExp ignoreForFilePattern = RegExp(r'// *ignore_for_file:');
 final RegExp asDynamicPattern = RegExp(r'\bas dynamic\b');
 final RegExp deprecationPattern = RegExp(r'^ *@[dD]eprecated');
 const Pattern globalsPattern = 'globals.';
-const String legacyDeprecationPattern = '// ignore: flutter_deprecation_syntax, https';
+const String legacyDeprecationPattern = '// flutter_ignore: deprecation_syntax, https';
 
 Future<double> findCostsForFile(File file) async {
-  if (path.extension(file.path) == '.py')
+  if (path.extension(file.path) == '.py') {
     return pythonCost;
+  }
   if (path.extension(file.path) != '.dart' &&
       path.extension(file.path) != '.yaml' &&
-      path.extension(file.path) != '.sh')
+      path.extension(file.path) != '.sh') {
     return 0.0;
+  }
   final bool isTest = file.path.endsWith('_test.dart');
   double total = 0.0;
   for (final String line in await file.readAsLines()) {
-    if (line.contains(todoPattern))
+    if (line.contains(todoPattern)) {
       total += todoCost;
-    if (line.contains(ignorePattern))
+    }
+    if (line.contains(ignorePattern)) {
       total += ignoreCost;
-    if (line.contains(ignoreForFilePattern))
+    }
+    if (line.contains(ignoreForFilePattern)) {
       total += ignoreForFileCost;
-    if (!isTest && line.contains(asDynamicPattern))
+    }
+    if (!isTest && line.contains(asDynamicPattern)) {
       total += asDynamicCost;
-    if (line.contains(deprecationPattern))
+    }
+    if (line.contains(deprecationPattern)) {
       total += deprecationCost;
-    if (line.contains(legacyDeprecationPattern))
+    }
+    if (line.contains(legacyDeprecationPattern)) {
       total += legacyDeprecationCost;
-    if (isTest && line.contains('skip:'))
+    }
+    if (isTest && line.contains('skip:') && !line.contains('[intended]')) {
       total += skipCost;
+    }
   }
   return total;
 }
 
 Future<int> findGlobalsForFile(File file) async {
-  if (path.extension(file.path) != '.dart')
+  if (path.extension(file.path) != '.dart') {
     return 0;
+  }
   int total = 0;
   for (final String line in await file.readAsLines()) {
-    if (line.contains(globalsPattern))
+    if (line.contains(globalsPattern)) {
       total += 1;
+    }
   }
   return total;
 }
 
 Future<double> findCostsForRepo() async {
-  final Process git = await startProcess(
-    'git',
-    <String>['ls-files', '--full-name', flutterDirectory.path],
-    workingDirectory: flutterDirectory.path,
-  );
+  final Process git = await startProcess('git', <String>[
+    'ls-files',
+    '--exclude',
+    'engine',
+    '--full-name',
+    flutterDirectory.path,
+  ], workingDirectory: flutterDirectory.path);
   double total = 0.0;
-  await for (final String entry in git.stdout.transform<String>(utf8.decoder).transform<String>(const LineSplitter()))
+  await for (final String entry in git.stdout
+      .transform<String>(utf8.decoder)
+      .transform<String>(const LineSplitter())) {
     total += await findCostsForFile(File(path.join(flutterDirectory.path, entry)));
+  }
   final int gitExitCode = await git.exitCode;
-  if (gitExitCode != 0)
+  if (gitExitCode != 0) {
     throw Exception('git exit with unexpected error code $gitExitCode');
+  }
   return total;
 }
 
 Future<int> findGlobalsForTool() async {
-  final Process git = await startProcess(
-    'git',
-    <String>['ls-files', '--full-name', path.join(flutterDirectory.path, 'packages', 'flutter_tools')],
-    workingDirectory: flutterDirectory.path,
-  );
+  final Process git = await startProcess('git', <String>[
+    'ls-files',
+    '--full-name',
+    path.join(flutterDirectory.path, 'packages', 'flutter_tools'),
+  ], workingDirectory: flutterDirectory.path);
   int total = 0;
-  await for (final String entry in git.stdout.transform<String>(utf8.decoder).transform<String>(const LineSplitter()))
+  await for (final String entry in git.stdout
+      .transform<String>(utf8.decoder)
+      .transform<String>(const LineSplitter())) {
     total += await findGlobalsForFile(File(path.join(flutterDirectory.path, entry)));
+  }
   final int gitExitCode = await git.exitCode;
-  if (gitExitCode != 0)
+  if (gitExitCode != 0) {
     throw Exception('git exit with unexpected error code $gitExitCode');
+  }
   return total;
 }
 
@@ -103,8 +125,11 @@ Future<int> countDependencies() async {
     options: <String>['--transitive-closure'],
   )).split('\n');
   final int count = lines.where((String line) => line.contains('->')).length;
-  if (count < 2) // we'll always have flutter and flutter_test, at least...
-    throw Exception('"flutter update-packages --transitive-closure" returned bogus output:\n${lines.join("\n")}');
+  if (count < 2) {
+    throw Exception(
+      '"flutter update-packages --transitive-closure" returned bogus output:\n${lines.join("\n")}',
+    );
+  }
   return count;
 }
 
@@ -114,8 +139,11 @@ Future<int> countConsumerDependencies() async {
     options: <String>['--transitive-closure', '--consumer-only'],
   )).split('\n');
   final int count = lines.where((String line) => line.contains('->')).length;
-  if (count < 2) // we'll always have flutter and flutter_test, at least...
-    throw Exception('"flutter update-packages --transitive-closure" returned bogus output:\n${lines.join("\n")}');
+  if (count < 2) {
+    throw Exception(
+      '"flutter update-packages --transitive-closure" returned bogus output:\n${lines.join("\n")}',
+    );
+  }
   return count;
 }
 

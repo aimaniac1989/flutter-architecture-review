@@ -7,9 +7,6 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:process/process.dart';
 
-import '../android/android_sdk.dart';
-import '../android/android_workflow.dart';
-import '../base/common.dart';
 import '../base/file_system.dart';
 import '../base/io.dart';
 import '../base/logger.dart';
@@ -18,14 +15,15 @@ import '../convert.dart';
 import '../device.dart';
 import '../emulator.dart';
 import 'android_sdk.dart';
+import 'android_workflow.dart';
 
 class AndroidEmulators extends EmulatorDiscovery {
   AndroidEmulators({
-    @required AndroidSdk androidSdk,
-    @required AndroidWorkflow androidWorkflow,
-    @required FileSystem fileSystem,
-    @required Logger logger,
-    @required ProcessManager processManager,
+    AndroidSdk? androidSdk,
+    required AndroidWorkflow androidWorkflow,
+    required FileSystem fileSystem,
+    required Logger logger,
+    required ProcessManager processManager,
   }) : _androidSdk = androidSdk,
        _androidWorkflow = androidWorkflow,
        _fileSystem = fileSystem,
@@ -34,7 +32,7 @@ class AndroidEmulators extends EmulatorDiscovery {
        _processUtils = ProcessUtils(logger: logger, processManager: processManager);
 
   final AndroidWorkflow _androidWorkflow;
-  final AndroidSdk _androidSdk;
+  final AndroidSdk? _androidSdk;
   final FileSystem _fileSystem;
   final Logger _logger;
   final ProcessManager _processManager;
@@ -47,26 +45,24 @@ class AndroidEmulators extends EmulatorDiscovery {
   bool get canListAnything => _androidWorkflow.canListEmulators;
 
   @override
-  bool get canLaunchAnything => _androidWorkflow.canListEmulators
-    && _androidSdk.getAvdManagerPath() != null;
+  bool get canLaunchAnything =>
+      _androidWorkflow.canListEmulators && _androidSdk?.getAvdManagerPath() != null;
 
   @override
   Future<List<Emulator>> get emulators => _getEmulatorAvds();
 
   /// Return the list of available emulator AVDs.
   Future<List<AndroidEmulator>> _getEmulatorAvds() async {
-    final String emulatorPath = _androidSdk?.emulatorPath;
+    final String? emulatorPath = _androidSdk?.emulatorPath;
     if (emulatorPath == null) {
       return <AndroidEmulator>[];
     }
 
-    final String listAvdsOutput = (await _processUtils.run(
-      <String>[emulatorPath, '-list-avds'])).stdout.trim();
+    final String listAvdsOutput =
+        (await _processUtils.run(<String>[emulatorPath, '-list-avds'])).stdout.trim();
 
     final List<AndroidEmulator> emulators = <AndroidEmulator>[];
-    if (listAvdsOutput != null) {
-      _extractEmulatorAvdInfo(listAvdsOutput, emulators);
-    }
+    _extractEmulatorAvdInfo(listAvdsOutput, emulators);
     return emulators;
   }
 
@@ -80,7 +76,7 @@ class AndroidEmulators extends EmulatorDiscovery {
 
   AndroidEmulator _loadEmulatorInfo(String id) {
     id = id.trim();
-    final String avdPath = _androidSdk.getAvdPath();
+    final String? avdPath = _androidSdk?.getAvdPath();
     final AndroidEmulator androidEmulatorWithoutProperties = AndroidEmulator(
       id,
       processManager: _processManager,
@@ -95,10 +91,11 @@ class AndroidEmulators extends EmulatorDiscovery {
       return androidEmulatorWithoutProperties;
     }
     final Map<String, String> ini = parseIniLines(iniFile.readAsLinesSync());
-    if (ini['path'] == null) {
+    final String? path = ini['path'];
+    if (path == null) {
       return androidEmulatorWithoutProperties;
     }
-    final File configFile = _fileSystem.file(_fileSystem.path.join(ini['path'], 'config.ini'));
+    final File configFile = _fileSystem.file(_fileSystem.path.join(path, 'config.ini'));
     if (!configFile.existsSync()) {
       return androidEmulatorWithoutProperties;
     }
@@ -114,21 +111,22 @@ class AndroidEmulators extends EmulatorDiscovery {
 }
 
 class AndroidEmulator extends Emulator {
-  AndroidEmulator(String id, {
-    Map<String, String> properties,
-    @required Logger logger,
-    @required AndroidSdk androidSdk,
-    @required ProcessManager processManager,
+  AndroidEmulator(
+    String id, {
+    Map<String, String>? properties,
+    required Logger logger,
+    AndroidSdk? androidSdk,
+    required ProcessManager processManager,
   }) : _properties = properties,
        _logger = logger,
        _androidSdk = androidSdk,
        _processUtils = ProcessUtils(logger: logger, processManager: processManager),
        super(id, properties != null && properties.isNotEmpty);
 
-  final Map<String, String> _properties;
+  final Map<String, String>? _properties;
   final Logger _logger;
   final ProcessUtils _processUtils;
-  final AndroidSdk _androidSdk;
+  final AndroidSdk? _androidSdk;
 
   // Android Studio uses the ID with underscores replaced with spaces
   // for the name if displayname is not set so we do the same.
@@ -136,7 +134,7 @@ class AndroidEmulator extends Emulator {
   String get name => _prop('avd.ini.displayname') ?? id.replaceAll('_', ' ').trim();
 
   @override
-  String get manufacturer => _prop('hw.device.manufacturer');
+  String? get manufacturer => _prop('hw.device.manufacturer');
 
   @override
   Category get category => Category.mobile;
@@ -144,25 +142,33 @@ class AndroidEmulator extends Emulator {
   @override
   PlatformType get platformType => PlatformType.android;
 
-  String _prop(String name) => _properties != null ? _properties[name] : null;
+  String? _prop(String name) => _properties != null ? _properties[name] : null;
 
   @override
-  Future<void> launch() async {
-    final Process process = await _processUtils.start(
-      <String>[_androidSdk.emulatorPath, '-avd', id],
-    );
+  Future<void> launch({@visibleForTesting Duration? startupDuration, bool coldBoot = false}) async {
+    final String? emulatorPath = _androidSdk?.emulatorPath;
+    if (emulatorPath == null) {
+      throw Exception('Emulator is missing from the Android SDK');
+    }
+    final List<String> command = <String>[
+      emulatorPath,
+      '-avd',
+      id,
+      if (coldBoot) '-no-snapshot-load',
+    ];
+    final Process process = await _processUtils.start(command);
 
     // Record output from the emulator process.
     final List<String> stdoutList = <String>[];
     final List<String> stderrList = <String>[];
     final StreamSubscription<String> stdoutSubscription = process.stdout
-      .transform<String>(utf8.decoder)
-      .transform<String>(const LineSplitter())
-      .listen(stdoutList.add);
+        .transform<String>(utf8.decoder)
+        .transform<String>(const LineSplitter())
+        .listen(stdoutList.add);
     final StreamSubscription<String> stderrSubscription = process.stderr
-      .transform<String>(utf8.decoder)
-      .transform<String>(const LineSplitter())
-      .listen(stderrList.add);
+        .transform<String>(utf8.decoder)
+        .transform<String>(const LineSplitter())
+        .listen(stderrList.add);
     final Future<void> stdioFuture = Future.wait<void>(<Future<void>>[
       stdoutSubscription.asFuture<void>(),
       stderrSubscription.asFuture<void>(),
@@ -173,37 +179,38 @@ class AndroidEmulator extends Emulator {
     // after the startup phase (3 seconds), then we only echo its output if
     // its error code is non-zero and its stderr is non-empty.
     bool earlyFailure = true;
-    unawaited(process.exitCode.then((int status) async {
-      if (status == 0) {
-        _logger.printTrace('The Android emulator exited successfully');
-        return;
-      }
-      // Make sure the process' stdout and stderr are drained.
-      await stdioFuture;
-      unawaited(stdoutSubscription.cancel());
-      unawaited(stderrSubscription.cancel());
-      if (stdoutList.isNotEmpty) {
-        _logger.printTrace('Android emulator stdout:');
-        stdoutList.forEach(_logger.printTrace);
-      }
-      if (!earlyFailure && stderrList.isEmpty) {
-        _logger.printStatus('The Android emulator exited with code $status');
-        return;
-      }
-      final String when = earlyFailure ? 'during startup' : 'after startup';
-      _logger.printError('The Android emulator exited with code $status $when');
-      _logger.printError('Android emulator stderr:');
-      stderrList.forEach(_logger.printError);
-      _logger.printError('Address these issues and try again.');
-    }));
+    unawaited(
+      process.exitCode.then((int status) async {
+        if (status == 0) {
+          _logger.printTrace('The Android emulator exited successfully');
+          return;
+        }
+        // Make sure the process' stdout and stderr are drained.
+        await stdioFuture;
+        unawaited(stdoutSubscription.cancel());
+        unawaited(stderrSubscription.cancel());
+        if (stdoutList.isNotEmpty) {
+          _logger.printTrace('Android emulator stdout:');
+          stdoutList.forEach(_logger.printTrace);
+        }
+        if (!earlyFailure && stderrList.isEmpty) {
+          _logger.printStatus('The Android emulator exited with code $status');
+          return;
+        }
+        final String when = earlyFailure ? 'during startup' : 'after startup';
+        _logger.printError('The Android emulator exited with code $status $when');
+        _logger.printError('Android emulator stderr:');
+        stderrList.forEach(_logger.printError);
+        _logger.printError('Address these issues and try again.');
+      }),
+    );
 
     // Wait a few seconds for the emulator to start.
-    await Future<void>.delayed(const Duration(seconds: 3));
+    await Future<void>.delayed(startupDuration ?? const Duration(seconds: 3));
     earlyFailure = false;
     return;
   }
 }
-
 
 @visibleForTesting
 Map<String, String> parseIniLines(List<String> contents) {

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:convert' show utf8;
-
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'text_input_utils.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  group('TextInput message channels', () {
+  group('AutofillClient', () {
     late FakeTextChannel fakeTextChannel;
     final FakeAutofillScope scope = FakeAutofillScope();
 
@@ -25,29 +25,30 @@ void main() {
       TextInput.setChannel(SystemChannels.textInput);
     });
 
-    test('throws if the hint list is empty', () async {
-      Map<String, dynamic>? json;
+    test('Does not throw if the hint list is empty', () async {
+      Object? exception;
       try {
-        const AutofillConfiguration config = AutofillConfiguration(
+        const AutofillConfiguration(
           uniqueIdentifier: 'id',
           autofillHints: <String>[],
-          currentEditingValue: TextEditingValue(),
+          currentEditingValue: TextEditingValue.empty,
         );
-
-        json = config.toJson();
       } catch (e) {
-        expect(e.toString(), contains('isNotEmpty'));
+        exception = e;
       }
 
-      expect(json, isNull);
+      expect(exception, isNull);
     });
 
     test(
-      'AutofillClients send the correct configuration to the platform'
-      'and responds to updateEditingStateWithTag method correctly',
+      'AutofillClients send the correct configuration to the platform and responds to updateEditingStateWithTag method correctly',
       () async {
-        final FakeAutofillClient client1 = FakeAutofillClient(const TextEditingValue(text: 'test1'));
-        final FakeAutofillClient client2 = FakeAutofillClient(const TextEditingValue(text: 'test2'));
+        final FakeAutofillClient client1 = FakeAutofillClient(
+          const TextEditingValue(text: 'test1'),
+        );
+        final FakeAutofillClient client2 = FakeAutofillClient(
+          const TextEditingValue(text: 'test2'),
+        );
 
         client1.textInputConfiguration = TextInputConfiguration(
           autofillConfiguration: AutofillConfiguration(
@@ -83,12 +84,83 @@ void main() {
         ]);
 
         const TextEditingValue text2 = TextEditingValue(text: 'Text 2');
-        fakeTextChannel.incoming?.call(MethodCall(
-          'TextInputClient.updateEditingStateWithTag',
-          <dynamic>[0, <String, dynamic>{ client2.autofillId : text2.toJSON() }],
-        ));
+        fakeTextChannel.incoming?.call(
+          MethodCall('TextInputClient.updateEditingStateWithTag', <dynamic>[
+            0,
+            <String, dynamic>{client2.autofillId: text2.toJSON()},
+          ]),
+        );
 
         expect(client2.currentTextEditingValue, text2);
+      },
+    );
+  });
+
+  group('AutoFillConfiguration', () {
+    late AutofillConfiguration fakeAutoFillConfiguration;
+    late AutofillConfiguration fakeAutoFillConfiguration2;
+
+    setUp(() {
+      // If you create two objects with `const` with the same values, the second object will be equal to the first one by reference.
+      // This means that even without overriding the `equals` method, the test will pass.
+      // ignore: prefer_const_constructors
+      fakeAutoFillConfiguration = AutofillConfiguration(
+        uniqueIdentifier: 'id1',
+        // ignore: prefer_const_literals_to_create_immutables
+        autofillHints: <String>['client1'],
+        currentEditingValue: TextEditingValue.empty,
+        hintText: 'hint',
+      );
+      // ignore: prefer_const_constructors
+      fakeAutoFillConfiguration2 = AutofillConfiguration(
+        uniqueIdentifier: 'id1',
+        // ignore: prefer_const_literals_to_create_immutables
+        autofillHints: <String>['client1'],
+        currentEditingValue: TextEditingValue.empty,
+        hintText: 'hint',
+      );
+    });
+
+    test('equality operator works correctly', () {
+      expect(fakeAutoFillConfiguration, equals(fakeAutoFillConfiguration2));
+      expect(fakeAutoFillConfiguration.enabled, equals(fakeAutoFillConfiguration2.enabled));
+      expect(
+        fakeAutoFillConfiguration.uniqueIdentifier,
+        equals(fakeAutoFillConfiguration2.uniqueIdentifier),
+      );
+      expect(
+        fakeAutoFillConfiguration.autofillHints,
+        equals(fakeAutoFillConfiguration2.autofillHints),
+      );
+      expect(
+        fakeAutoFillConfiguration.currentEditingValue,
+        equals(fakeAutoFillConfiguration2.currentEditingValue),
+      );
+      expect(fakeAutoFillConfiguration.hintText, equals(fakeAutoFillConfiguration2.hintText));
+    });
+
+    test('hashCode works correctly', () {
+      expect(fakeAutoFillConfiguration.hashCode, equals(fakeAutoFillConfiguration2.hashCode));
+      expect(
+        fakeAutoFillConfiguration.enabled.hashCode,
+        equals(fakeAutoFillConfiguration2.enabled.hashCode),
+      );
+      expect(
+        fakeAutoFillConfiguration.uniqueIdentifier.hashCode,
+        equals(fakeAutoFillConfiguration2.uniqueIdentifier.hashCode),
+      );
+      expect(
+        Object.hashAll(fakeAutoFillConfiguration.autofillHints),
+        equals(Object.hashAll(fakeAutoFillConfiguration2.autofillHints)),
+      );
+      expect(
+        fakeAutoFillConfiguration.currentEditingValue.hashCode,
+        equals(fakeAutoFillConfiguration2.currentEditingValue.hashCode),
+      );
+      expect(
+        fakeAutoFillConfiguration.hintText.hashCode,
+        equals(fakeAutoFillConfiguration2.hintText.hashCode),
+      );
     });
   });
 }
@@ -127,6 +199,11 @@ class FakeAutofillClient implements TextInputClient, AutofillClient {
   }
 
   @override
+  void insertContent(KeyboardInsertedContent content) {
+    latestMethodCall = 'commitContent';
+  }
+
+  @override
   void updateFloatingCursor(RawFloatingCursorPoint point) {
     latestMethodCall = 'updateFloatingCursor';
   }
@@ -139,6 +216,34 @@ class FakeAutofillClient implements TextInputClient, AutofillClient {
   @override
   void showAutocorrectionPromptRect(int start, int end) {
     latestMethodCall = 'showAutocorrectionPromptRect';
+  }
+
+  @override
+  void didChangeInputControl(TextInputControl? oldControl, TextInputControl? newControl) {
+    latestMethodCall = 'didChangeInputControl';
+  }
+
+  @override
+  void autofill(TextEditingValue newEditingValue) => updateEditingValue(newEditingValue);
+
+  @override
+  void showToolbar() {
+    latestMethodCall = 'showToolbar';
+  }
+
+  @override
+  void insertTextPlaceholder(Size size) {
+    latestMethodCall = 'insertTextPlaceholder';
+  }
+
+  @override
+  void removeTextPlaceholder() {
+    latestMethodCall = 'removeTextPlaceholder';
+  }
+
+  @override
+  void performSelector(String selectorName) {
+    latestMethodCall = 'performSelector';
   }
 }
 
@@ -153,72 +258,5 @@ class FakeAutofillScope with AutofillScopeMixin implements AutofillScope {
 
   void register(AutofillClient client) {
     clients.putIfAbsent(client.autofillId, () => client);
-  }
-}
-
-class FakeTextChannel implements MethodChannel {
-  FakeTextChannel(this.outgoing) : assert(outgoing != null);
-
-  Future<dynamic> Function(MethodCall) outgoing;
-  Future<void> Function(MethodCall)? incoming;
-
-  List<MethodCall> outgoingCalls = <MethodCall>[];
-
-  @override
-  BinaryMessenger get binaryMessenger => throw UnimplementedError();
-
-  @override
-  MethodCodec get codec => const JSONMethodCodec();
-
-  @override
-  Future<List<T>> invokeListMethod<T>(String method, [dynamic arguments]) => throw UnimplementedError();
-
-  @override
-  Future<Map<K, V>> invokeMapMethod<K, V>(String method, [dynamic arguments]) => throw UnimplementedError();
-
-  @override
-  Future<T> invokeMethod<T>(String method, [dynamic arguments]) async {
-    final MethodCall call = MethodCall(method, arguments);
-    outgoingCalls.add(call);
-    return await outgoing(call) as T;
-  }
-
-  @override
-  String get name => 'flutter/textinput';
-
-  @override
-  void setMethodCallHandler(Future<void> Function(MethodCall call)? handler) {
-    incoming = handler;
-  }
-
-  @override
-  bool checkMethodCallHandler(Future<void> Function(MethodCall call)? handler) => throw UnimplementedError();
-
-  @override
-  void setMockMethodCallHandler(Future<void>? Function(MethodCall call)? handler)  => throw UnimplementedError();
-
-  @override
-  bool checkMockMethodCallHandler(Future<void> Function(MethodCall call)? handler) => throw UnimplementedError();
-
-  void validateOutgoingMethodCalls(List<MethodCall> calls) {
-    expect(outgoingCalls.length, calls.length);
-    bool hasError = false;
-    for (int i = 0; i < calls.length; i++) {
-      final ByteData outgoingData = codec.encodeMethodCall(outgoingCalls[i]);
-      final ByteData expectedData = codec.encodeMethodCall(calls[i]);
-      final String outgoingString = utf8.decode(outgoingData.buffer.asUint8List());
-      final String expectedString = utf8.decode(expectedData.buffer.asUint8List());
-
-      if (outgoingString != expectedString) {
-        print(
-          'Index $i did not match:\n'
-          '  actual:   ${outgoingCalls[i]}\n'
-          '  expected: ${calls[i]}');
-        hasError = true;
-      }
-    }
-    if (hasError) {
-      fail('Calls did not match.');
-    }
   }
 }

@@ -7,10 +7,12 @@ import 'package:flutter/material.dart';
 import '../../gallery/demo.dart';
 
 class SearchDemo extends StatefulWidget {
+  const SearchDemo({super.key});
+
   static const String routeName = '/material/search';
 
   @override
-  _SearchDemoState createState() => _SearchDemoState();
+  State<SearchDemo> createState() => _SearchDemoState();
 }
 
 class _SearchDemoState extends State<SearchDemo> {
@@ -41,10 +43,7 @@ class _SearchDemoState extends State<SearchDemo> {
             tooltip: 'Search',
             icon: const Icon(Icons.search),
             onPressed: () async {
-              final int? selected = await showSearch<int?>(
-                context: context,
-                delegate: _delegate,
-              );
+              final int? selected = await showSearch<int?>(context: context, delegate: _delegate);
               if (selected != null && selected != _lastIntegerSelected) {
                 setState(() {
                   _lastIntegerSelected = selected;
@@ -56,11 +55,9 @@ class _SearchDemoState extends State<SearchDemo> {
           IconButton(
             tooltip: 'More (not implemented)',
             icon: Icon(
-              Theme.of(context).platform == TargetPlatform.iOS
-                  ? Icons.more_horiz
-                  : Icons.more_vert,
+              Theme.of(context).platform == TargetPlatform.iOS ? Icons.more_horiz : Icons.more_vert,
             ),
-            onPressed: () { },
+            onPressed: () {},
           ),
         ],
       ),
@@ -68,30 +65,24 @@ class _SearchDemoState extends State<SearchDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            MergeSemantics(
+            const MergeSemantics(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
+                    children: <Widget>[
                       Text('Press the '),
-                      Tooltip(
-                        message: 'search',
-                        child: Icon(
-                          Icons.search,
-                          size: 18.0,
-                        ),
-                      ),
+                      Tooltip(message: 'search', child: Icon(Icons.search, size: 18.0)),
                       Text(' icon in the AppBar'),
                     ],
                   ),
-                  const Text('and search for an integer between 0 and 100,000.'),
+                  Text('and search for an integer between 0 and 100,000.'),
                 ],
               ),
             ),
             const SizedBox(height: 64.0),
-            Text('Last selected integer: ${_lastIntegerSelected ?? 'NONE' }.'),
+            Text('Last selected integer: ${_lastIntegerSelected ?? 'NONE'}.'),
           ],
         ),
       ),
@@ -121,10 +112,7 @@ class _SearchDemoState extends State<SearchDemo> {
               context: context,
               // DrawerHeader consumes top MediaQuery padding.
               removeTop: true,
-              child: const ListTile(
-                leading: Icon(Icons.payment),
-                title: Text('Placeholder'),
-              ),
+              child: const ListTile(leading: Icon(Icons.payment), title: Text('Placeholder')),
             ),
           ],
         ),
@@ -141,10 +129,7 @@ class _SearchDemoSearchDelegate extends SearchDelegate<int?> {
   Widget buildLeading(BuildContext context) {
     return IconButton(
       tooltip: 'Back',
-      icon: AnimatedIcon(
-        icon: AnimatedIcons.menu_arrow,
-        progress: transitionAnimation,
-      ),
+      icon: AnimatedIcon(icon: AnimatedIcons.menu_arrow, progress: transitionAnimation),
       onPressed: () {
         close(context, null);
       },
@@ -153,10 +138,8 @@ class _SearchDemoSearchDelegate extends SearchDelegate<int?> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-
-    final Iterable<int> suggestions = query.isEmpty
-        ? _history
-        : _data.where((int i) => '$i'.startsWith(query));
+    final Iterable<int> suggestions =
+        query.isEmpty ? _history : _data.where((int i) => '$i'.startsWith(query));
 
     return _SuggestionList(
       query: query,
@@ -182,21 +165,9 @@ class _SearchDemoSearchDelegate extends SearchDelegate<int?> {
 
     return ListView(
       children: <Widget>[
-        _ResultCard(
-          title: 'This integer',
-          integer: searched,
-          searchDelegate: this,
-        ),
-        _ResultCard(
-          title: 'Next integer',
-          integer: searched + 1,
-          searchDelegate: this,
-        ),
-        _ResultCard(
-          title: 'Previous integer',
-          integer: searched - 1,
-          searchDelegate: this,
-        ),
+        _ResultCard(title: 'This integer', integer: searched, searchDelegate: this),
+        _ResultCard(title: 'Next integer', integer: searched + 1, searchDelegate: this),
+        _ResultCard(title: 'Previous integer', integer: searched - 1, searchDelegate: this),
       ],
     );
   }
@@ -209,7 +180,7 @@ class _SearchDemoSearchDelegate extends SearchDelegate<int?> {
           tooltip: 'Voice Search',
           icon: const Icon(Icons.mic),
           onPressed: () {
-            query = 'TODO: implement voice input';
+            query = 'Implement voice input';
           },
         )
       else
@@ -225,10 +196,8 @@ class _SearchDemoSearchDelegate extends SearchDelegate<int?> {
   }
 
   @override
-  PreferredSizeWidget buildBottom(BuildContext context) => const PreferredSize(
-    preferredSize: Size.fromHeight(56.0),
-    child: Text('Numbers'),
-  );
+  PreferredSizeWidget buildBottom(BuildContext context) =>
+      const PreferredSize(preferredSize: Size.fromHeight(56.0), child: Text('Numbers'));
 }
 
 class _ResultCard extends StatelessWidget {
@@ -251,10 +220,7 @@ class _ResultCard extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(title!),
-              Text(
-                '$integer',
-                style: theme.textTheme.headline5!.copyWith(fontSize: 72.0),
-              ),
+              Text('$integer', style: theme.textTheme.headlineSmall!.copyWith(fontSize: 72.0)),
             ],
           ),
         ),
@@ -282,11 +248,11 @@ class _SuggestionList extends StatelessWidget {
           title: RichText(
             text: TextSpan(
               text: suggestion.substring(0, query!.length),
-              style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
               children: <TextSpan>[
                 TextSpan(
                   text: suggestion.substring(query!.length),
-                  style: theme.textTheme.subtitle1,
+                  style: theme.textTheme.titleMedium,
                 ),
               ],
             ),

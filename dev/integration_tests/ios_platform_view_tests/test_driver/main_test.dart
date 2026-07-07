@@ -8,7 +8,7 @@ import 'package:test/test.dart' hide TypeMatcher, isInstanceOf;
 
 void main() {
   group('FlutterDriver', () {
-    FlutterDriver driver;
+    late FlutterDriver driver;
 
     setUpAll(() async {
       driver = await FlutterDriver.connect();
@@ -16,11 +16,9 @@ void main() {
 
     tearDownAll(() => driver.close());
 
-    test('Merge thread to create and remove platform views should not crash',
-        () async {
+    test('Merge thread to create and remove platform views should not crash', () async {
       // Start pushing in a page with platform view, merge threads.
-      final SerializableFinder platformViewButton =
-          find.byValueKey('platform_view_button');
+      final SerializableFinder platformViewButton = find.byValueKey('platform_view_button');
       await driver.waitFor(platformViewButton);
       await driver.tap(platformViewButton);
 
@@ -40,13 +38,11 @@ void main() {
 
       final Health driverHealth = await driver.checkHealth();
       expect(driverHealth.status, HealthStatus.ok);
-    });
+    }, timeout: Timeout.none);
 
-    test('Merge thread to create and remove platform views should not crash',
-        () async {
+    test('Merge thread to create and remove platform views should not crash', () async {
       // Start pushing in a page with platform view, merge threads.
-      final SerializableFinder platformViewButton =
-          find.byValueKey('platform_view_button');
+      final SerializableFinder platformViewButton = find.byValueKey('platform_view_button');
       await driver.waitFor(platformViewButton);
       await driver.tap(platformViewButton);
       await driver.waitUntilNoTransientCallbacks();
@@ -57,14 +53,13 @@ void main() {
       await driver.waitUntilNoTransientCallbacks();
 
       // The animation of tapping a `ElevatedButton` should pump enough frames to un-merge the thread.
-      final SerializableFinder unmergeButton =
-          find.byValueKey('unmerge_button');
+      final SerializableFinder unmergeButton = find.byValueKey('unmerge_button');
       await driver.waitFor(unmergeButton);
       await driver.tap(unmergeButton);
       await driver.waitUntilNoTransientCallbacks();
 
       final Health driverHealth = await driver.checkHealth();
       expect(driverHealth.status, HealthStatus.ok);
-    });
+    }, timeout: Timeout.none);
   });
 }

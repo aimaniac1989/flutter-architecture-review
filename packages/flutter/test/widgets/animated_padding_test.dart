@@ -2,9 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('AnimatedPadding.debugFillProperties', (WidgetTester tester) async {
@@ -17,7 +16,9 @@ void main() {
     expect(padding, hasOneLineDescription);
   });
 
-  testWidgets('AnimatedPadding padding visual-to-directional animation', (WidgetTester tester) async {
+  testWidgets('AnimatedPadding padding visual-to-directional animation', (
+    WidgetTester tester,
+  ) async {
     final Key target = UniqueKey();
 
     await tester.pumpWidget(
@@ -59,7 +60,9 @@ void main() {
     expect(tester.getTopRight(find.byKey(target)), const Offset(700.0, 0.0));
   });
 
-  testWidgets('AnimatedPadding animated padding clamped to positive values', (WidgetTester tester) async {
+  testWidgets('AnimatedPadding animated padding clamped to positive values', (
+    WidgetTester tester,
+  ) async {
     final Key target = UniqueKey();
 
     await tester.pumpWidget(
@@ -83,7 +86,7 @@ void main() {
         child: AnimatedPadding(
           curve: Curves.easeInOutBack,
           duration: const Duration(milliseconds: 200),
-          padding: const EdgeInsets.only(right: 0.0),
+          padding: EdgeInsets.zero,
           child: SizedBox.expand(key: target),
         ),
       ),
@@ -97,5 +100,4 @@ void main() {
     expect(tester.getSize(find.byKey(target)), const Size(800.0, 600.0));
     expect(tester.getTopRight(find.byKey(target)), const Offset(800.0, 0.0));
   });
-
 }

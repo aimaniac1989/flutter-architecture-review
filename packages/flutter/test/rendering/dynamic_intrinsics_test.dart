@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/rendering.dart';
-import '../flutter_test_alternative.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 import 'rendering_tester.dart';
 
@@ -31,7 +31,7 @@ class RenderFixedSize extends RenderBox {
 }
 
 class RenderParentSize extends RenderProxyBox {
-  RenderParentSize({ required RenderBox child }) : super(child);
+  RenderParentSize({required RenderBox child}) : super(child);
 
   @override
   bool get sizedByParent => true;
@@ -48,7 +48,7 @@ class RenderParentSize extends RenderProxyBox {
 }
 
 class RenderIntrinsicSize extends RenderProxyBox {
-  RenderIntrinsicSize({ required RenderBox child }) : super(child);
+  RenderIntrinsicSize({required RenderBox child}) : super(child);
 
   @override
   void performLayout() {
@@ -72,25 +72,18 @@ class RenderInvalidIntrinsics extends RenderBox {
   @override
   double computeMaxIntrinsicHeight(double width) => -1;
   @override
-  Size computeDryLayout(BoxConstraints constraints) => const Size(0, 0);
+  Size computeDryLayout(BoxConstraints constraints) => Size.zero;
 }
 
 void main() {
+  TestRenderingFlutterBinding.ensureInitialized();
+
   test('Whether using intrinsics means you get hooked into layout', () {
     RenderBox root;
     RenderFixedSize inner;
     layout(
-      root = RenderIntrinsicSize(
-        child: RenderParentSize(
-          child: inner = RenderFixedSize()
-        )
-      ),
-      constraints: const BoxConstraints(
-        minWidth: 0.0,
-        minHeight: 0.0,
-        maxWidth: 1000.0,
-        maxHeight: 1000.0,
-      ),
+      root = RenderIntrinsicSize(child: RenderParentSize(child: inner = RenderFixedSize())),
+      constraints: const BoxConstraints(maxWidth: 1000.0, maxHeight: 1000.0),
     );
     expect(root.size, equals(inner.size));
 
@@ -104,17 +97,8 @@ void main() {
     RenderFixedSize inner;
 
     layout(
-      RenderIntrinsicSize(
-        child: parent = RenderParentSize(
-          child: inner = RenderFixedSize()
-        )
-      ),
-      constraints: const BoxConstraints(
-        minWidth: 0.0,
-        minHeight: 0.0,
-        maxWidth: 1000.0,
-        maxHeight: 1000.0,
-      ),
+      RenderIntrinsicSize(child: parent = RenderParentSize(child: inner = RenderFixedSize())),
+      constraints: const BoxConstraints(maxWidth: 1000.0, maxHeight: 1000.0),
     );
 
     _expectIntrinsicDimensions(parent, 100);
@@ -127,15 +111,13 @@ void main() {
 
   test('Intrinsic checks are turned on', () async {
     final List<FlutterErrorDetails> errorDetails = <FlutterErrorDetails>[];
-    layout(RenderInvalidIntrinsics(),
-        constraints: const BoxConstraints(
-          minWidth: 0.0,
-          minHeight: 0.0,
-          maxWidth: 1000.0,
-          maxHeight: 1000.0,
-        ), onErrors: () {
-        errorDetails.addAll(renderer.takeAllFlutterErrorDetails());
-    });
+    layout(
+      RenderInvalidIntrinsics(),
+      constraints: const BoxConstraints(maxWidth: 1000.0, maxHeight: 1000.0),
+      onErrors: () {
+        errorDetails.addAll(TestRenderingFlutterBinding.instance.takeAllFlutterErrorDetails());
+      },
+    );
 
     expect(errorDetails, isNotEmpty);
     expect(

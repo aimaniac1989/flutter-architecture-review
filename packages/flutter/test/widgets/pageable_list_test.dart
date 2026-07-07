@@ -2,9 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 Size pageSize = const Size(600.0, 300.0);
 const List<int> defaultPages = <int>[0, 1, 2, 3, 4, 5];
@@ -12,7 +11,7 @@ final List<GlobalKey> globalKeys = defaultPages.map<GlobalKey>((_) => GlobalKey(
 int? currentPage;
 
 Widget buildPage(int page) {
-  return Container(
+  return SizedBox(
     key: globalKeys[page],
     width: pageSize.width,
     height: pageSize.height,
@@ -26,9 +25,10 @@ Widget buildFrame({
   required TextDirection textDirection,
 }) {
   final PageView child = PageView(
-    scrollDirection: Axis.horizontal,
     reverse: reverse,
-    onPageChanged: (int page) { currentPage = page; },
+    onPageChanged: (int page) {
+      currentPage = page;
+    },
     children: pages.map<Widget>(buildPage).toList(),
   );
 
@@ -36,11 +36,7 @@ Widget buildFrame({
   // an outer container where we can change the size.
   return Directionality(
     textDirection: textDirection,
-    child: Center(
-      child: Container(
-        width: pageSize.width, height: pageSize.height, child: child,
-      ),
-    ),
+    child: Center(child: SizedBox(width: pageSize.width, height: pageSize.height, child: child)),
   );
 }
 
@@ -63,12 +59,7 @@ Future<void> pageRight(WidgetTester tester) {
 void main() {
   testWidgets('PageView default control', (WidgetTester tester) async {
     await tester.pumpWidget(
-      Directionality(
-        textDirection: TextDirection.ltr,
-        child: Center(
-          child: PageView(),
-        ),
-      ),
+      Directionality(textDirection: TextDirection.ltr, child: Center(child: PageView())),
     );
   });
 

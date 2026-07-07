@@ -2,12 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+/// @docImport 'package:fake_async/fake_async.dart';
+///
+/// @docImport 'test_compat.dart';
+/// @docImport 'widget_tester.dart';
+library;
+
 import 'dart:async';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
-
-import 'package:flutter/foundation.dart';
-import 'package:flutter/painting.dart';
 
 import 'test_async_utils.dart';
 
@@ -27,38 +30,27 @@ final Map<int, ui.Image> _cache = <int, ui.Image>{};
 /// [FakeAsync] zones set up by [testWidgets]. Typically, it should be invoked
 /// as a setup step before [testWidgets] are run, such as [setUp] or [setUpAll].
 /// If needed, it can be invoked using [WidgetTester.runAsync].
-Future<ui.Image> createTestImage({
-  int width = 1,
-  int height = 1,
-  bool cache = true,
-}) => TestAsyncUtils.guard(() async {
-  assert(width != null && width > 0);
-  assert(height != null && height > 0);
-  assert(cache != null);
+Future<ui.Image> createTestImage({int width = 1, int height = 1, bool cache = true}) =>
+    TestAsyncUtils.guard(() async {
+      assert(width > 0);
+      assert(height > 0);
 
-  final int cacheKey = hashValues(width, height);
-  if (cache && _cache.containsKey(cacheKey)) {
-    return _cache[cacheKey]!.clone();
-  }
+      final int cacheKey = Object.hash(width, height);
+      if (cache && _cache.containsKey(cacheKey)) {
+        return _cache[cacheKey]!.clone();
+      }
 
-  final ui.Image image = await _createImage(width, height);
-  if (cache) {
-    _cache[cacheKey] = image.clone();
-  }
-  return image;
-});
+      final ui.Image image = await _createImage(width, height);
+      if (cache) {
+        _cache[cacheKey] = image.clone();
+      }
+      return image;
+    });
 
 Future<ui.Image> _createImage(int width, int height) async {
-  if (kIsWeb) {
-    return await _webCreateTestImage(
-      width: width,
-      height: height,
-    );
-  }
-
   final Completer<ui.Image> completer = Completer<ui.Image>();
   ui.decodeImageFromPixels(
-    Uint8List.fromList(List<int>.filled(width * height * 4, 0, growable: false)),
+    Uint8List.fromList(List<int>.filled(width * height * 4, 0)),
     width,
     height,
     ui.PixelFormat.rgba8888,
@@ -66,54 +58,5 @@ Future<ui.Image> _createImage(int width, int height) async {
       completer.complete(image);
     },
   );
-  return await completer.future;
-}
-
-/// Web doesn't support [decodeImageFromPixels]. Instead, generate a 1bpp BMP
-/// and just use [instantiateImageCodec].
-// TODO(dnfield): Remove this when https://github.com/flutter/flutter/issues/49244
-// is resolved.
-Future<ui.Image> _webCreateTestImage({
-  required int width,
-  required int height,
-}) async {
-  // See https://en.wikipedia.org/wiki/BMP_file_format for format examples.
-  final int bufferSize = 0x36 + (width * height);
-  final ByteData bmpData = ByteData(bufferSize);
-  // 'BM' header
-  bmpData.setUint8(0x00, 0x42);
-  bmpData.setUint8(0x01, 0x4D);
-  // Size of data
-  bmpData.setUint32(0x02, bufferSize, Endian.little);
-  // Offset where pixel array begins
-  bmpData.setUint32(0x0A, 0x36, Endian.little);
-  // Bytes in DIB header
-  bmpData.setUint32(0x0E, 0x28, Endian.little);
-  // width
-  bmpData.setUint32(0x12, width, Endian.little);
-  // height
-  bmpData.setUint32(0x16, height, Endian.little);
-  // Color panes
-  bmpData.setUint16(0x1A, 0x01, Endian.little);
-  // bpp
-  bmpData.setUint16(0x1C, 0x01, Endian.little);
-  // no compression
-  bmpData.setUint32(0x1E, 0x00, Endian.little);
-  // raw bitmap data size
-  bmpData.setUint32(0x22, width * height, Endian.little);
-  // print DPI width
-  bmpData.setUint32(0x26, width, Endian.little);
-  // print DPI height
-  bmpData.setUint32(0x2A, height, Endian.little);
-  // colors in the palette
-  bmpData.setUint32(0x2E, 0x00, Endian.little);
-  // important colors
-  bmpData.setUint32(0x32, 0x00, Endian.little);
-  // rest of data is zeroed as black pixels.
-
-  final ui.Codec codec = await ui.instantiateImageCodec(
-    bmpData.buffer.asUint8List(),
-  );
-  final ui.FrameInfo frameInfo = await codec.getNextFrame();
-  return frameInfo.image;
+  return completer.future;
 }

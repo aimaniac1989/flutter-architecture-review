@@ -2,6 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+@Tags(<String>['flutter-test-driver'])
+library;
+
 import 'dart:async';
 
 import 'package:file/file.dart';
@@ -12,7 +15,7 @@ import 'test_driver.dart';
 import 'test_utils.dart';
 
 void main() {
-  Directory tempDir;
+  late Directory tempDir;
 
   setUp(() async {
     tempDir = createResolvedTempDirectorySync('hot_reload_test.');
@@ -28,33 +31,32 @@ void main() {
     final FlutterRunTestDriver flutter = FlutterRunTestDriver(tempDir);
 
     const String newBackgroundMessage = 'New Background';
-    final Completer<void> sawForgroundMessage = Completer<void>.sync();
+    final Completer<void> sawForegroundMessage = Completer<void>.sync();
     final Completer<void> sawBackgroundMessage = Completer<void>.sync();
     final Completer<void> sawNewBackgroundMessage = Completer<void>.sync();
     final StreamSubscription<String> subscription = flutter.stdout.listen((String line) {
-        print('[LOG]:"$line"');
-        if (line.contains('Main thread') && !sawForgroundMessage.isCompleted) {
-          sawForgroundMessage.complete();
-        }
-        if (line.contains('Isolate thread')) {
-          sawBackgroundMessage.complete();
-        }
-        if (line.contains(newBackgroundMessage)) {
-          sawNewBackgroundMessage.complete();
-        }
-      },
-    );
+      printOnFailure('[LOG]:"$line"');
+      if (line.contains('Main thread') && !sawForegroundMessage.isCompleted) {
+        sawForegroundMessage.complete();
+      }
+      if (line.contains('Isolate thread')) {
+        sawBackgroundMessage.complete();
+      }
+      if (line.contains(newBackgroundMessage)) {
+        sawNewBackgroundMessage.complete();
+      }
+    });
     await flutter.run();
-    await sawForgroundMessage.future;
+    await sawForegroundMessage.future;
     await sawBackgroundMessage.future;
 
     project.updateTestIsolatePhrase(newBackgroundMessage);
     await flutter.hotRestart();
-    await sawBackgroundMessage.future;
+    await sawNewBackgroundMessage.future;
     // Wait a tiny amount of time in case we did not kill the background isolate.
     await Future<void>.delayed(const Duration(milliseconds: 10));
     await subscription.cancel();
-    await flutter?.stop();
+    await flutter.stop();
   });
 
   testWithoutContext('Hot reload updates background isolates', () async {
@@ -66,15 +68,14 @@ void main() {
     final Completer<void> sawBackgroundMessage = Completer<void>.sync();
     final Completer<void> sawNewBackgroundMessage = Completer<void>.sync();
     final StreamSubscription<String> subscription = flutter.stdout.listen((String line) {
-        print('[LOG]:"$line"');
-        if (line.contains('Isolate thread') && !sawBackgroundMessage.isCompleted) {
-          sawBackgroundMessage.complete();
-        }
-        if (line.contains(newBackgroundMessage) && !sawNewBackgroundMessage.isCompleted) {
-          sawNewBackgroundMessage.complete();
-        }
-      },
-    );
+      printOnFailure('[LOG]:"$line"');
+      if (line.contains('Isolate thread') && !sawBackgroundMessage.isCompleted) {
+        sawBackgroundMessage.complete();
+      }
+      if (line.contains(newBackgroundMessage) && !sawNewBackgroundMessage.isCompleted) {
+        sawNewBackgroundMessage.complete();
+      }
+    });
     await flutter.run();
     await sawBackgroundMessage.future;
 
@@ -82,6 +83,6 @@ void main() {
     await flutter.hotReload();
     await sawNewBackgroundMessage.future;
     await subscription.cancel();
-    await flutter?.stop();
+    await flutter.stop();
   });
 }

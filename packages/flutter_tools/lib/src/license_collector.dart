@@ -2,7 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:meta/meta.dart';
 import 'package:package_config/package_config.dart';
 
 import 'base/file_system.dart';
@@ -25,14 +24,12 @@ import 'base/file_system.dart';
 /// example, a package might itself contain code from multiple third-party
 /// sources, and might need to include a license for each one.
 class LicenseCollector {
-  LicenseCollector({
-    @required FileSystem fileSystem
-  }) : _fileSystem = fileSystem;
+  LicenseCollector({required FileSystem fileSystem}) : _fileSystem = fileSystem;
 
   final FileSystem _fileSystem;
 
   /// The expected separator for multiple licenses.
-  static final String licenseSeparator = '\n' + ('-' * 80) + '\n';
+  static final String licenseSeparator = '\n${'-' * 80}\n';
 
   /// Obtain licenses from the `packageMap` into a single result.
   ///
@@ -48,7 +45,7 @@ class LicenseCollector {
 
     for (final Package package in packageConfig.packages) {
       final Uri packageUri = package.packageUriRoot;
-      if (packageUri == null || packageUri.scheme != 'file') {
+      if (packageUri.scheme != 'file') {
         continue;
       }
       // First check for NOTICES, then fallback to LICENSE
@@ -61,12 +58,10 @@ class LicenseCollector {
       }
 
       dependencies.add(file);
-      final List<String> rawLicenses = file
-        .readAsStringSync()
-        .split(licenseSeparator);
+      final List<String> rawLicenses = file.readAsStringSync().split(licenseSeparator);
       for (final String rawLicense in rawLicenses) {
-        List<String> packageNames;
-        String licenseText;
+        List<String> packageNames = <String>[];
+        String? licenseText;
         if (rawLicenses.length > 1) {
           final int split = rawLicense.indexOf('\n\n');
           if (split >= 0) {
@@ -83,23 +78,22 @@ class LicenseCollector {
       }
     }
 
-    final List<String> combinedLicensesList = packageLicenses.keys
-      .map<String>((String license) {
-        final List<String> packageNames = packageLicenses[license].toList()
-          ..sort();
-        return packageNames.join('\n') + '\n\n' + license;
-      }).toList();
+    final List<String> combinedLicensesList =
+        packageLicenses.entries.map<String>((MapEntry<String, Set<String>> entry) {
+          final List<String> packageNames = entry.value.toList()..sort();
+          return '${packageNames.join('\n')}\n\n${entry.key}';
+        }).toList();
     combinedLicensesList.sort();
 
     /// Append additional LICENSE files as specified in the pubspec.yaml.
     final List<String> additionalLicenseText = <String>[];
     final List<String> errorMessages = <String>[];
     for (final String package in additionalLicenses.keys) {
-      for (final File license in additionalLicenses[package]) {
+      for (final File license in additionalLicenses[package]!) {
         if (!license.existsSync()) {
           errorMessages.add(
             'package $package specified an additional license at ${license.path}, but this file '
-            'does not exist.'
+            'does not exist.',
           );
           continue;
         }
@@ -110,13 +104,13 @@ class LicenseCollector {
           // File has an invalid encoding.
           errorMessages.add(
             'package $package specified an additional license at ${license.path}, but this file '
-            'could not be read:\n$err'
+            'could not be read:\n$err',
           );
         } on FileSystemException catch (err) {
           // File cannot be parsed.
           errorMessages.add(
             'package $package specified an additional license at ${license.path}, but this file '
-            'could not be read:\n$err'
+            'could not be read:\n$err',
           );
         }
       }
@@ -130,8 +124,8 @@ class LicenseCollector {
     }
 
     final String combinedLicenses = combinedLicensesList
-      .followedBy(additionalLicenseText)
-      .join(licenseSeparator);
+        .followedBy(additionalLicenseText)
+        .join(licenseSeparator);
 
     return LicenseResult(
       combinedLicenses: combinedLicenses,
@@ -144,9 +138,9 @@ class LicenseCollector {
 /// The result of processing licenses with a [LicenseCollector].
 class LicenseResult {
   const LicenseResult({
-    @required this.combinedLicenses,
-    @required this.dependencies,
-    @required this.errorMessages,
+    required this.combinedLicenses,
+    required this.dependencies,
+    required this.errorMessages,
   });
 
   /// The raw text of the consumed licenses.

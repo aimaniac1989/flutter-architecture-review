@@ -5,20 +5,19 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter/gestures.dart';
 
 void main() {
   testWidgets('Scrollable scaled up', (WidgetTester tester) async {
     final ScrollController controller = ScrollController();
+    addTearDown(controller.dispose);
+
     await tester.pumpWidget(
       MaterialApp(
         home: Transform.scale(
           scale: 2.0,
           child: Center(
-            child: Container(
+            child: SizedBox(
               width: 200,
               child: ListView.builder(
                 controller: controller,
@@ -57,12 +56,14 @@ void main() {
 
   testWidgets('Scrollable scaled down', (WidgetTester tester) async {
     final ScrollController controller = ScrollController();
+    addTearDown(controller.dispose);
+
     await tester.pumpWidget(
       MaterialApp(
         home: Transform.scale(
           scale: 0.5,
           child: Center(
-            child: Container(
+            child: SizedBox(
               width: 200,
               child: ListView.builder(
                 controller: controller,
@@ -101,12 +102,14 @@ void main() {
 
   testWidgets('Scrollable rotated 90 degrees', (WidgetTester tester) async {
     final ScrollController controller = ScrollController();
+    addTearDown(controller.dispose);
+
     await tester.pumpWidget(
       MaterialApp(
         home: Transform.rotate(
           angle: math.pi / 2,
           child: Center(
-            child: Container(
+            child: SizedBox(
               width: 200,
               child: ListView.builder(
                 controller: controller,
@@ -141,14 +144,17 @@ void main() {
 
   testWidgets('Perspective transform on scrollable', (WidgetTester tester) async {
     final ScrollController controller = ScrollController();
+    addTearDown(controller.dispose);
+
     await tester.pumpWidget(
       MaterialApp(
         home: Transform(
-          transform: Matrix4.identity()
-            ..setEntry(3, 2, 0.001)
-            ..rotateX(math.pi / 4),
+          transform:
+              Matrix4.identity()
+                ..setEntry(3, 2, 0.001)
+                ..rotateX(math.pi / 4),
           child: Center(
-            child: Container(
+            child: SizedBox(
               width: 200,
               child: ListView.builder(
                 controller: controller,
@@ -205,10 +211,7 @@ void main() {
 
     // The tracked point (in the coordinate space of the screen) and the finger
     // should have moved the same vertical distance over the screen.
-    expect(
-      pointOnScreenStart.dy - pointOnScreenEnd.dy,
-      within(distance: 0.00001, from: 50.0),
-    );
+    expect(pointOnScreenStart.dy - pointOnScreenEnd.dy, within(distance: 0.00001, from: 50.0));
 
     // While the point traveled the same distance as the finger in the
     // coordinate space of the screen, the scroll view actually moved far more

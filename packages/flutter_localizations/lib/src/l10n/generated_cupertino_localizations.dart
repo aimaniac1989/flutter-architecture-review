@@ -20,38 +20,41 @@ import '../cupertino_localizations.dart';
 // bottom of this file, and used by the [_GlobalCupertinoLocalizationsDelegate.load]
 // method defined in `flutter_localizations/lib/src/cupertino_localizations.dart`.
 
+// TODO(goderbauer): Extend the generator to properly format the output.
+// dart format off
+
 /// The translations for Afrikaans (`af`).
 class CupertinoLocalizationAf extends GlobalCupertinoLocalizations {
   /// Create an instance of the translation bundle for Afrikaans.
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationAf({
-    String localeName = 'af',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'af',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Opletberig';
 
   @override
   String get anteMeridiemAbbreviation => 'vm.';
+
+  @override
+  String get backButtonLabel => 'Terug';
+
+  @override
+  String get cancelButtonLabel => 'Kanselleer';
+
+  @override
+  String get clearButtonLabel => 'Vee uit';
 
   @override
   String get copyButtonLabel => 'Kopieer';
@@ -102,7 +105,16 @@ class CupertinoLocalizationAf extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Kyk op';
+
+  @override
+  String get menuDismissLabel => 'Maak kieslys toe';
+
+  @override
   String get modalBarrierDismissLabel => 'Maak toe';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Geen plaasvervangers gevind nie';
 
   @override
   String get pasteButtonLabel => 'Plak';
@@ -114,7 +126,13 @@ class CupertinoLocalizationAf extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Soek';
 
   @override
+  String get searchWebButtonLabel => 'Deursoek web';
+
+  @override
   String get selectAllButtonLabel => 'Kies alles';
+
+  @override
+  String get shareButtonLabel => 'Deel …';
 
   @override
   String get tabSemanticsLabelRaw => r'Oortjie $tabIndex van $tabCount';
@@ -183,32 +201,32 @@ class CupertinoLocalizationAm extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationAm({
-    String localeName = 'am',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'am',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'ማንቂያ';
 
   @override
   String get anteMeridiemAbbreviation => 'ጥዋት';
+
+  @override
+  String get backButtonLabel => 'ተመለስ';
+
+  @override
+  String get cancelButtonLabel => 'ይቅር';
+
+  @override
+  String get clearButtonLabel => 'አጽዳ';
 
   @override
   String get copyButtonLabel => 'ቅዳ';
@@ -259,7 +277,16 @@ class CupertinoLocalizationAm extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'ይመልከቱ';
+
+  @override
+  String get menuDismissLabel => 'ምናሌን አሰናብት';
+
+  @override
   String get modalBarrierDismissLabel => 'አሰናብት';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'ምንም ተተኪዎች አልተገኙም';
 
   @override
   String get pasteButtonLabel => 'ለጥፍ';
@@ -268,10 +295,16 @@ class CupertinoLocalizationAm extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'ከሰዓት';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'ይፈልጉ';
+  String get searchTextFieldPlaceholderLabel => 'ፍለጋ';
+
+  @override
+  String get searchWebButtonLabel => 'ድርን ፈልግ';
 
   @override
   String get selectAllButtonLabel => 'ሁሉንም ምረጥ';
+
+  @override
+  String get shareButtonLabel => 'አጋራ...';
 
   @override
   String get tabSemanticsLabelRaw => r'ትር $tabIndex ከ$tabCount';
@@ -340,32 +373,32 @@ class CupertinoLocalizationAr extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationAr({
-    String localeName = 'ar',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ar',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'تنبيه';
 
   @override
   String get anteMeridiemAbbreviation => 'ص';
+
+  @override
+  String get backButtonLabel => 'رجوع';
+
+  @override
+  String get cancelButtonLabel => 'الإلغاء';
+
+  @override
+  String get clearButtonLabel => 'محو';
 
   @override
   String get copyButtonLabel => 'نسخ';
@@ -416,7 +449,16 @@ class CupertinoLocalizationAr extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => r'$minute دقيقة​';
 
   @override
+  String get lookUpButtonLabel => 'بحث عام';
+
+  @override
+  String get menuDismissLabel => 'إغلاق القائمة';
+
+  @override
   String get modalBarrierDismissLabel => 'رفض';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'لم يتم العثور على بدائل';
 
   @override
   String get pasteButtonLabel => 'لصق';
@@ -428,7 +470,13 @@ class CupertinoLocalizationAr extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'بحث';
 
   @override
+  String get searchWebButtonLabel => 'البحث على الويب';
+
+  @override
   String get selectAllButtonLabel => 'اختيار الكل';
+
+  @override
+  String get shareButtonLabel => 'مشاركة…';
 
   @override
   String get tabSemanticsLabelRaw => r'علامة التبويب $tabIndex من $tabCount';
@@ -497,32 +545,32 @@ class CupertinoLocalizationAs extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationAs({
-    String localeName = 'as',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'as',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'সতৰ্কবাৰ্তা';
 
   @override
   String get anteMeridiemAbbreviation => 'পূৰ্বাহ্ন';
+
+  @override
+  String get backButtonLabel => 'উভতি যাওক';
+
+  @override
+  String get cancelButtonLabel => 'বাতিল কৰক';
+
+  @override
+  String get clearButtonLabel => 'মচক';
 
   @override
   String get copyButtonLabel => 'প্ৰতিলিপি কৰক';
@@ -573,7 +621,16 @@ class CupertinoLocalizationAs extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'ওপৰলৈ চাওক';
+
+  @override
+  String get menuDismissLabel => 'অগ্ৰাহ্য কৰাৰ মেনু';
+
+  @override
   String get modalBarrierDismissLabel => 'অগ্ৰাহ্য কৰক';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'এইটোৰ সলনি ব্যৱহাৰ কৰিব পৰা শব্দ পোৱা নগ’ল';
 
   @override
   String get pasteButtonLabel => "পে'ষ্ট কৰক";
@@ -585,7 +642,13 @@ class CupertinoLocalizationAs extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'সন্ধান কৰক';
 
   @override
+  String get searchWebButtonLabel => 'ৱেবত সন্ধান কৰক';
+
+  @override
   String get selectAllButtonLabel => 'সকলো বাছনি কৰক';
+
+  @override
+  String get shareButtonLabel => 'শ্বেয়াৰ কৰক…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount টা টেবৰ $tabIndex নম্বৰটো';
@@ -654,32 +717,32 @@ class CupertinoLocalizationAz extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationAz({
-    String localeName = 'az',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'az',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Bildiriş';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Geri';
+
+  @override
+  String get cancelButtonLabel => 'Ləğv edin';
+
+  @override
+  String get clearButtonLabel => 'Silin';
 
   @override
   String get copyButtonLabel => 'Kopyalayın';
@@ -730,7 +793,16 @@ class CupertinoLocalizationAz extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Axtarın';
+
+  @override
+  String get menuDismissLabel => 'Menyunu qapadın';
+
+  @override
   String get modalBarrierDismissLabel => 'İmtina edin';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Əvəzləmə Tapılmadı';
 
   @override
   String get pasteButtonLabel => 'Yerləşdirin';
@@ -739,10 +811,16 @@ class CupertinoLocalizationAz extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'PM';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Axtarış';
+  String get searchTextFieldPlaceholderLabel => 'Axtarın';
+
+  @override
+  String get searchWebButtonLabel => 'Vebdə axtarın';
 
   @override
   String get selectAllButtonLabel => 'Hamısını seçin';
+
+  @override
+  String get shareButtonLabel => 'Paylaşın...';
 
   @override
   String get tabSemanticsLabelRaw => r'Tab $tabIndex/$tabCount';
@@ -811,32 +889,32 @@ class CupertinoLocalizationBe extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationBe({
-    String localeName = 'be',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'be',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Абвестка';
 
   @override
   String get anteMeridiemAbbreviation => 'раніцы';
+
+  @override
+  String get backButtonLabel => 'Назад';
+
+  @override
+  String get cancelButtonLabel => 'Скасаваць';
+
+  @override
+  String get clearButtonLabel => 'Ачысціць';
 
   @override
   String get copyButtonLabel => 'Капіраваць';
@@ -887,7 +965,16 @@ class CupertinoLocalizationBe extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Знайсці';
+
+  @override
+  String get menuDismissLabel => 'Закрыць меню';
+
+  @override
   String get modalBarrierDismissLabel => 'Адхіліць';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Замен не знойдзена';
 
   @override
   String get pasteButtonLabel => 'Уставіць';
@@ -899,7 +986,13 @@ class CupertinoLocalizationBe extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Пошук';
 
   @override
+  String get searchWebButtonLabel => 'Пошук у сетцы';
+
+  @override
   String get selectAllButtonLabel => 'Выбраць усе';
+
+  @override
+  String get shareButtonLabel => 'Абагуліць...';
 
   @override
   String get tabSemanticsLabelRaw => r'Укладка $tabIndex з $tabCount';
@@ -968,32 +1061,32 @@ class CupertinoLocalizationBg extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationBg({
-    String localeName = 'bg',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'bg',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Сигнал';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Назад';
+
+  @override
+  String get cancelButtonLabel => 'Отказ';
+
+  @override
+  String get clearButtonLabel => 'Изчистване';
 
   @override
   String get copyButtonLabel => 'Копиране';
@@ -1044,7 +1137,16 @@ class CupertinoLocalizationBg extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Look Up';
+
+  @override
+  String get menuDismissLabel => 'Отхвърляне на менюто';
+
+  @override
   String get modalBarrierDismissLabel => 'Отхвърляне';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Не бяха намерени замествания';
 
   @override
   String get pasteButtonLabel => 'Поставяне';
@@ -1053,10 +1155,16 @@ class CupertinoLocalizationBg extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'PM';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Търсете';
+  String get searchTextFieldPlaceholderLabel => 'Търсене';
+
+  @override
+  String get searchWebButtonLabel => 'Търсене в мрежата';
 
   @override
   String get selectAllButtonLabel => 'Избиране на всички';
+
+  @override
+  String get shareButtonLabel => 'Споделяне...';
 
   @override
   String get tabSemanticsLabelRaw => r'Раздел $tabIndex от $tabCount';
@@ -1125,32 +1233,32 @@ class CupertinoLocalizationBn extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationBn({
-    String localeName = 'bn',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'bn',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'সতর্কতা';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'ফিরে যান';
+
+  @override
+  String get cancelButtonLabel => 'বাতিল করুন';
+
+  @override
+  String get clearButtonLabel => 'মুছুন';
 
   @override
   String get copyButtonLabel => 'কপি করুন';
@@ -1201,7 +1309,16 @@ class CupertinoLocalizationBn extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'লুক-আপ';
+
+  @override
+  String get menuDismissLabel => 'বাতিল করার মেনু';
+
+  @override
   String get modalBarrierDismissLabel => 'খারিজ করুন';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'কোনও বিকল্প বানান দেখানো হয়নি';
 
   @override
   String get pasteButtonLabel => 'পেস্ট করুন';
@@ -1210,10 +1327,16 @@ class CupertinoLocalizationBn extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'PM';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'খুঁজুন';
+  String get searchTextFieldPlaceholderLabel => 'সার্চ করুন';
+
+  @override
+  String get searchWebButtonLabel => 'ওয়েবে সার্চ করুন';
 
   @override
   String get selectAllButtonLabel => 'সব বেছে নিন';
+
+  @override
+  String get shareButtonLabel => 'শেয়ার করুন...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount-এর মধ্যে $tabIndex নম্বর ট্যাব';
@@ -1276,38 +1399,210 @@ class CupertinoLocalizationBn extends GlobalCupertinoLocalizations {
   String get todayLabel => 'আজ';
 }
 
+/// The translations for Tibetan (`bo`).
+class CupertinoLocalizationBo extends GlobalCupertinoLocalizations {
+  /// Create an instance of the translation bundle for Tibetan.
+  ///
+  /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
+  const CupertinoLocalizationBo({
+    super.localeName = 'bo',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get alertDialogLabel => 'གསལ་བརྡ།';
+
+  @override
+  String get anteMeridiemAbbreviation => 'སྔ་དྲོ';
+
+  @override
+  String get backButtonLabel => 'Back';
+
+  @override
+  String get cancelButtonLabel => 'ཕྱིར་འཐེན།';
+
+  @override
+  String get clearButtonLabel => 'གཙང་བཟོ།';
+
+  @override
+  String get copyButtonLabel => 'བཤུས།';
+
+  @override
+  String get cutButtonLabel => 'གཅོད།';
+
+  @override
+  String get datePickerDateOrderString => 'ymd';
+
+  @override
+  String get datePickerDateTimeOrderString => 'date_time_dayPeriod';
+
+  @override
+  String? get datePickerHourSemanticsLabelFew => null;
+
+  @override
+  String? get datePickerHourSemanticsLabelMany => null;
+
+  @override
+  String? get datePickerHourSemanticsLabelOne => r'$hour ཆུ་ཚོད།';
+
+  @override
+  String get datePickerHourSemanticsLabelOther => r'$hour ཆུ་ཚོད།';
+
+  @override
+  String? get datePickerHourSemanticsLabelTwo => null;
+
+  @override
+  String? get datePickerHourSemanticsLabelZero => null;
+
+  @override
+  String? get datePickerMinuteSemanticsLabelFew => null;
+
+  @override
+  String? get datePickerMinuteSemanticsLabelMany => null;
+
+  @override
+  String? get datePickerMinuteSemanticsLabelOne => 'སྐར་མ། 1';
+
+  @override
+  String get datePickerMinuteSemanticsLabelOther => r'$minute སྐར་མ་དུ་མ།';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelTwo => null;
+
+  @override
+  String? get datePickerMinuteSemanticsLabelZero => null;
+
+  @override
+  String get lookUpButtonLabel => 'འཚོལ་བ།';
+
+  @override
+  String get menuDismissLabel => 'ཐོ་གཞུང་འདོར་བ།';
+
+  @override
+  String get modalBarrierDismissLabel => 'འདོར་བ།';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'བརྗེས་ལེན་མ་རྙེད།';
+
+  @override
+  String get pasteButtonLabel => 'འཕོས་པ།';
+
+  @override
+  String get postMeridiemAbbreviation => 'ཕྱི་དྲོ།';
+
+  @override
+  String get searchTextFieldPlaceholderLabel => 'འཚོལ་བཤེར།';
+
+  @override
+  String get searchWebButtonLabel => 'དྲ་ཐོག་འཚོལ་བཤེར།';
+
+  @override
+  String get selectAllButtonLabel => 'ཚང་འདེམས།';
+
+  @override
+  String get shareButtonLabel => 'མཉམ་སྤྱོད།…';
+
+  @override
+  String get tabSemanticsLabelRaw => r'འཛར་གནོན་ $tabIndex ཡི $tabCount';
+
+  @override
+  String? get timerPickerHourLabelFew => null;
+
+  @override
+  String? get timerPickerHourLabelMany => null;
+
+  @override
+  String? get timerPickerHourLabelOne => 'ཆུ་ཚོད།';
+
+  @override
+  String get timerPickerHourLabelOther => 'ཆུ་ཚོད་དུ་མ།';
+
+  @override
+  String? get timerPickerHourLabelTwo => null;
+
+  @override
+  String? get timerPickerHourLabelZero => null;
+
+  @override
+  String? get timerPickerMinuteLabelFew => null;
+
+  @override
+  String? get timerPickerMinuteLabelMany => null;
+
+  @override
+  String? get timerPickerMinuteLabelOne => 'སྐར་མ།';
+
+  @override
+  String get timerPickerMinuteLabelOther => 'སྐར་མ།';
+
+  @override
+  String? get timerPickerMinuteLabelTwo => null;
+
+  @override
+  String? get timerPickerMinuteLabelZero => null;
+
+  @override
+  String? get timerPickerSecondLabelFew => null;
+
+  @override
+  String? get timerPickerSecondLabelMany => null;
+
+  @override
+  String? get timerPickerSecondLabelOne => 'སྐར་ཆ།';
+
+  @override
+  String get timerPickerSecondLabelOther => 'སྐར་ཆ།';
+
+  @override
+  String? get timerPickerSecondLabelTwo => null;
+
+  @override
+  String? get timerPickerSecondLabelZero => null;
+
+  @override
+  String get todayLabel => 'དེ་རིང་།';
+}
+
 /// The translations for Bosnian (`bs`).
 class CupertinoLocalizationBs extends GlobalCupertinoLocalizations {
   /// Create an instance of the translation bundle for Bosnian.
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationBs({
-    String localeName = 'bs',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'bs',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Upozorenje';
 
   @override
   String get anteMeridiemAbbreviation => 'prijepodne';
+
+  @override
+  String get backButtonLabel => 'Nazad';
+
+  @override
+  String get cancelButtonLabel => 'Otkaži';
+
+  @override
+  String get clearButtonLabel => 'Obriši';
 
   @override
   String get copyButtonLabel => 'Kopiraj';
@@ -1358,7 +1653,16 @@ class CupertinoLocalizationBs extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Pogled nagore';
+
+  @override
+  String get menuDismissLabel => 'Odbacivanje menija';
+
+  @override
   String get modalBarrierDismissLabel => 'Odbaci';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nije pronađena nijedna zamjena';
 
   @override
   String get pasteButtonLabel => 'Zalijepi';
@@ -1370,7 +1674,13 @@ class CupertinoLocalizationBs extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Pretraživanje';
 
   @override
+  String get searchWebButtonLabel => 'Pretraži Web';
+
+  @override
   String get selectAllButtonLabel => 'Odaberi sve';
+
+  @override
+  String get shareButtonLabel => 'Dijeli...';
 
   @override
   String get tabSemanticsLabelRaw => r'Kartica $tabIndex od $tabCount';
@@ -1394,16 +1704,16 @@ class CupertinoLocalizationBs extends GlobalCupertinoLocalizations {
   String? get timerPickerHourLabelZero => null;
 
   @override
-  String? get timerPickerMinuteLabelFew => 'min.';
+  String? get timerPickerMinuteLabelFew => 'min';
 
   @override
   String? get timerPickerMinuteLabelMany => null;
 
   @override
-  String? get timerPickerMinuteLabelOne => 'min.';
+  String? get timerPickerMinuteLabelOne => 'min';
 
   @override
-  String get timerPickerMinuteLabelOther => 'min.';
+  String get timerPickerMinuteLabelOther => 'min';
 
   @override
   String? get timerPickerMinuteLabelTwo => null;
@@ -1439,32 +1749,32 @@ class CupertinoLocalizationCa extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationCa({
-    String localeName = 'ca',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ca',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alerta';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Enrere';
+
+  @override
+  String get cancelButtonLabel => 'Cancel·la';
+
+  @override
+  String get clearButtonLabel => 'Esborra';
 
   @override
   String get copyButtonLabel => 'Copia';
@@ -1515,7 +1825,16 @@ class CupertinoLocalizationCa extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Mira amunt';
+
+  @override
+  String get menuDismissLabel => 'Ignora el menú';
+
+  @override
   String get modalBarrierDismissLabel => 'Ignora';
+
+  @override
+  String get noSpellCheckReplacementsLabel => "No s'ha trobat cap substitució";
 
   @override
   String get pasteButtonLabel => 'Enganxa';
@@ -1527,7 +1846,13 @@ class CupertinoLocalizationCa extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Cerca';
 
   @override
-  String get selectAllButtonLabel => 'Selecciona-ho tot';
+  String get searchWebButtonLabel => 'Cerca al web';
+
+  @override
+  String get selectAllButtonLabel => 'Seleccionar-ho tot';
+
+  @override
+  String get shareButtonLabel => 'Comparteix...';
 
   @override
   String get tabSemanticsLabelRaw => r'Pestanya $tabIndex de $tabCount';
@@ -1596,32 +1921,32 @@ class CupertinoLocalizationCs extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationCs({
-    String localeName = 'cs',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'cs',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Upozornění';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Zpět';
+
+  @override
+  String get cancelButtonLabel => 'Zrušit';
+
+  @override
+  String get clearButtonLabel => 'Vymazat';
 
   @override
   String get copyButtonLabel => 'Kopírovat';
@@ -1672,7 +1997,16 @@ class CupertinoLocalizationCs extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Vyhledat';
+
+  @override
+  String get menuDismissLabel => 'Zavřít nabídku';
+
+  @override
   String get modalBarrierDismissLabel => 'Zavřít';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Žádná nahrazení nenalezena';
 
   @override
   String get pasteButtonLabel => 'Vložit';
@@ -1684,7 +2018,13 @@ class CupertinoLocalizationCs extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Hledat';
 
   @override
+  String get searchWebButtonLabel => 'Vyhledávat na webu';
+
+  @override
   String get selectAllButtonLabel => 'Vybrat vše';
+
+  @override
+  String get shareButtonLabel => 'Sdílet…';
 
   @override
   String get tabSemanticsLabelRaw => r'Karta $tabIndex z $tabCount';
@@ -1747,38 +2087,210 @@ class CupertinoLocalizationCs extends GlobalCupertinoLocalizations {
   String get todayLabel => 'Dnes';
 }
 
+/// The translations for Welsh (`cy`).
+class CupertinoLocalizationCy extends GlobalCupertinoLocalizations {
+  /// Create an instance of the translation bundle for Welsh.
+  ///
+  /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
+  const CupertinoLocalizationCy({
+    super.localeName = 'cy',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get alertDialogLabel => 'Rhybudd';
+
+  @override
+  String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Nôl';
+
+  @override
+  String get cancelButtonLabel => 'Canslo';
+
+  @override
+  String get clearButtonLabel => 'Clirio';
+
+  @override
+  String get copyButtonLabel => 'Copïo';
+
+  @override
+  String get cutButtonLabel => 'Torri';
+
+  @override
+  String get datePickerDateOrderString => 'dmy';
+
+  @override
+  String get datePickerDateTimeOrderString => 'date_time_dayPeriod';
+
+  @override
+  String? get datePickerHourSemanticsLabelFew => r"$hour o'r gloch";
+
+  @override
+  String? get datePickerHourSemanticsLabelMany => r"$hour o'r gloch";
+
+  @override
+  String? get datePickerHourSemanticsLabelOne => r"$hour o'r gloch";
+
+  @override
+  String get datePickerHourSemanticsLabelOther => r"$hour o'r gloch";
+
+  @override
+  String? get datePickerHourSemanticsLabelTwo => r"$hour o'r gloch";
+
+  @override
+  String? get datePickerHourSemanticsLabelZero => r"$hour o'r gloch";
+
+  @override
+  String? get datePickerMinuteSemanticsLabelFew => r'$minute munud';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelMany => r'$minute munud';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelOne => '1 funud';
+
+  @override
+  String get datePickerMinuteSemanticsLabelOther => r'$minute munud';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelTwo => r'$minute funud';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelZero => r'$minute munud';
+
+  @override
+  String get lookUpButtonLabel => 'Chwilio';
+
+  @override
+  String get menuDismissLabel => "Diystyru'r ddewislen";
+
+  @override
+  String get modalBarrierDismissLabel => 'Diystyru';
+
+  @override
+  String get noSpellCheckReplacementsLabel => "Dim Ailosodiadau wedi'u Canfod";
+
+  @override
+  String get pasteButtonLabel => 'Gludo';
+
+  @override
+  String get postMeridiemAbbreviation => 'PM';
+
+  @override
+  String get searchTextFieldPlaceholderLabel => 'Chwilio';
+
+  @override
+  String get searchWebButtonLabel => "Chwilio'r We";
+
+  @override
+  String get selectAllButtonLabel => 'Dewis y Cyfan';
+
+  @override
+  String get shareButtonLabel => 'Rhannu...';
+
+  @override
+  String get tabSemanticsLabelRaw => r'Tab $tabIndex o $tabCount';
+
+  @override
+  String? get timerPickerHourLabelFew => 'awr';
+
+  @override
+  String? get timerPickerHourLabelMany => 'awr';
+
+  @override
+  String? get timerPickerHourLabelOne => 'awr';
+
+  @override
+  String get timerPickerHourLabelOther => 'awr';
+
+  @override
+  String? get timerPickerHourLabelTwo => 'awr';
+
+  @override
+  String? get timerPickerHourLabelZero => 'awr';
+
+  @override
+  String? get timerPickerMinuteLabelFew => 'munud';
+
+  @override
+  String? get timerPickerMinuteLabelMany => 'munud';
+
+  @override
+  String? get timerPickerMinuteLabelOne => 'funud';
+
+  @override
+  String get timerPickerMinuteLabelOther => 'munud';
+
+  @override
+  String? get timerPickerMinuteLabelTwo => 'funud';
+
+  @override
+  String? get timerPickerMinuteLabelZero => 'munud';
+
+  @override
+  String? get timerPickerSecondLabelFew => 'eiliad';
+
+  @override
+  String? get timerPickerSecondLabelMany => 'eiliad';
+
+  @override
+  String? get timerPickerSecondLabelOne => 'eiliad';
+
+  @override
+  String get timerPickerSecondLabelOther => 'eiliad';
+
+  @override
+  String? get timerPickerSecondLabelTwo => 'eiliad';
+
+  @override
+  String? get timerPickerSecondLabelZero => 'eiliad';
+
+  @override
+  String get todayLabel => 'Heddiw';
+}
+
 /// The translations for Danish (`da`).
 class CupertinoLocalizationDa extends GlobalCupertinoLocalizations {
   /// Create an instance of the translation bundle for Danish.
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationDa({
-    String localeName = 'da',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'da',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Underretning';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Tilbage';
+
+  @override
+  String get cancelButtonLabel => 'Annuller';
+
+  @override
+  String get clearButtonLabel => 'Ryd';
 
   @override
   String get copyButtonLabel => 'Kopiér';
@@ -1829,10 +2341,19 @@ class CupertinoLocalizationDa extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Slå op';
+
+  @override
+  String get menuDismissLabel => 'Luk menu';
+
+  @override
   String get modalBarrierDismissLabel => 'Afvis';
 
   @override
-  String get pasteButtonLabel => 'Sæt ind';
+  String get noSpellCheckReplacementsLabel => 'Der blev ikke fundet nogen erstatninger';
+
+  @override
+  String get pasteButtonLabel => 'Indsæt';
 
   @override
   String get postMeridiemAbbreviation => 'PM';
@@ -1841,7 +2362,13 @@ class CupertinoLocalizationDa extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Søg';
 
   @override
-  String get selectAllButtonLabel => 'Vælg alle';
+  String get searchWebButtonLabel => 'Søg på nettet';
+
+  @override
+  String get selectAllButtonLabel => 'Vælg alt';
+
+  @override
+  String get shareButtonLabel => 'Del…';
 
   @override
   String get tabSemanticsLabelRaw => r'Fane $tabIndex af $tabCount';
@@ -1910,32 +2437,32 @@ class CupertinoLocalizationDe extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationDe({
-    String localeName = 'de',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'de',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Benachrichtigung';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Zurück';
+
+  @override
+  String get cancelButtonLabel => 'Abbrechen';
+
+  @override
+  String get clearButtonLabel => 'Löschen';
 
   @override
   String get copyButtonLabel => 'Kopieren';
@@ -1986,7 +2513,16 @@ class CupertinoLocalizationDe extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Nachschlagen';
+
+  @override
+  String get menuDismissLabel => 'Menü schließen';
+
+  @override
   String get modalBarrierDismissLabel => 'Schließen';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Keine Ersetzungen gefunden';
 
   @override
   String get pasteButtonLabel => 'Einsetzen';
@@ -1998,7 +2534,13 @@ class CupertinoLocalizationDe extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Suche';
 
   @override
-  String get selectAllButtonLabel => 'Alles auswählen';
+  String get searchWebButtonLabel => 'Im Web suchen';
+
+  @override
+  String get selectAllButtonLabel => 'Alle auswählen';
+
+  @override
+  String get shareButtonLabel => 'Teilen…';
 
   @override
   String get tabSemanticsLabelRaw => r'Tab $tabIndex von $tabCount';
@@ -2067,26 +2609,23 @@ class CupertinoLocalizationDeCh extends CupertinoLocalizationDe {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationDeCh({
-    String localeName = 'de_CH',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'de_CH',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get clearButtonLabel => 'Clear';
+
+  @override
+  String get selectAllButtonLabel => 'Alles auswählen';
 
   @override
   String get modalBarrierDismissLabel => 'Schliessen';
@@ -2098,32 +2637,32 @@ class CupertinoLocalizationEl extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEl({
-    String localeName = 'el',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'el',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Ειδοποίηση';
 
   @override
   String get anteMeridiemAbbreviation => 'π.μ.';
+
+  @override
+  String get backButtonLabel => 'Πίσω';
+
+  @override
+  String get cancelButtonLabel => 'Ακύρωση';
+
+  @override
+  String get clearButtonLabel => 'Διαγραφή';
 
   @override
   String get copyButtonLabel => 'Αντιγραφή';
@@ -2174,7 +2713,16 @@ class CupertinoLocalizationEl extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Look Up';
+
+  @override
+  String get menuDismissLabel => 'Παράβλεψη μενού';
+
+  @override
   String get modalBarrierDismissLabel => 'Παράβλεψη';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Δεν βρέθηκαν αντικαταστάσεις';
 
   @override
   String get pasteButtonLabel => 'Επικόλληση';
@@ -2186,7 +2734,13 @@ class CupertinoLocalizationEl extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Αναζήτηση';
 
   @override
+  String get searchWebButtonLabel => 'Αναζήτηση στον ιστό';
+
+  @override
   String get selectAllButtonLabel => 'Επιλογή όλων';
+
+  @override
+  String get shareButtonLabel => 'Κοινοποίηση…';
 
   @override
   String get tabSemanticsLabelRaw => r'Καρτέλα $tabIndex από $tabCount';
@@ -2255,32 +2809,32 @@ class CupertinoLocalizationEn extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEn({
-    String localeName = 'en',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'en',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alert';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Back';
+
+  @override
+  String get cancelButtonLabel => 'Cancel';
+
+  @override
+  String get clearButtonLabel => 'Clear';
 
   @override
   String get copyButtonLabel => 'Copy';
@@ -2331,7 +2885,16 @@ class CupertinoLocalizationEn extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Look Up';
+
+  @override
+  String get menuDismissLabel => 'Dismiss menu';
+
+  @override
   String get modalBarrierDismissLabel => 'Dismiss';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No Replacements Found';
 
   @override
   String get pasteButtonLabel => 'Paste';
@@ -2343,7 +2906,13 @@ class CupertinoLocalizationEn extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Search';
 
   @override
+  String get searchWebButtonLabel => 'Search Web';
+
+  @override
   String get selectAllButtonLabel => 'Select All';
+
+  @override
+  String get shareButtonLabel => 'Share...';
 
   @override
   String get tabSemanticsLabelRaw => r'Tab $tabIndex of $tabCount';
@@ -2412,26 +2981,23 @@ class CupertinoLocalizationEnAu extends CupertinoLocalizationEn {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEnAu({
-    String localeName = 'en_AU',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'en_AU',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get lookUpButtonLabel => 'Look up';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No replacements found';
 
   @override
   String get datePickerDateOrderString => 'dmy';
@@ -2446,26 +3012,17 @@ class CupertinoLocalizationEnCa extends CupertinoLocalizationEn {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEnCa({
-    String localeName = 'en_CA',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'en_CA',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get datePickerDateOrderString => 'dmy';
@@ -2480,26 +3037,23 @@ class CupertinoLocalizationEnGb extends CupertinoLocalizationEn {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEnGb({
-    String localeName = 'en_GB',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'en_GB',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get lookUpButtonLabel => 'Look up';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No replacements found';
 
   @override
   String get datePickerDateOrderString => 'dmy';
@@ -2514,26 +3068,23 @@ class CupertinoLocalizationEnIe extends CupertinoLocalizationEn {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEnIe({
-    String localeName = 'en_IE',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'en_IE',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get lookUpButtonLabel => 'Look up';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No replacements found';
 
   @override
   String get datePickerDateOrderString => 'dmy';
@@ -2548,26 +3099,23 @@ class CupertinoLocalizationEnIn extends CupertinoLocalizationEn {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEnIn({
-    String localeName = 'en_IN',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'en_IN',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get lookUpButtonLabel => 'Look up';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No replacements found';
 
   @override
   String get datePickerDateOrderString => 'dmy';
@@ -2582,26 +3130,23 @@ class CupertinoLocalizationEnNz extends CupertinoLocalizationEn {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEnNz({
-    String localeName = 'en_NZ',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'en_NZ',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get lookUpButtonLabel => 'Look up';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No replacements found';
 
   @override
   String get datePickerDateOrderString => 'dmy';
@@ -2616,26 +3161,23 @@ class CupertinoLocalizationEnSg extends CupertinoLocalizationEn {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEnSg({
-    String localeName = 'en_SG',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'en_SG',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get lookUpButtonLabel => 'Look up';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No replacements found';
 
   @override
   String get datePickerDateOrderString => 'dmy';
@@ -2650,26 +3192,23 @@ class CupertinoLocalizationEnZa extends CupertinoLocalizationEn {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEnZa({
-    String localeName = 'en_ZA',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'en_ZA',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get lookUpButtonLabel => 'Look up';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No replacements found';
 
   @override
   String get datePickerDateOrderString => 'dmy';
@@ -2684,32 +3223,32 @@ class CupertinoLocalizationEs extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEs({
-    String localeName = 'es',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alerta';
 
   @override
   String get anteMeridiemAbbreviation => 'a. m.';
+
+  @override
+  String get backButtonLabel => 'Atrás';
+
+  @override
+  String get cancelButtonLabel => 'Cancelar';
+
+  @override
+  String get clearButtonLabel => 'Borrar';
 
   @override
   String get copyButtonLabel => 'Copiar';
@@ -2760,7 +3299,16 @@ class CupertinoLocalizationEs extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Buscador visual';
+
+  @override
+  String get menuDismissLabel => 'Cerrar menú';
+
+  @override
   String get modalBarrierDismissLabel => 'Cerrar';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se ha encontrado ninguna sustitución';
 
   @override
   String get pasteButtonLabel => 'Pegar';
@@ -2772,7 +3320,13 @@ class CupertinoLocalizationEs extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Buscar';
 
   @override
-  String get selectAllButtonLabel => 'Seleccionar todos';
+  String get searchWebButtonLabel => 'Buscar en la Web';
+
+  @override
+  String get selectAllButtonLabel => 'Seleccionar todo';
+
+  @override
+  String get shareButtonLabel => 'Compartir...';
 
   @override
   String get tabSemanticsLabelRaw => r'Pestaña $tabIndex de $tabCount';
@@ -2841,26 +3395,29 @@ class CupertinoLocalizationEs419 extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEs419({
-    String localeName = 'es_419',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_419',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -2884,26 +3441,29 @@ class CupertinoLocalizationEsAr extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsAr({
-    String localeName = 'es_AR',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_AR',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -2927,26 +3487,29 @@ class CupertinoLocalizationEsBo extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsBo({
-    String localeName = 'es_BO',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_BO',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -2970,26 +3533,29 @@ class CupertinoLocalizationEsCl extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsCl({
-    String localeName = 'es_CL',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_CL',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3013,26 +3579,29 @@ class CupertinoLocalizationEsCo extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsCo({
-    String localeName = 'es_CO',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_CO',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3056,26 +3625,29 @@ class CupertinoLocalizationEsCr extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsCr({
-    String localeName = 'es_CR',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_CR',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3099,26 +3671,29 @@ class CupertinoLocalizationEsDo extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsDo({
-    String localeName = 'es_DO',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_DO',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3142,26 +3717,29 @@ class CupertinoLocalizationEsEc extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsEc({
-    String localeName = 'es_EC',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_EC',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3185,26 +3763,29 @@ class CupertinoLocalizationEsGt extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsGt({
-    String localeName = 'es_GT',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_GT',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3228,26 +3809,29 @@ class CupertinoLocalizationEsHn extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsHn({
-    String localeName = 'es_HN',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_HN',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3271,26 +3855,29 @@ class CupertinoLocalizationEsMx extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsMx({
-    String localeName = 'es_MX',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_MX',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3314,26 +3901,29 @@ class CupertinoLocalizationEsNi extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsNi({
-    String localeName = 'es_NI',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_NI',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3357,26 +3947,29 @@ class CupertinoLocalizationEsPa extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsPa({
-    String localeName = 'es_PA',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_PA',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3400,26 +3993,29 @@ class CupertinoLocalizationEsPe extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsPe({
-    String localeName = 'es_PE',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_PE',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3443,26 +4039,29 @@ class CupertinoLocalizationEsPr extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsPr({
-    String localeName = 'es_PR',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_PR',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3486,26 +4085,29 @@ class CupertinoLocalizationEsPy extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsPy({
-    String localeName = 'es_PY',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_PY',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3529,26 +4131,29 @@ class CupertinoLocalizationEsSv extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsSv({
-    String localeName = 'es_SV',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_SV',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3572,26 +4177,29 @@ class CupertinoLocalizationEsUs extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsUs({
-    String localeName = 'es_US',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_US',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3615,26 +4223,29 @@ class CupertinoLocalizationEsUy extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsUy({
-    String localeName = 'es_UY',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_UY',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3658,26 +4269,29 @@ class CupertinoLocalizationEsVe extends CupertinoLocalizationEs {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEsVe({
-    String localeName = 'es_VE',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'es_VE',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
+
+  @override
+  String get lookUpButtonLabel => 'Mirar hacia arriba';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'No se encontraron reemplazos';
+
+  @override
+  String get menuDismissLabel => 'Descartar menú';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour en punto';
@@ -3701,32 +4315,32 @@ class CupertinoLocalizationEt extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEt({
-    String localeName = 'et',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'et',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Märguanne';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Tagasi';
+
+  @override
+  String get cancelButtonLabel => 'Tühista';
+
+  @override
+  String get clearButtonLabel => 'Kustutamine';
 
   @override
   String get copyButtonLabel => 'Kopeeri';
@@ -3777,7 +4391,16 @@ class CupertinoLocalizationEt extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Look Up';
+
+  @override
+  String get menuDismissLabel => 'Sulge menüü';
+
+  @override
   String get modalBarrierDismissLabel => 'Loobu';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Asendusi ei leitud';
 
   @override
   String get pasteButtonLabel => 'Kleebi';
@@ -3789,7 +4412,13 @@ class CupertinoLocalizationEt extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Otsige';
 
   @override
+  String get searchWebButtonLabel => 'Otsi veebist';
+
+  @override
   String get selectAllButtonLabel => 'Vali kõik';
+
+  @override
+  String get shareButtonLabel => 'Jaga …';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabIndex. vaheleht $tabCount-st';
@@ -3858,32 +4487,32 @@ class CupertinoLocalizationEu extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationEu({
-    String localeName = 'eu',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'eu',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alerta';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Atzera';
+
+  @override
+  String get cancelButtonLabel => 'Utzi';
+
+  @override
+  String get clearButtonLabel => 'Garbitu';
 
   @override
   String get copyButtonLabel => 'Kopiatu';
@@ -3934,7 +4563,16 @@ class CupertinoLocalizationEu extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Bilatu';
+
+  @override
+  String get menuDismissLabel => 'Baztertu menua';
+
+  @override
   String get modalBarrierDismissLabel => 'Baztertu';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Ez da aurkitu ordezteko hitzik';
 
   @override
   String get pasteButtonLabel => 'Itsatsi';
@@ -3946,7 +4584,13 @@ class CupertinoLocalizationEu extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Bilatu';
 
   @override
-  String get selectAllButtonLabel => 'Hautatu guztiak';
+  String get searchWebButtonLabel => 'Bilatu sarean';
+
+  @override
+  String get selectAllButtonLabel => 'Hautatu dena';
+
+  @override
+  String get shareButtonLabel => 'Partekatu...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabIndex/$tabCount fitxa';
@@ -4015,32 +4659,32 @@ class CupertinoLocalizationFa extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationFa({
-    String localeName = 'fa',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'fa',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'هشدار';
 
   @override
   String get anteMeridiemAbbreviation => 'ق.ظ.';
+
+  @override
+  String get backButtonLabel => 'برگشتن';
+
+  @override
+  String get cancelButtonLabel => 'لغو';
+
+  @override
+  String get clearButtonLabel => 'پاک کردن';
 
   @override
   String get copyButtonLabel => 'کپی';
@@ -4091,7 +4735,16 @@ class CupertinoLocalizationFa extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'جستجو';
+
+  @override
+  String get menuDismissLabel => 'بستن منو';
+
+  @override
   String get modalBarrierDismissLabel => 'نپذیرفتن';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'جایگزینی پیدا نشد';
 
   @override
   String get pasteButtonLabel => 'جای‌گذاری';
@@ -4103,7 +4756,13 @@ class CupertinoLocalizationFa extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'جستجو';
 
   @override
+  String get searchWebButtonLabel => 'جستجو در وب';
+
+  @override
   String get selectAllButtonLabel => 'انتخاب همه';
+
+  @override
+  String get shareButtonLabel => 'هم‌رسانی…';
 
   @override
   String get tabSemanticsLabelRaw => r'برگه $tabIndex از $tabCount';
@@ -4172,32 +4831,32 @@ class CupertinoLocalizationFi extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationFi({
-    String localeName = 'fi',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'fi',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Ilmoitus';
 
   @override
   String get anteMeridiemAbbreviation => 'ap';
+
+  @override
+  String get backButtonLabel => 'Takaisin';
+
+  @override
+  String get cancelButtonLabel => 'Peru';
+
+  @override
+  String get clearButtonLabel => 'Tyhjennä';
 
   @override
   String get copyButtonLabel => 'Kopioi';
@@ -4248,7 +4907,16 @@ class CupertinoLocalizationFi extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Hae';
+
+  @override
+  String get menuDismissLabel => 'Hylkää valikko';
+
+  @override
   String get modalBarrierDismissLabel => 'Ohita';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Korvaavia sanoja ei löydy';
 
   @override
   String get pasteButtonLabel => 'Liitä';
@@ -4257,13 +4925,19 @@ class CupertinoLocalizationFi extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'ip';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Haku';
+  String get searchTextFieldPlaceholderLabel => 'Hae';
+
+  @override
+  String get searchWebButtonLabel => 'Hae verkosta';
 
   @override
   String get selectAllButtonLabel => 'Valitse kaikki';
 
   @override
-  String get tabSemanticsLabelRaw => r'Välilehti $tabIndex/$tabCount';
+  String get shareButtonLabel => 'Jaa…';
+
+  @override
+  String get tabSemanticsLabelRaw => r'Välilehti $tabIndex kautta $tabCount';
 
   @override
   String? get timerPickerHourLabelFew => null;
@@ -4329,32 +5003,32 @@ class CupertinoLocalizationFil extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationFil({
-    String localeName = 'fil',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'fil',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alerto';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Bumalik';
+
+  @override
+  String get cancelButtonLabel => 'Kanselahin';
+
+  @override
+  String get clearButtonLabel => 'I-clear';
 
   @override
   String get copyButtonLabel => 'Kopyahin';
@@ -4405,7 +5079,16 @@ class CupertinoLocalizationFil extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Tumingin sa Itaas';
+
+  @override
+  String get menuDismissLabel => 'I-dismiss ang menu';
+
+  @override
   String get modalBarrierDismissLabel => 'I-dismiss';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Walang Nahanap na Kapalit';
 
   @override
   String get pasteButtonLabel => 'I-paste';
@@ -4414,10 +5097,16 @@ class CupertinoLocalizationFil extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'PM';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Maghanap';
+  String get searchTextFieldPlaceholderLabel => 'Hanapin';
+
+  @override
+  String get searchWebButtonLabel => 'Maghanap sa Web';
 
   @override
   String get selectAllButtonLabel => 'Piliin Lahat';
+
+  @override
+  String get shareButtonLabel => 'Ibahagi...';
 
   @override
   String get tabSemanticsLabelRaw => r'Tab $tabIndex ng $tabCount';
@@ -4486,32 +5175,32 @@ class CupertinoLocalizationFr extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationFr({
-    String localeName = 'fr',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'fr',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alerte';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Retour';
+
+  @override
+  String get cancelButtonLabel => 'Annuler';
+
+  @override
+  String get clearButtonLabel => 'Effacer';
 
   @override
   String get copyButtonLabel => 'Copier';
@@ -4562,7 +5251,16 @@ class CupertinoLocalizationFr extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Recherche visuelle';
+
+  @override
+  String get menuDismissLabel => 'Fermer le menu';
+
+  @override
   String get modalBarrierDismissLabel => 'Ignorer';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Aucun remplacement trouvé';
 
   @override
   String get pasteButtonLabel => 'Coller';
@@ -4574,7 +5272,13 @@ class CupertinoLocalizationFr extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Rechercher';
 
   @override
-  String get selectAllButtonLabel => 'Tout sélect.';
+  String get searchWebButtonLabel => 'Rechercher sur le Web';
+
+  @override
+  String get selectAllButtonLabel => 'Tout sélectionner';
+
+  @override
+  String get shareButtonLabel => 'Partager…';
 
   @override
   String get tabSemanticsLabelRaw => r'Onglet $tabIndex sur $tabCount';
@@ -4643,26 +5347,23 @@ class CupertinoLocalizationFrCa extends CupertinoLocalizationFr {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationFrCa({
-    String localeName = 'fr_CA',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'fr_CA',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get lookUpButtonLabel => 'Regarder en haut';
+
+  @override
+  String get menuDismissLabel => 'Ignorer le menu';
 
   @override
   String? get datePickerHourSemanticsLabelOne => r'$hour heure';
@@ -4684,9 +5385,178 @@ class CupertinoLocalizationFrCa extends CupertinoLocalizationFr {
 
   @override
   String get timerPickerMinuteLabelOther => 'min';
+}
+
+/// The translations for Irish (`ga`).
+class CupertinoLocalizationGa extends GlobalCupertinoLocalizations {
+  /// Create an instance of the translation bundle for Irish.
+  ///
+  /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
+  const CupertinoLocalizationGa({
+    super.localeName = 'ga',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
-  String get selectAllButtonLabel => 'Tout sélectionner';
+  String get alertDialogLabel => 'Foláireamh';
+
+  @override
+  String get anteMeridiemAbbreviation => 'R.N.';
+
+  @override
+  String get backButtonLabel => 'Siar';
+
+  @override
+  String get cancelButtonLabel => 'Cealaigh';
+
+  @override
+  String get clearButtonLabel => 'Glan';
+
+  @override
+  String get copyButtonLabel => 'Cóipeáil';
+
+  @override
+  String get cutButtonLabel => 'Gearr';
+
+  @override
+  String get datePickerDateOrderString => 'dmy';
+
+  @override
+  String get datePickerDateTimeOrderString => 'date_time_dayPeriod';
+
+  @override
+  String? get datePickerHourSemanticsLabelFew => r'$hour a chlog';
+
+  @override
+  String? get datePickerHourSemanticsLabelMany => r'$hour a chlog';
+
+  @override
+  String? get datePickerHourSemanticsLabelOne => r'$hour a chlog';
+
+  @override
+  String get datePickerHourSemanticsLabelOther => r'$hour a chlog';
+
+  @override
+  String? get datePickerHourSemanticsLabelTwo => r'$hour a chlog';
+
+  @override
+  String? get datePickerHourSemanticsLabelZero => null;
+
+  @override
+  String? get datePickerMinuteSemanticsLabelFew => r'$minute nóiméad';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelMany => r'$minute nóiméad';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelOne => 'Aon nóiméad amháin';
+
+  @override
+  String get datePickerMinuteSemanticsLabelOther => r'$minute nóiméad';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelTwo => r'$minute nóiméad';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelZero => null;
+
+  @override
+  String get lookUpButtonLabel => 'Cuardaigh';
+
+  @override
+  String get menuDismissLabel => 'Ruaig an roghchlár';
+
+  @override
+  String get modalBarrierDismissLabel => 'Ruaig';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Níor Aimsíodh Aon Fhocal Oiriúnach le Cur ina Áit';
+
+  @override
+  String get pasteButtonLabel => 'Greamaigh';
+
+  @override
+  String get postMeridiemAbbreviation => 'I.N.';
+
+  @override
+  String get searchTextFieldPlaceholderLabel => 'Cuardaigh';
+
+  @override
+  String get searchWebButtonLabel => 'Cuardaigh an Gréasán';
+
+  @override
+  String get selectAllButtonLabel => 'Roghnaigh Gach Rud';
+
+  @override
+  String get shareButtonLabel => 'Comhroinn...';
+
+  @override
+  String get tabSemanticsLabelRaw => r'Cluaisín $tabIndex de $tabCount';
+
+  @override
+  String? get timerPickerHourLabelFew => 'uair an chloig';
+
+  @override
+  String? get timerPickerHourLabelMany => 'n-uair an chloig';
+
+  @override
+  String? get timerPickerHourLabelOne => 'uair an chloig';
+
+  @override
+  String get timerPickerHourLabelOther => 'uair an chloig';
+
+  @override
+  String? get timerPickerHourLabelTwo => 'uair an chloig';
+
+  @override
+  String? get timerPickerHourLabelZero => null;
+
+  @override
+  String? get timerPickerMinuteLabelFew => 'nóim.';
+
+  @override
+  String? get timerPickerMinuteLabelMany => 'nóim.';
+
+  @override
+  String? get timerPickerMinuteLabelOne => 'nóim.';
+
+  @override
+  String get timerPickerMinuteLabelOther => 'nóim.';
+
+  @override
+  String? get timerPickerMinuteLabelTwo => 'nóim.';
+
+  @override
+  String? get timerPickerMinuteLabelZero => null;
+
+  @override
+  String? get timerPickerSecondLabelFew => 'soic.';
+
+  @override
+  String? get timerPickerSecondLabelMany => 'soic.';
+
+  @override
+  String? get timerPickerSecondLabelOne => 'soic.';
+
+  @override
+  String get timerPickerSecondLabelOther => 'soic.';
+
+  @override
+  String? get timerPickerSecondLabelTwo => 'soic.';
+
+  @override
+  String? get timerPickerSecondLabelZero => null;
+
+  @override
+  String get todayLabel => 'Inniu';
 }
 
 /// The translations for Galician (`gl`).
@@ -4695,32 +5565,32 @@ class CupertinoLocalizationGl extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationGl({
-    String localeName = 'gl',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'gl',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alerta';
 
   @override
   String get anteMeridiemAbbreviation => 'a.m.';
+
+  @override
+  String get backButtonLabel => 'Atrás';
+
+  @override
+  String get cancelButtonLabel => 'Cancelar';
+
+  @override
+  String get clearButtonLabel => 'Borrar';
 
   @override
   String get copyButtonLabel => 'Copiar';
@@ -4771,7 +5641,16 @@ class CupertinoLocalizationGl extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Mirar cara arriba';
+
+  @override
+  String get menuDismissLabel => 'Pechar menú';
+
+  @override
   String get modalBarrierDismissLabel => 'Ignorar';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Non se encontrou ningunha substitución';
 
   @override
   String get pasteButtonLabel => 'Pegar';
@@ -4780,10 +5659,16 @@ class CupertinoLocalizationGl extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'p.m.';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Busca';
+  String get searchTextFieldPlaceholderLabel => 'Fai unha busca';
+
+  @override
+  String get searchWebButtonLabel => 'Buscar na Web';
 
   @override
   String get selectAllButtonLabel => 'Seleccionar todo';
+
+  @override
+  String get shareButtonLabel => 'Compartir…';
 
   @override
   String get tabSemanticsLabelRaw => r'Pestana $tabIndex de $tabCount';
@@ -4852,32 +5737,32 @@ class CupertinoLocalizationGsw extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationGsw({
-    String localeName = 'gsw',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'gsw',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Benachrichtigung';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Zurück';
+
+  @override
+  String get cancelButtonLabel => 'Abbrechen';
+
+  @override
+  String get clearButtonLabel => 'Löschen';
 
   @override
   String get copyButtonLabel => 'Kopieren';
@@ -4928,7 +5813,16 @@ class CupertinoLocalizationGsw extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Nachschlagen';
+
+  @override
+  String get menuDismissLabel => 'Menü schließen';
+
+  @override
   String get modalBarrierDismissLabel => 'Schließen';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Keine Ersetzungen gefunden';
 
   @override
   String get pasteButtonLabel => 'Einsetzen';
@@ -4940,7 +5834,13 @@ class CupertinoLocalizationGsw extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Suche';
 
   @override
-  String get selectAllButtonLabel => 'Alles auswählen';
+  String get searchWebButtonLabel => 'Im Web suchen';
+
+  @override
+  String get selectAllButtonLabel => 'Alle auswählen';
+
+  @override
+  String get shareButtonLabel => 'Teilen…';
 
   @override
   String get tabSemanticsLabelRaw => r'Tab $tabIndex von $tabCount';
@@ -5009,32 +5909,32 @@ class CupertinoLocalizationGu extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationGu({
-    String localeName = 'gu',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'gu',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'અલર્ટ';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'પાછળ';
+
+  @override
+  String get cancelButtonLabel => 'રદ કરો';
+
+  @override
+  String get clearButtonLabel => 'સાફ કરો';
 
   @override
   String get copyButtonLabel => 'કૉપિ કરો';
@@ -5085,7 +5985,16 @@ class CupertinoLocalizationGu extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'શોધો';
+
+  @override
+  String get menuDismissLabel => 'મેનૂ છોડી દો';
+
+  @override
   String get modalBarrierDismissLabel => 'છોડી દો';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'બદલવા માટે કોઈ શબ્દ મળ્યો નથી';
 
   @override
   String get pasteButtonLabel => 'પેસ્ટ કરો';
@@ -5097,7 +6006,13 @@ class CupertinoLocalizationGu extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'શોધો';
 
   @override
+  String get searchWebButtonLabel => 'વેબ પર શોધો';
+
+  @override
   String get selectAllButtonLabel => 'બધા પસંદ કરો';
+
+  @override
+  String get shareButtonLabel => 'શેર કરો…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCountમાંથી $tabIndex ટૅબ';
@@ -5166,32 +6081,32 @@ class CupertinoLocalizationHe extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationHe({
-    String localeName = 'he',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'he',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'התראה';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'למסך הקודם';
+
+  @override
+  String get cancelButtonLabel => 'ביטול';
+
+  @override
+  String get clearButtonLabel => 'ניקוי';
 
   @override
   String get copyButtonLabel => 'העתקה';
@@ -5242,7 +6157,16 @@ class CupertinoLocalizationHe extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'חיפוש';
+
+  @override
+  String get menuDismissLabel => 'סגירת התפריט';
+
+  @override
   String get modalBarrierDismissLabel => 'סגירה';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'לא נמצאו חלופות';
 
   @override
   String get pasteButtonLabel => 'הדבקה';
@@ -5254,7 +6178,13 @@ class CupertinoLocalizationHe extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'חיפוש';
 
   @override
+  String get searchWebButtonLabel => 'חיפוש באינטרנט';
+
+  @override
   String get selectAllButtonLabel => 'בחירת הכול';
+
+  @override
+  String get shareButtonLabel => 'שיתוף…';
 
   @override
   String get tabSemanticsLabelRaw => r'כרטיסייה $tabIndex מתוך $tabCount';
@@ -5323,32 +6253,32 @@ class CupertinoLocalizationHi extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationHi({
-    String localeName = 'hi',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'hi',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'अलर्ट';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'वापस जाएं';
+
+  @override
+  String get cancelButtonLabel => 'रद्द करें';
+
+  @override
+  String get clearButtonLabel => 'मिटाएं';
 
   @override
   String get copyButtonLabel => 'कॉपी करें';
@@ -5399,7 +6329,16 @@ class CupertinoLocalizationHi extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'लुक अप बटन';
+
+  @override
+  String get menuDismissLabel => 'मेन्यू खारिज करें';
+
+  @override
   String get modalBarrierDismissLabel => 'खारिज करें';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'सही वर्तनी वाला कोई शब्द नहीं मिला';
 
   @override
   String get pasteButtonLabel => 'चिपकाएं';
@@ -5411,7 +6350,13 @@ class CupertinoLocalizationHi extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'खोजें';
 
   @override
+  String get searchWebButtonLabel => 'वेब पर खोजें';
+
+  @override
   String get selectAllButtonLabel => 'सभी चुनें';
+
+  @override
+  String get shareButtonLabel => 'शेयर करें…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount का टैब $tabIndex';
@@ -5480,32 +6425,32 @@ class CupertinoLocalizationHr extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationHr({
-    String localeName = 'hr',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'hr',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Upozorenje';
 
   @override
   String get anteMeridiemAbbreviation => 'prijepodne';
+
+  @override
+  String get backButtonLabel => 'Natrag';
+
+  @override
+  String get cancelButtonLabel => 'Odustani';
+
+  @override
+  String get clearButtonLabel => 'Izbriši';
 
   @override
   String get copyButtonLabel => 'Kopiraj';
@@ -5556,7 +6501,16 @@ class CupertinoLocalizationHr extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Pogled prema gore';
+
+  @override
+  String get menuDismissLabel => 'Odbacivanje izbornika';
+
+  @override
   String get modalBarrierDismissLabel => 'Odbaci';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nema pronađenih zamjena';
 
   @override
   String get pasteButtonLabel => 'Zalijepi';
@@ -5568,7 +6522,13 @@ class CupertinoLocalizationHr extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Pretraživanje';
 
   @override
+  String get searchWebButtonLabel => 'Pretraži web';
+
+  @override
   String get selectAllButtonLabel => 'Odaberi sve';
+
+  @override
+  String get shareButtonLabel => 'Dijeli...';
 
   @override
   String get tabSemanticsLabelRaw => r'Kartica $tabIndex od $tabCount';
@@ -5637,32 +6597,32 @@ class CupertinoLocalizationHu extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationHu({
-    String localeName = 'hu',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'hu',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Értesítés';
 
   @override
   String get anteMeridiemAbbreviation => 'de.';
+
+  @override
+  String get backButtonLabel => 'Vissza';
+
+  @override
+  String get cancelButtonLabel => 'Mégse';
+
+  @override
+  String get clearButtonLabel => 'Törlés';
 
   @override
   String get copyButtonLabel => 'Másolás';
@@ -5713,7 +6673,16 @@ class CupertinoLocalizationHu extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Felfelé nézés';
+
+  @override
+  String get menuDismissLabel => 'Menü bezárása';
+
+  @override
   String get modalBarrierDismissLabel => 'Elvetés';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nem található javítás';
 
   @override
   String get pasteButtonLabel => 'Beillesztés';
@@ -5725,7 +6694,13 @@ class CupertinoLocalizationHu extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Keresés';
 
   @override
+  String get searchWebButtonLabel => 'Keresés az interneten';
+
+  @override
   String get selectAllButtonLabel => 'Összes kijelölése';
+
+  @override
+  String get shareButtonLabel => 'Megosztás…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount/$tabIndex. lap';
@@ -5794,32 +6769,32 @@ class CupertinoLocalizationHy extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationHy({
-    String localeName = 'hy',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'hy',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Ծանուցում';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Հետ';
+
+  @override
+  String get cancelButtonLabel => 'Չեղարկել';
+
+  @override
+  String get clearButtonLabel => 'Մաքրել';
 
   @override
   String get copyButtonLabel => 'Պատճենել';
@@ -5870,7 +6845,16 @@ class CupertinoLocalizationHy extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Փնտրել';
+
+  @override
+  String get menuDismissLabel => 'Փակել ընտրացանկը';
+
+  @override
   String get modalBarrierDismissLabel => 'Փակել';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Փոխարինումներ չեն գտնվել';
 
   @override
   String get pasteButtonLabel => 'Տեղադրել';
@@ -5879,10 +6863,16 @@ class CupertinoLocalizationHy extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'PM';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Որոնեք';
+  String get searchTextFieldPlaceholderLabel => 'Որոնում';
+
+  @override
+  String get searchWebButtonLabel => 'Որոնել համացանցում';
 
   @override
   String get selectAllButtonLabel => 'Նշել բոլորը';
+
+  @override
+  String get shareButtonLabel => 'Կիսվել...';
 
   @override
   String get tabSemanticsLabelRaw => r'Ներդիր $tabIndex՝ $tabCount-ից';
@@ -5951,32 +6941,32 @@ class CupertinoLocalizationId extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationId({
-    String localeName = 'id',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'id',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Notifikasi';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Kembali';
+
+  @override
+  String get cancelButtonLabel => 'Batal';
+
+  @override
+  String get clearButtonLabel => 'Hapus';
 
   @override
   String get copyButtonLabel => 'Salin';
@@ -6027,7 +7017,16 @@ class CupertinoLocalizationId extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Cari';
+
+  @override
+  String get menuDismissLabel => 'Tutup menu';
+
+  @override
   String get modalBarrierDismissLabel => 'Tutup';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Penggantian Tidak Ditemukan';
 
   @override
   String get pasteButtonLabel => 'Tempel';
@@ -6039,7 +7038,13 @@ class CupertinoLocalizationId extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Telusuri';
 
   @override
+  String get searchWebButtonLabel => 'Telusuri di Web';
+
+  @override
   String get selectAllButtonLabel => 'Pilih Semua';
+
+  @override
+  String get shareButtonLabel => 'Bagikan...';
 
   @override
   String get tabSemanticsLabelRaw => r'Tab $tabIndex dari $tabCount';
@@ -6108,32 +7113,32 @@ class CupertinoLocalizationIs extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationIs({
-    String localeName = 'is',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'is',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Tilkynning';
 
   @override
   String get anteMeridiemAbbreviation => 'f.h.';
+
+  @override
+  String get backButtonLabel => 'Til baka';
+
+  @override
+  String get cancelButtonLabel => 'Hætta við';
+
+  @override
+  String get clearButtonLabel => 'Hreinsa';
 
   @override
   String get copyButtonLabel => 'Afrita';
@@ -6184,7 +7189,16 @@ class CupertinoLocalizationIs extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Look Up';
+
+  @override
+  String get menuDismissLabel => 'Loka valmynd';
+
+  @override
   String get modalBarrierDismissLabel => 'Hunsa';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Engir staðgenglar fundust';
 
   @override
   String get pasteButtonLabel => 'Líma';
@@ -6196,7 +7210,13 @@ class CupertinoLocalizationIs extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Leit';
 
   @override
+  String get searchWebButtonLabel => 'Leita á vefnum';
+
+  @override
   String get selectAllButtonLabel => 'Velja allt';
+
+  @override
+  String get shareButtonLabel => 'Deila...';
 
   @override
   String get tabSemanticsLabelRaw => r'Flipi $tabIndex af $tabCount';
@@ -6265,32 +7285,32 @@ class CupertinoLocalizationIt extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationIt({
-    String localeName = 'it',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'it',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Avviso';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Indietro';
+
+  @override
+  String get cancelButtonLabel => 'Annulla';
+
+  @override
+  String get clearButtonLabel => 'Cancella';
 
   @override
   String get copyButtonLabel => 'Copia';
@@ -6341,7 +7361,16 @@ class CupertinoLocalizationIt extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Cerca';
+
+  @override
+  String get menuDismissLabel => 'Ignora menu';
+
+  @override
   String get modalBarrierDismissLabel => 'Ignora';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nessuna sostituzione trovata';
 
   @override
   String get pasteButtonLabel => 'Incolla';
@@ -6353,7 +7382,13 @@ class CupertinoLocalizationIt extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Cerca';
 
   @override
+  String get searchWebButtonLabel => 'Cerca sul web';
+
+  @override
   String get selectAllButtonLabel => 'Seleziona tutto';
+
+  @override
+  String get shareButtonLabel => 'Condividi…';
 
   @override
   String get tabSemanticsLabelRaw => r'Scheda $tabIndex di $tabCount';
@@ -6422,32 +7457,32 @@ class CupertinoLocalizationJa extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationJa({
-    String localeName = 'ja',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ja',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => '通知';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => '戻る';
+
+  @override
+  String get cancelButtonLabel => 'キャンセル';
+
+  @override
+  String get clearButtonLabel => '消去';
 
   @override
   String get copyButtonLabel => 'コピー';
@@ -6498,7 +7533,16 @@ class CupertinoLocalizationJa extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => '調べる';
+
+  @override
+  String get menuDismissLabel => 'メニューを閉じる';
+
+  @override
   String get modalBarrierDismissLabel => '閉じる';
+
+  @override
+  String get noSpellCheckReplacementsLabel => '置き換えるものがありません';
 
   @override
   String get pasteButtonLabel => '貼り付け';
@@ -6510,7 +7554,13 @@ class CupertinoLocalizationJa extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => '検索';
 
   @override
-  String get selectAllButtonLabel => 'すべて選択';
+  String get searchWebButtonLabel => 'ウェブを検索';
+
+  @override
+  String get selectAllButtonLabel => 'すべてを選択';
+
+  @override
+  String get shareButtonLabel => '共有...';
 
   @override
   String get tabSemanticsLabelRaw => r'タブ: $tabIndex/$tabCount';
@@ -6579,32 +7629,32 @@ class CupertinoLocalizationKa extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationKa({
-    String localeName = 'ka',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ka',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'გაფრთხილება';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'უკან';
+
+  @override
+  String get cancelButtonLabel => 'გაუქმება';
+
+  @override
+  String get clearButtonLabel => 'გასუფთავება';
 
   @override
   String get copyButtonLabel => 'კოპირება';
@@ -6655,7 +7705,16 @@ class CupertinoLocalizationKa extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'აიხედეთ ზემოთ';
+
+  @override
+  String get menuDismissLabel => 'მენიუს უარყოფა';
+
+  @override
   String get modalBarrierDismissLabel => 'დახურვა';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'ჩანაცვლება არ მოიძებნა';
 
   @override
   String get pasteButtonLabel => 'ჩასმა';
@@ -6667,7 +7726,13 @@ class CupertinoLocalizationKa extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'ძიება';
 
   @override
+  String get searchWebButtonLabel => 'ვებში ძიება';
+
+  @override
   String get selectAllButtonLabel => 'ყველას არჩევა';
+
+  @override
+  String get shareButtonLabel => 'გაზიარება...';
 
   @override
   String get tabSemanticsLabelRaw => r'ჩანართი $tabIndex / $tabCount-დან';
@@ -6736,32 +7801,32 @@ class CupertinoLocalizationKk extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationKk({
-    String localeName = 'kk',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'kk',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Дабыл';
 
   @override
   String get anteMeridiemAbbreviation => 'түстен кейін';
+
+  @override
+  String get backButtonLabel => 'Артқа';
+
+  @override
+  String get cancelButtonLabel => 'Бас тарту';
+
+  @override
+  String get clearButtonLabel => 'Өшіру';
 
   @override
   String get copyButtonLabel => 'Көшіру';
@@ -6812,7 +7877,16 @@ class CupertinoLocalizationKk extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Іздеу';
+
+  @override
+  String get menuDismissLabel => 'Мәзірді жабу';
+
+  @override
   String get modalBarrierDismissLabel => 'Жабу';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Ауыстыратын ешнәрсе табылмады.';
 
   @override
   String get pasteButtonLabel => 'Қою';
@@ -6824,7 +7898,13 @@ class CupertinoLocalizationKk extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Іздеу';
 
   @override
+  String get searchWebButtonLabel => 'Интернеттен іздеу';
+
+  @override
   String get selectAllButtonLabel => 'Барлығын таңдау';
+
+  @override
+  String get shareButtonLabel => 'Бөлісу…';
 
   @override
   String get tabSemanticsLabelRaw => r'Қойынды: $tabIndex/$tabCount';
@@ -6893,32 +7973,32 @@ class CupertinoLocalizationKm extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationKm({
-    String localeName = 'km',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'km',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'ជូនដំណឹង';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'ថយក្រោយ';
+
+  @override
+  String get cancelButtonLabel => 'បោះបង់';
+
+  @override
+  String get clearButtonLabel => 'សម្អាត';
 
   @override
   String get copyButtonLabel => 'ចម្លង';
@@ -6969,7 +8049,16 @@ class CupertinoLocalizationKm extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'រកមើល';
+
+  @override
+  String get menuDismissLabel => 'ច្រានចោល​ម៉ឺនុយ';
+
+  @override
   String get modalBarrierDismissLabel => 'ច្រាន​ចោល';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'រកមិនឃើញ​ការជំនួសទេ';
 
   @override
   String get pasteButtonLabel => 'ដាក់​ចូល';
@@ -6981,7 +8070,13 @@ class CupertinoLocalizationKm extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'ស្វែងរក';
 
   @override
+  String get searchWebButtonLabel => 'ស្វែងរក​លើបណ្ដាញ';
+
+  @override
   String get selectAllButtonLabel => 'ជ្រើសរើស​ទាំងអស់';
+
+  @override
+  String get shareButtonLabel => 'ចែករំលែក...';
 
   @override
   String get tabSemanticsLabelRaw => r'ផ្ទាំងទី $tabIndex នៃ $tabCount';
@@ -7050,32 +8145,32 @@ class CupertinoLocalizationKn extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationKn({
-    String localeName = 'kn',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'kn',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => '\u{c8e}\u{c9a}\u{ccd}\u{c9a}\u{cb0}\u{cbf}\u{c95}\u{cc6}';
 
   @override
   String get anteMeridiemAbbreviation => '\u{cac}\u{cc6}\u{cb3}\u{cbf}\u{c97}\u{ccd}\u{c97}\u{cc6}';
+
+  @override
+  String get backButtonLabel => '\u{cb9}\u{cbf}\u{c82}\u{ca6}\u{cc6}';
+
+  @override
+  String get cancelButtonLabel => '\u{cb0}\u{ca6}\u{ccd}\u{ca6}\u{cc1}\u{cae}\u{cbe}\u{ca1}\u{cbf}';
+
+  @override
+  String get clearButtonLabel => '\u{ca4}\u{cc6}\u{cb0}\u{cb5}\u{cc1}\u{c97}\u{cca}\u{cb3}\u{cbf}\u{cb8}\u{cbf}';
 
   @override
   String get copyButtonLabel => '\u{ca8}\u{c95}\u{cb2}\u{cbf}\u{cb8}\u{cbf}';
@@ -7126,7 +8221,16 @@ class CupertinoLocalizationKn extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => '\u{cae}\u{cc7}\u{cb2}\u{cc6}\u{20}\u{ca8}\u{ccb}\u{ca1}\u{cbf}';
+
+  @override
+  String get menuDismissLabel => '\u{cae}\u{cc6}\u{ca8}\u{cc1}\u{cb5}\u{ca8}\u{ccd}\u{ca8}\u{cc1}\u{20}\u{cb5}\u{c9c}\u{cbe}\u{c97}\u{cc6}\u{cc2}\u{cb3}\u{cbf}\u{cb8}\u{cbf}';
+
+  @override
   String get modalBarrierDismissLabel => '\u{cb5}\u{c9c}\u{cbe}\u{c97}\u{cca}\u{cb3}\u{cbf}\u{cb8}\u{cbf}';
+
+  @override
+  String get noSpellCheckReplacementsLabel => '\u{caf}\u{cbe}\u{cb5}\u{cc1}\u{ca6}\u{cc7}\u{20}\u{cac}\u{ca6}\u{cb2}\u{cbe}\u{cb5}\u{ca3}\u{cc6}\u{c97}\u{cb3}\u{cc1}\u{20}\u{c95}\u{c82}\u{ca1}\u{cc1}\u{cac}\u{c82}\u{ca6}\u{cbf}\u{cb2}\u{ccd}\u{cb2}';
 
   @override
   String get pasteButtonLabel => '\u{c85}\u{c82}\u{c9f}\u{cbf}\u{cb8}\u{cbf}';
@@ -7138,7 +8242,13 @@ class CupertinoLocalizationKn extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => '\u{cb9}\u{cc1}\u{ca1}\u{cc1}\u{c95}\u{cbf}';
 
   @override
+  String get searchWebButtonLabel => '\u{cb5}\u{cc6}\u{cac}\u{ccd}\u{200c}\u{ca8}\u{cb2}\u{ccd}\u{cb2}\u{cbf}\u{20}\u{cb9}\u{cc1}\u{ca1}\u{cc1}\u{c95}\u{cbf}';
+
+  @override
   String get selectAllButtonLabel => '\u{c8e}\u{cb2}\u{ccd}\u{cb2}\u{cb5}\u{ca8}\u{ccd}\u{ca8}\u{cc2}\u{20}\u{c86}\u{caf}\u{ccd}\u{c95}\u{cc6}\u{cae}\u{cbe}\u{ca1}\u{cbf}';
+
+  @override
+  String get shareButtonLabel => '\u{cb9}\u{c82}\u{c9a}\u{cbf}\u{c95}\u{cca}\u{cb3}\u{ccd}\u{cb3}\u{cbf}\u{2e}\u{2e}\u{2e}';
 
   @override
   String get tabSemanticsLabelRaw => '\u{24}\u{74}\u{61}\u{62}\u{43}\u{6f}\u{75}\u{6e}\u{74}\u{20}\u{cb0}\u{cb2}\u{ccd}\u{cb2}\u{cbf}\u{ca8}\u{20}\u{24}\u{74}\u{61}\u{62}\u{49}\u{6e}\u{64}\u{65}\u{78}\u{20}\u{c9f}\u{ccd}\u{caf}\u{cbe}\u{cac}\u{ccd}';
@@ -7207,26 +8317,17 @@ class CupertinoLocalizationKo extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationKo({
-    String localeName = 'ko',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ko',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => '알림';
@@ -7235,16 +8336,25 @@ class CupertinoLocalizationKo extends GlobalCupertinoLocalizations {
   String get anteMeridiemAbbreviation => '오전';
 
   @override
+  String get backButtonLabel => '뒤로';
+
+  @override
+  String get cancelButtonLabel => '취소';
+
+  @override
+  String get clearButtonLabel => '삭제';
+
+  @override
   String get copyButtonLabel => '복사';
 
   @override
-  String get cutButtonLabel => '잘라냄';
+  String get cutButtonLabel => '잘라내기';
 
   @override
   String get datePickerDateOrderString => 'ymd';
 
   @override
-  String get datePickerDateTimeOrderString => 'date_time_dayPeriod';
+  String get datePickerDateTimeOrderString => 'date_dayPeriod_time';
 
   @override
   String? get datePickerHourSemanticsLabelFew => null;
@@ -7283,7 +8393,16 @@ class CupertinoLocalizationKo extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => '찾기';
+
+  @override
+  String get menuDismissLabel => '메뉴 닫기';
+
+  @override
   String get modalBarrierDismissLabel => '닫기';
+
+  @override
+  String get noSpellCheckReplacementsLabel => '수정사항 없음';
 
   @override
   String get pasteButtonLabel => '붙여넣기';
@@ -7295,7 +8414,13 @@ class CupertinoLocalizationKo extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => '검색';
 
   @override
+  String get searchWebButtonLabel => '웹 검색';
+
+  @override
   String get selectAllButtonLabel => '전체 선택';
+
+  @override
+  String get shareButtonLabel => '공유...';
 
   @override
   String get tabSemanticsLabelRaw => r'탭 $tabCount개 중 $tabIndex번째';
@@ -7364,32 +8489,32 @@ class CupertinoLocalizationKy extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationKy({
-    String localeName = 'ky',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ky',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Эскертүү';
 
   @override
   String get anteMeridiemAbbreviation => 'түшкө чейин';
+
+  @override
+  String get backButtonLabel => 'Артка';
+
+  @override
+  String get cancelButtonLabel => 'Токтотуу';
+
+  @override
+  String get clearButtonLabel => 'Тазалоо';
 
   @override
   String get copyButtonLabel => 'Көчүрүү';
@@ -7440,7 +8565,16 @@ class CupertinoLocalizationKy extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Издөө';
+
+  @override
+  String get menuDismissLabel => 'Менюну жабуу';
+
+  @override
   String get modalBarrierDismissLabel => 'Жабуу';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Алмаштыруу үчүн сөз табылган жок';
 
   @override
   String get pasteButtonLabel => 'Чаптоо';
@@ -7452,7 +8586,13 @@ class CupertinoLocalizationKy extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Издөө';
 
   @override
+  String get searchWebButtonLabel => 'Интернеттен издөө';
+
+  @override
   String get selectAllButtonLabel => 'Баарын тандоо';
+
+  @override
+  String get shareButtonLabel => 'Бөлүшүү…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount ичинен $tabIndex-өтмөк';
@@ -7521,32 +8661,32 @@ class CupertinoLocalizationLo extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationLo({
-    String localeName = 'lo',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'lo',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'ການເຕືອນ';
 
   @override
   String get anteMeridiemAbbreviation => 'ກ່ອນທ່ຽງ';
+
+  @override
+  String get backButtonLabel => 'ກັບຄືນ';
+
+  @override
+  String get cancelButtonLabel => 'ຍົກເລີກ';
+
+  @override
+  String get clearButtonLabel => 'ລຶບລ້າງ';
 
   @override
   String get copyButtonLabel => 'ສຳເນົາ';
@@ -7597,7 +8737,16 @@ class CupertinoLocalizationLo extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'ຊອກຫາຂໍ້ມູນ';
+
+  @override
+  String get menuDismissLabel => 'ປິດເມນູ';
+
+  @override
   String get modalBarrierDismissLabel => 'ປິດໄວ້';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'ບໍ່ພົບການແທນທີ່';
 
   @override
   String get pasteButtonLabel => 'ວາງ';
@@ -7609,7 +8758,13 @@ class CupertinoLocalizationLo extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'ຊອກຫາ';
 
   @override
+  String get searchWebButtonLabel => 'ຊອກຫາຢູ່ອິນເຕີເນັດ';
+
+  @override
   String get selectAllButtonLabel => 'ເລືອກທັງໝົດ';
+
+  @override
+  String get shareButtonLabel => 'ແບ່ງປັນ...';
 
   @override
   String get tabSemanticsLabelRaw => r'ແຖບທີ $tabIndex ຈາກທັງໝົດ $tabCount';
@@ -7678,32 +8833,32 @@ class CupertinoLocalizationLt extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationLt({
-    String localeName = 'lt',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'lt',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Įspėjimas';
 
   @override
   String get anteMeridiemAbbreviation => 'priešpiet';
+
+  @override
+  String get backButtonLabel => 'Atgal';
+
+  @override
+  String get cancelButtonLabel => 'Atšaukti';
+
+  @override
+  String get clearButtonLabel => 'Išvalyti';
 
   @override
   String get copyButtonLabel => 'Kopijuoti';
@@ -7754,7 +8909,16 @@ class CupertinoLocalizationLt extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Ieškoti';
+
+  @override
+  String get menuDismissLabel => 'Atsisakyti meniu';
+
+  @override
   String get modalBarrierDismissLabel => 'Atsisakyti';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nerasta jokių pakeitimų';
 
   @override
   String get pasteButtonLabel => 'Įklijuoti';
@@ -7763,10 +8927,16 @@ class CupertinoLocalizationLt extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'popiet';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Ieškoti';
+  String get searchTextFieldPlaceholderLabel => 'Paieška';
+
+  @override
+  String get searchWebButtonLabel => 'Ieškoti žiniatinklyje';
 
   @override
   String get selectAllButtonLabel => 'Pasirinkti viską';
+
+  @override
+  String get shareButtonLabel => 'Bendrinti...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabIndex skirtukas iš $tabCount';
@@ -7835,32 +9005,32 @@ class CupertinoLocalizationLv extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationLv({
-    String localeName = 'lv',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'lv',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Brīdinājums';
 
   @override
   String get anteMeridiemAbbreviation => 'priekšpusdienā';
+
+  @override
+  String get backButtonLabel => 'Atpakaļ';
+
+  @override
+  String get cancelButtonLabel => 'Atcelt';
+
+  @override
+  String get clearButtonLabel => 'Notīrīt';
 
   @override
   String get copyButtonLabel => 'Kopēt';
@@ -7911,7 +9081,16 @@ class CupertinoLocalizationLv extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => r'$minute minūtes';
 
   @override
+  String get lookUpButtonLabel => 'Meklēt';
+
+  @override
+  String get menuDismissLabel => 'Nerādīt izvēlni';
+
+  @override
   String get modalBarrierDismissLabel => 'Nerādīt';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Netika atrasts neviens vārds aizstāšanai';
 
   @override
   String get pasteButtonLabel => 'Ielīmēt';
@@ -7920,10 +9099,16 @@ class CupertinoLocalizationLv extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'pēcpusdienā';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Meklēt';
+  String get searchTextFieldPlaceholderLabel => 'Meklēšana';
+
+  @override
+  String get searchWebButtonLabel => 'Meklēt tīmeklī';
 
   @override
   String get selectAllButtonLabel => 'Atlasīt visu';
+
+  @override
+  String get shareButtonLabel => 'Kopīgot…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabIndex. cilne no $tabCount';
@@ -7992,32 +9177,32 @@ class CupertinoLocalizationMk extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationMk({
-    String localeName = 'mk',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'mk',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Предупредување';
 
   @override
   String get anteMeridiemAbbreviation => 'ПРЕТПЛАДНЕ';
+
+  @override
+  String get backButtonLabel => 'Назад';
+
+  @override
+  String get cancelButtonLabel => 'Откажи';
+
+  @override
+  String get clearButtonLabel => 'Избриши';
 
   @override
   String get copyButtonLabel => 'Копирај';
@@ -8068,7 +9253,16 @@ class CupertinoLocalizationMk extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Погледнете нагоре';
+
+  @override
+  String get menuDismissLabel => 'Отфрлете го менито';
+
+  @override
   String get modalBarrierDismissLabel => 'Отфрли';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Не се најдени заменски зборови';
 
   @override
   String get pasteButtonLabel => 'Залепи';
@@ -8080,7 +9274,13 @@ class CupertinoLocalizationMk extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Пребарувајте';
 
   @override
+  String get searchWebButtonLabel => 'Пребарајте на интернет';
+
+  @override
   String get selectAllButtonLabel => 'Избери ги сите';
+
+  @override
+  String get shareButtonLabel => 'Споделете...';
 
   @override
   String get tabSemanticsLabelRaw => r'Картичка $tabIndex од $tabCount';
@@ -8149,32 +9349,32 @@ class CupertinoLocalizationMl extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationMl({
-    String localeName = 'ml',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ml',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'മുന്നറിയിപ്പ്';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'മടങ്ങുക';
+
+  @override
+  String get cancelButtonLabel => 'റദ്ദാക്കുക';
+
+  @override
+  String get clearButtonLabel => 'മായ്ക്കുക';
 
   @override
   String get copyButtonLabel => 'പകർത്തുക';
@@ -8225,7 +9425,16 @@ class CupertinoLocalizationMl extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'മുകളിലേക്ക് നോക്കുക';
+
+  @override
+  String get menuDismissLabel => 'മെനു ഡിസ്മിസ് ചെയ്യുക';
+
+  @override
   String get modalBarrierDismissLabel => 'നിരസിക്കുക';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'റീപ്ലേസ്‌മെന്റുകളൊന്നും കണ്ടെത്തിയില്ല';
 
   @override
   String get pasteButtonLabel => 'ഒട്ടിക്കുക';
@@ -8237,7 +9446,13 @@ class CupertinoLocalizationMl extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'തിരയുക';
 
   @override
+  String get searchWebButtonLabel => 'വെബിൽ തിരയുക';
+
+  @override
   String get selectAllButtonLabel => 'എല്ലാം തിരഞ്ഞെടുക്കുക';
+
+  @override
+  String get shareButtonLabel => 'പങ്കിടുക...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount ടാബിൽ $tabIndex-ാമത്തേത്';
@@ -8306,32 +9521,32 @@ class CupertinoLocalizationMn extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationMn({
-    String localeName = 'mn',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'mn',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Сэрэмжлүүлэг';
 
   @override
   String get anteMeridiemAbbreviation => 'ӨГЛӨӨ';
+
+  @override
+  String get backButtonLabel => 'Буцах';
+
+  @override
+  String get cancelButtonLabel => 'Цуцлах';
+
+  @override
+  String get clearButtonLabel => 'Арилгах';
 
   @override
   String get copyButtonLabel => 'Хуулах';
@@ -8382,7 +9597,16 @@ class CupertinoLocalizationMn extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Дээшээ харах';
+
+  @override
+  String get menuDismissLabel => 'Цэсийг хаах';
+
+  @override
   String get modalBarrierDismissLabel => 'Үл хэрэгсэх';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Ямар ч орлуулалт олдсонгүй';
 
   @override
   String get pasteButtonLabel => 'Буулгах';
@@ -8394,7 +9618,13 @@ class CupertinoLocalizationMn extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Хайх';
 
   @override
+  String get searchWebButtonLabel => 'Вебээс хайх';
+
+  @override
   String get selectAllButtonLabel => 'Бүгдийг сонгох';
+
+  @override
+  String get shareButtonLabel => 'Хуваалцах...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount-н $tabIndex-р таб';
@@ -8463,32 +9693,32 @@ class CupertinoLocalizationMr extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationMr({
-    String localeName = 'mr',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'mr',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'सूचना';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'मागे जा';
+
+  @override
+  String get cancelButtonLabel => 'रद्द करा';
+
+  @override
+  String get clearButtonLabel => 'साफ करा';
 
   @override
   String get copyButtonLabel => 'कॉपी करा';
@@ -8539,7 +9769,16 @@ class CupertinoLocalizationMr extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'शोध घ्या';
+
+  @override
+  String get menuDismissLabel => 'मेनू डिसमिस करा';
+
+  @override
   String get modalBarrierDismissLabel => 'डिसमिस करा';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'कोणतेही बदल आढळले नाहीत';
 
   @override
   String get pasteButtonLabel => 'पेस्ट करा';
@@ -8551,7 +9790,13 @@ class CupertinoLocalizationMr extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'शोधा';
 
   @override
+  String get searchWebButtonLabel => 'वेबवर शोधा';
+
+  @override
   String get selectAllButtonLabel => 'सर्व निवडा';
+
+  @override
+  String get shareButtonLabel => 'शेअर करा...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount पैकी $tabIndex टॅब';
@@ -8620,32 +9865,32 @@ class CupertinoLocalizationMs extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationMs({
-    String localeName = 'ms',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ms',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Makluman';
 
   @override
   String get anteMeridiemAbbreviation => 'PG';
+
+  @override
+  String get backButtonLabel => 'Kembali';
+
+  @override
+  String get cancelButtonLabel => 'Batal';
+
+  @override
+  String get clearButtonLabel => 'Kosongkan';
 
   @override
   String get copyButtonLabel => 'Salin';
@@ -8696,19 +9941,34 @@ class CupertinoLocalizationMs extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Lihat ke Atas';
+
+  @override
+  String get menuDismissLabel => 'Ketepikan menu';
+
+  @override
   String get modalBarrierDismissLabel => 'Tolak';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Tiada Penggantian Ditemukan';
 
   @override
   String get pasteButtonLabel => 'Tampal';
 
   @override
-  String get postMeridiemAbbreviation => 'PTG';
+  String get postMeridiemAbbreviation => 'P/M';
 
   @override
   String get searchTextFieldPlaceholderLabel => 'Cari';
 
   @override
+  String get searchWebButtonLabel => 'Buat carian pada Web';
+
+  @override
   String get selectAllButtonLabel => 'Pilih Semua';
+
+  @override
+  String get shareButtonLabel => 'Kongsi...';
 
   @override
   String get tabSemanticsLabelRaw => r'Tab $tabIndex daripada $tabCount';
@@ -8777,32 +10037,32 @@ class CupertinoLocalizationMy extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationMy({
-    String localeName = 'my',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'my',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'သတိပေးချက်';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'နောက်သို့';
+
+  @override
+  String get cancelButtonLabel => 'မလုပ်တော့';
+
+  @override
+  String get clearButtonLabel => 'ဖယ်ရှားရန်';
 
   @override
   String get copyButtonLabel => 'မိတ္တူကူးရန်';
@@ -8853,7 +10113,16 @@ class CupertinoLocalizationMy extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'အပေါ်ကြည့်ရန်';
+
+  @override
+  String get menuDismissLabel => 'မီနူးကိုပယ်ပါ';
+
+  @override
   String get modalBarrierDismissLabel => 'ပယ်ရန်';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'အစားထိုးမှုများ မတွေ့ပါ';
 
   @override
   String get pasteButtonLabel => 'ကူးထည့်ရန်';
@@ -8865,7 +10134,13 @@ class CupertinoLocalizationMy extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'ရှာရန်';
 
   @override
+  String get searchWebButtonLabel => 'ဝဘ်တွင်ရှာရန်';
+
+  @override
   String get selectAllButtonLabel => 'အားလုံး ရွေးရန်';
+
+  @override
+  String get shareButtonLabel => 'မျှဝေရန်...';
 
   @override
   String get tabSemanticsLabelRaw => r'တဘ် $tabCount ခုအနက် $tabIndex ခု';
@@ -8934,32 +10209,32 @@ class CupertinoLocalizationNb extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationNb({
-    String localeName = 'nb',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'nb',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Varsel';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Tilbake';
+
+  @override
+  String get cancelButtonLabel => 'Avbryt';
+
+  @override
+  String get clearButtonLabel => 'Slett';
 
   @override
   String get copyButtonLabel => 'Kopiér';
@@ -9010,7 +10285,16 @@ class CupertinoLocalizationNb extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Slå opp';
+
+  @override
+  String get menuDismissLabel => 'Lukk menyen';
+
+  @override
   String get modalBarrierDismissLabel => 'Avvis';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Fant ingen erstatninger';
 
   @override
   String get pasteButtonLabel => 'Lim inn';
@@ -9022,7 +10306,13 @@ class CupertinoLocalizationNb extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Søk';
 
   @override
+  String get searchWebButtonLabel => 'Søk på nettet';
+
+  @override
   String get selectAllButtonLabel => 'Velg alle';
+
+  @override
+  String get shareButtonLabel => 'Del…';
 
   @override
   String get tabSemanticsLabelRaw => r'Fane $tabIndex av $tabCount';
@@ -9091,35 +10381,35 @@ class CupertinoLocalizationNe extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationNe({
-    String localeName = 'ne',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ne',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'अलर्ट';
 
   @override
-  String get anteMeridiemAbbreviation => 'पूर्वाह्न';
+  String get anteMeridiemAbbreviation => 'AM';
 
   @override
-  String get copyButtonLabel => 'प्रतिलिपि गर्नुहोस्';
+  String get backButtonLabel => 'पछाडि';
+
+  @override
+  String get cancelButtonLabel => 'रद्द गर्नुहोस्';
+
+  @override
+  String get clearButtonLabel => 'हटाउनुहोस्';
+
+  @override
+  String get copyButtonLabel => 'कपी गर्नुहोस्';
 
   @override
   String get cutButtonLabel => 'काट्नुहोस्';
@@ -9167,19 +10457,34 @@ class CupertinoLocalizationNe extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'माथितिर हेर्नुहोस्';
+
+  @override
+  String get menuDismissLabel => 'मेनु खारेज गर्नुहोस्';
+
+  @override
   String get modalBarrierDismissLabel => 'खारेज गर्नुहोस्';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'बदल्नु पर्ने कुनै पनि कुरा भेटिएन';
 
   @override
   String get pasteButtonLabel => 'टाँस्नुहोस्';
 
   @override
-  String get postMeridiemAbbreviation => 'अपराह्न';
+  String get postMeridiemAbbreviation => 'PM';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'खोज';
+  String get searchTextFieldPlaceholderLabel => 'खोज्नुहोस्';
+
+  @override
+  String get searchWebButtonLabel => 'वेबमा खोज्नुहोस्';
 
   @override
   String get selectAllButtonLabel => 'सबै चयन गर्नुहोस्';
+
+  @override
+  String get shareButtonLabel => 'सेयर गर्नुहोस्...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount मध्ये $tabIndex ट्याब';
@@ -9248,32 +10553,32 @@ class CupertinoLocalizationNl extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationNl({
-    String localeName = 'nl',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'nl',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Melding';
 
   @override
   String get anteMeridiemAbbreviation => 'am';
+
+  @override
+  String get backButtonLabel => 'Terug';
+
+  @override
+  String get cancelButtonLabel => 'Annuleren';
+
+  @override
+  String get clearButtonLabel => 'Wissen';
 
   @override
   String get copyButtonLabel => 'Kopiëren';
@@ -9324,7 +10629,16 @@ class CupertinoLocalizationNl extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Opzoeken';
+
+  @override
+  String get menuDismissLabel => 'Menu sluiten';
+
+  @override
   String get modalBarrierDismissLabel => 'Sluiten';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Geen vervangingen gevonden';
 
   @override
   String get pasteButtonLabel => 'Plakken';
@@ -9336,7 +10650,13 @@ class CupertinoLocalizationNl extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Zoeken';
 
   @override
+  String get searchWebButtonLabel => 'Op internet zoeken';
+
+  @override
   String get selectAllButtonLabel => 'Alles selecteren';
+
+  @override
+  String get shareButtonLabel => 'Delen...';
 
   @override
   String get tabSemanticsLabelRaw => r'Tabblad $tabIndex van $tabCount';
@@ -9405,32 +10725,32 @@ class CupertinoLocalizationNo extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationNo({
-    String localeName = 'no',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'no',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Varsel';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Tilbake';
+
+  @override
+  String get cancelButtonLabel => 'Avbryt';
+
+  @override
+  String get clearButtonLabel => 'Slett';
 
   @override
   String get copyButtonLabel => 'Kopiér';
@@ -9481,7 +10801,16 @@ class CupertinoLocalizationNo extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Slå opp';
+
+  @override
+  String get menuDismissLabel => 'Lukk menyen';
+
+  @override
   String get modalBarrierDismissLabel => 'Avvis';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Fant ingen erstatninger';
 
   @override
   String get pasteButtonLabel => 'Lim inn';
@@ -9493,7 +10822,13 @@ class CupertinoLocalizationNo extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Søk';
 
   @override
+  String get searchWebButtonLabel => 'Søk på nettet';
+
+  @override
   String get selectAllButtonLabel => 'Velg alle';
+
+  @override
+  String get shareButtonLabel => 'Del…';
 
   @override
   String get tabSemanticsLabelRaw => r'Fane $tabIndex av $tabCount';
@@ -9562,32 +10897,32 @@ class CupertinoLocalizationOr extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationOr({
-    String localeName = 'or',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'or',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'ଆଲର୍ଟ';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Back';
+
+  @override
+  String get cancelButtonLabel => 'ବାତିଲ କରନ୍ତୁ';
+
+  @override
+  String get clearButtonLabel => 'ଖାଲି କରନ୍ତୁ';
 
   @override
   String get copyButtonLabel => 'କପି କରନ୍ତୁ';
@@ -9638,7 +10973,16 @@ class CupertinoLocalizationOr extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'ଉପରକୁ ଦେଖନ୍ତୁ';
+
+  @override
+  String get menuDismissLabel => 'ମେନୁ ଖାରଜ କରନ୍ତୁ';
+
+  @override
   String get modalBarrierDismissLabel => 'ଖାରଜ କରନ୍ତୁ';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'କୌଣସି ରିପ୍ଲେସମେଣ୍ଟ ମିଳିଲା ନାହିଁ';
 
   @override
   String get pasteButtonLabel => 'ପେଷ୍ଟ କରନ୍ତୁ';
@@ -9650,7 +10994,13 @@ class CupertinoLocalizationOr extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'ସନ୍ଧାନ କରନ୍ତୁ';
 
   @override
+  String get searchWebButtonLabel => 'ୱେବ ସର୍ଚ୍ଚ କରନ୍ତୁ';
+
+  @override
   String get selectAllButtonLabel => 'ସମସ୍ତ ଚୟନ କରନ୍ତୁ';
+
+  @override
+  String get shareButtonLabel => 'ସେୟାର୍ କରନ୍ତୁ...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCountର $tabIndex ଟାବ୍';
@@ -9719,32 +11069,32 @@ class CupertinoLocalizationPa extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationPa({
-    String localeName = 'pa',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'pa',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
-  String get alertDialogLabel => 'ਸੁਚੇਤਨਾ';
+  String get alertDialogLabel => 'ਅਲਰਟ';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'ਪਿੱਛੇ';
+
+  @override
+  String get cancelButtonLabel => 'ਰੱਦ ਕਰੋ';
+
+  @override
+  String get clearButtonLabel => 'ਕਲੀਅਰ ਕਰੋ';
 
   @override
   String get copyButtonLabel => 'ਕਾਪੀ ਕਰੋ';
@@ -9795,7 +11145,16 @@ class CupertinoLocalizationPa extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'ਖੋਜੋ';
+
+  @override
+  String get menuDismissLabel => 'ਮੀਨੂ ਖਾਰਜ ਕਰੋ';
+
+  @override
   String get modalBarrierDismissLabel => 'ਖਾਰਜ ਕਰੋ';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'ਕੋਈ ਸੁਝਾਅ ਨਹੀਂ ਮਿਲਿਆ';
 
   @override
   String get pasteButtonLabel => 'ਪੇਸਟ ਕਰੋ';
@@ -9807,7 +11166,13 @@ class CupertinoLocalizationPa extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'ਖੋਜੋ';
 
   @override
+  String get searchWebButtonLabel => "ਵੈੱਬ 'ਤੇ ਖੋਜੋ";
+
+  @override
   String get selectAllButtonLabel => 'ਸਭ ਚੁਣੋ';
+
+  @override
+  String get shareButtonLabel => 'ਸਾਂਝਾ ਕਰੋ...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount ਵਿੱਚੋਂ $tabIndex ਟੈਬ';
@@ -9876,32 +11241,32 @@ class CupertinoLocalizationPl extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationPl({
-    String localeName = 'pl',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'pl',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alert';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Wstecz';
+
+  @override
+  String get cancelButtonLabel => 'Anuluj';
+
+  @override
+  String get clearButtonLabel => 'Wyczyść';
 
   @override
   String get copyButtonLabel => 'Kopiuj';
@@ -9952,7 +11317,16 @@ class CupertinoLocalizationPl extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Sprawdź';
+
+  @override
+  String get menuDismissLabel => 'Zamknij menu';
+
+  @override
   String get modalBarrierDismissLabel => 'Zamknij';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Brak wyników zamieniania';
 
   @override
   String get pasteButtonLabel => 'Wklej';
@@ -9964,7 +11338,13 @@ class CupertinoLocalizationPl extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Szukaj';
 
   @override
+  String get searchWebButtonLabel => 'Szukaj w internecie';
+
+  @override
   String get selectAllButtonLabel => 'Wybierz wszystkie';
+
+  @override
+  String get shareButtonLabel => 'Udostępnij…';
 
   @override
   String get tabSemanticsLabelRaw => r'Karta $tabIndex z $tabCount';
@@ -10033,32 +11413,32 @@ class CupertinoLocalizationPt extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationPt({
-    String localeName = 'pt',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'pt',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alerta';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Voltar';
+
+  @override
+  String get cancelButtonLabel => 'Cancelar';
+
+  @override
+  String get clearButtonLabel => 'Limpar';
 
   @override
   String get copyButtonLabel => 'Copiar';
@@ -10109,7 +11489,16 @@ class CupertinoLocalizationPt extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Pesquisar';
+
+  @override
+  String get menuDismissLabel => 'Dispensar menu';
+
+  @override
   String get modalBarrierDismissLabel => 'Dispensar';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nenhuma alternativa encontrada';
 
   @override
   String get pasteButtonLabel => 'Colar';
@@ -10121,7 +11510,13 @@ class CupertinoLocalizationPt extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Pesquisar';
 
   @override
-  String get selectAllButtonLabel => 'Selecionar Tudo';
+  String get searchWebButtonLabel => 'Pesquisar na Web';
+
+  @override
+  String get selectAllButtonLabel => 'Selecionar tudo';
+
+  @override
+  String get shareButtonLabel => 'Compartilhar…';
 
   @override
   String get tabSemanticsLabelRaw => r'Guia $tabIndex de $tabCount';
@@ -10190,26 +11585,35 @@ class CupertinoLocalizationPtPt extends CupertinoLocalizationPt {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationPtPt({
-    String localeName = 'pt_PT',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'pt_PT',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get backButtonLabel => 'Anterior';
+
+  @override
+  String get shareButtonLabel => 'Partilhar…';
+
+  @override
+  String get lookUpButtonLabel => 'Procurar';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Não foram encontradas substituições';
+
+  @override
+  String get menuDismissLabel => 'Ignorar menu';
+
+  @override
+  String get searchTextFieldPlaceholderLabel => 'Pesquise';
 
   @override
   String get tabSemanticsLabelRaw => r'Separador $tabIndex de $tabCount';
@@ -10224,9 +11628,6 @@ class CupertinoLocalizationPtPt extends CupertinoLocalizationPt {
   String get timerPickerSecondLabelOther => 'seg';
 
   @override
-  String get selectAllButtonLabel => 'Selecionar tudo';
-
-  @override
   String get modalBarrierDismissLabel => 'Ignorar';
 }
 
@@ -10236,32 +11637,32 @@ class CupertinoLocalizationRo extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationRo({
-    String localeName = 'ro',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ro',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alertă';
 
   @override
   String get anteMeridiemAbbreviation => 'a.m.';
+
+  @override
+  String get backButtonLabel => 'Înapoi';
+
+  @override
+  String get cancelButtonLabel => 'Anulați';
+
+  @override
+  String get clearButtonLabel => 'Ștergeți';
 
   @override
   String get copyButtonLabel => 'Copiați';
@@ -10312,7 +11713,16 @@ class CupertinoLocalizationRo extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Privire în sus';
+
+  @override
+  String get menuDismissLabel => 'Respingeți meniul';
+
+  @override
   String get modalBarrierDismissLabel => 'Închideți';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nu s-au găsit înlocuiri';
 
   @override
   String get pasteButtonLabel => 'Inserați';
@@ -10324,7 +11734,13 @@ class CupertinoLocalizationRo extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Căutați';
 
   @override
-  String get selectAllButtonLabel => 'Selectați-le pe toate';
+  String get searchWebButtonLabel => 'Căutați pe web';
+
+  @override
+  String get selectAllButtonLabel => 'Selectează tot';
+
+  @override
+  String get shareButtonLabel => 'Trimiteți…';
 
   @override
   String get tabSemanticsLabelRaw => r'Fila $tabIndex din $tabCount';
@@ -10393,32 +11809,32 @@ class CupertinoLocalizationRu extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationRu({
-    String localeName = 'ru',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ru',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Оповещение';
 
   @override
   String get anteMeridiemAbbreviation => 'АМ';
+
+  @override
+  String get backButtonLabel => 'Назад';
+
+  @override
+  String get cancelButtonLabel => 'Отмена';
+
+  @override
+  String get clearButtonLabel => 'Очистить';
 
   @override
   String get copyButtonLabel => 'Копировать';
@@ -10469,7 +11885,16 @@ class CupertinoLocalizationRu extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Найти';
+
+  @override
+  String get menuDismissLabel => 'Закрыть меню';
+
+  @override
   String get modalBarrierDismissLabel => 'Закрыть';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Варианты замены не найдены';
 
   @override
   String get pasteButtonLabel => 'Вставить';
@@ -10481,7 +11906,13 @@ class CupertinoLocalizationRu extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Поиск';
 
   @override
+  String get searchWebButtonLabel => 'Искать в интернете';
+
+  @override
   String get selectAllButtonLabel => 'Выбрать все';
+
+  @override
+  String get shareButtonLabel => 'Поделиться';
 
   @override
   String get tabSemanticsLabelRaw => r'Вкладка $tabIndex из $tabCount';
@@ -10550,32 +11981,32 @@ class CupertinoLocalizationSi extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationSi({
-    String localeName = 'si',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'si',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'ඇඟවීම';
 
   @override
   String get anteMeridiemAbbreviation => 'පෙ.ව.';
+
+  @override
+  String get backButtonLabel => 'Back';
+
+  @override
+  String get cancelButtonLabel => 'අවලංගු කරන්න';
+
+  @override
+  String get clearButtonLabel => 'හිස් කරන්න';
 
   @override
   String get copyButtonLabel => 'පිටපත් කරන්න';
@@ -10626,7 +12057,16 @@ class CupertinoLocalizationSi extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'උඩ බලන්න';
+
+  @override
+  String get menuDismissLabel => 'මෙනුව අස් කරන්න';
+
+  @override
   String get modalBarrierDismissLabel => 'ඉවත ලන්න';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'ප්‍රතිස්ථාපන හමු නොවිණි';
 
   @override
   String get pasteButtonLabel => 'අලවන්න';
@@ -10638,7 +12078,13 @@ class CupertinoLocalizationSi extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'සෙවීම';
 
   @override
+  String get searchWebButtonLabel => 'වෙබය සොයන්න';
+
+  @override
   String get selectAllButtonLabel => 'සියල්ල තෝරන්න';
+
+  @override
+  String get shareButtonLabel => 'බෙදා ගන්න...';
 
   @override
   String get tabSemanticsLabelRaw => r'ටැබ $tabCount න් $tabIndex';
@@ -10707,32 +12153,32 @@ class CupertinoLocalizationSk extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationSk({
-    String localeName = 'sk',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'sk',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Upozornenie';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Späť';
+
+  @override
+  String get cancelButtonLabel => 'Zrušiť';
+
+  @override
+  String get clearButtonLabel => 'Vymazať';
 
   @override
   String get copyButtonLabel => 'Kopírovať';
@@ -10783,7 +12229,16 @@ class CupertinoLocalizationSk extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Pohľad nahor';
+
+  @override
+  String get menuDismissLabel => 'Zavrieť ponuku';
+
+  @override
   String get modalBarrierDismissLabel => 'Odmietnuť';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nenašli sa žiadne náhrady';
 
   @override
   String get pasteButtonLabel => 'Prilepiť';
@@ -10795,7 +12250,13 @@ class CupertinoLocalizationSk extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Hľadať';
 
   @override
-  String get selectAllButtonLabel => 'Vybrať všetko';
+  String get searchWebButtonLabel => 'Hľadať na webe';
+
+  @override
+  String get selectAllButtonLabel => 'Označiť všetko';
+
+  @override
+  String get shareButtonLabel => 'Zdieľať…';
 
   @override
   String get tabSemanticsLabelRaw => r'Karta $tabIndex z $tabCount';
@@ -10864,32 +12325,32 @@ class CupertinoLocalizationSl extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationSl({
-    String localeName = 'sl',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'sl',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Opozorilo';
 
   @override
   String get anteMeridiemAbbreviation => 'DOP.';
+
+  @override
+  String get backButtonLabel => 'Nazaj';
+
+  @override
+  String get cancelButtonLabel => 'Prekliči';
+
+  @override
+  String get clearButtonLabel => 'Počisti';
 
   @override
   String get copyButtonLabel => 'Kopiraj';
@@ -10940,7 +12401,16 @@ class CupertinoLocalizationSl extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Pogled gor';
+
+  @override
+  String get menuDismissLabel => 'Opusti meni';
+
+  @override
   String get modalBarrierDismissLabel => 'Opusti';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Ni zamenjav';
 
   @override
   String get pasteButtonLabel => 'Prilepi';
@@ -10952,7 +12422,13 @@ class CupertinoLocalizationSl extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Iskanje';
 
   @override
+  String get searchWebButtonLabel => 'Iskanje v spletu';
+
+  @override
   String get selectAllButtonLabel => 'Izberi vse';
+
+  @override
+  String get shareButtonLabel => 'Deli …';
 
   @override
   String get tabSemanticsLabelRaw => r'Zavihek $tabIndex od $tabCount';
@@ -11021,32 +12497,32 @@ class CupertinoLocalizationSq extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationSq({
-    String localeName = 'sq',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'sq',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Sinjalizim';
 
   @override
   String get anteMeridiemAbbreviation => 'paradite';
+
+  @override
+  String get backButtonLabel => 'Prapa';
+
+  @override
+  String get cancelButtonLabel => 'Anulo';
+
+  @override
+  String get clearButtonLabel => 'Pastro';
 
   @override
   String get copyButtonLabel => 'Kopjo';
@@ -11097,7 +12573,16 @@ class CupertinoLocalizationSq extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Kërko';
+
+  @override
+  String get menuDismissLabel => 'Hiqe menynë';
+
+  @override
   String get modalBarrierDismissLabel => 'Hiq';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nuk u gjetën zëvendësime';
 
   @override
   String get pasteButtonLabel => 'Ngjit';
@@ -11109,7 +12594,13 @@ class CupertinoLocalizationSq extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Kërko';
 
   @override
+  String get searchWebButtonLabel => 'Kërko në ueb';
+
+  @override
   String get selectAllButtonLabel => 'Zgjidhi të gjitha';
+
+  @override
+  String get shareButtonLabel => 'Ndaj...';
 
   @override
   String get tabSemanticsLabelRaw => r'Skeda $tabIndex nga $tabCount';
@@ -11178,32 +12669,32 @@ class CupertinoLocalizationSr extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationSr({
-    String localeName = 'sr',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'sr',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Обавештење';
 
   @override
   String get anteMeridiemAbbreviation => 'пре подне';
+
+  @override
+  String get backButtonLabel => 'Назад';
+
+  @override
+  String get cancelButtonLabel => 'Откажи';
+
+  @override
+  String get clearButtonLabel => 'Обриши';
 
   @override
   String get copyButtonLabel => 'Копирај';
@@ -11254,7 +12745,16 @@ class CupertinoLocalizationSr extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Поглед нагоре';
+
+  @override
+  String get menuDismissLabel => 'Одбаците мени';
+
+  @override
   String get modalBarrierDismissLabel => 'Одбаци';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Нису пронађене замене';
 
   @override
   String get pasteButtonLabel => 'Налепи';
@@ -11263,10 +12763,16 @@ class CupertinoLocalizationSr extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'по подне';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Претрага';
+  String get searchTextFieldPlaceholderLabel => 'Претражите';
+
+  @override
+  String get searchWebButtonLabel => 'Претражи веб';
 
   @override
   String get selectAllButtonLabel => 'Изабери све';
+
+  @override
+  String get shareButtonLabel => 'Дели…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabIndex. картица од $tabCount';
@@ -11335,26 +12841,17 @@ class CupertinoLocalizationSrCyrl extends CupertinoLocalizationSr {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationSrCyrl({
-    String localeName = 'sr_Cyrl',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'sr_Cyrl',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 }
 
 /// The translations for Serbian, using the Latin script (`sr_Latn`).
@@ -11363,32 +12860,32 @@ class CupertinoLocalizationSrLatn extends CupertinoLocalizationSr {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationSrLatn({
-    String localeName = 'sr_Latn',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'sr_Latn',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Obaveštenje';
 
   @override
   String get anteMeridiemAbbreviation => 'pre podne';
+
+  @override
+  String get backButtonLabel => 'Nazad';
+
+  @override
+  String get cancelButtonLabel => 'Otkaži';
+
+  @override
+  String get clearButtonLabel => 'Obriši';
 
   @override
   String get copyButtonLabel => 'Kopiraj';
@@ -11415,7 +12912,16 @@ class CupertinoLocalizationSrLatn extends CupertinoLocalizationSr {
   String get datePickerMinuteSemanticsLabelOther => r'$minute minuta';
 
   @override
+  String get lookUpButtonLabel => 'Pogled nagore';
+
+  @override
+  String get menuDismissLabel => 'Odbacite meni';
+
+  @override
   String get modalBarrierDismissLabel => 'Odbaci';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Nisu pronađene zamene';
 
   @override
   String get pasteButtonLabel => 'Nalepi';
@@ -11424,10 +12930,16 @@ class CupertinoLocalizationSrLatn extends CupertinoLocalizationSr {
   String get postMeridiemAbbreviation => 'po podne';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Pretraga';
+  String get searchTextFieldPlaceholderLabel => 'Pretražite';
+
+  @override
+  String get searchWebButtonLabel => 'Pretraži veb';
 
   @override
   String get selectAllButtonLabel => 'Izaberi sve';
+
+  @override
+  String get shareButtonLabel => 'Deli…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabIndex. kartica od $tabCount';
@@ -11469,32 +12981,32 @@ class CupertinoLocalizationSv extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationSv({
-    String localeName = 'sv',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'sv',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Varning';
 
   @override
   String get anteMeridiemAbbreviation => 'FM';
+
+  @override
+  String get backButtonLabel => 'Tillbaka';
+
+  @override
+  String get cancelButtonLabel => 'Avbryt';
+
+  @override
+  String get clearButtonLabel => 'Rensa';
 
   @override
   String get copyButtonLabel => 'Kopiera';
@@ -11545,7 +13057,16 @@ class CupertinoLocalizationSv extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Titta upp';
+
+  @override
+  String get menuDismissLabel => 'Stäng menyn';
+
+  @override
   String get modalBarrierDismissLabel => 'Stäng';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Inga ersättningar hittades';
 
   @override
   String get pasteButtonLabel => 'Klistra in';
@@ -11557,7 +13078,13 @@ class CupertinoLocalizationSv extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Sök';
 
   @override
-  String get selectAllButtonLabel => 'Markera alla';
+  String get searchWebButtonLabel => 'Sök på webben';
+
+  @override
+  String get selectAllButtonLabel => 'Markera allt';
+
+  @override
+  String get shareButtonLabel => 'Dela …';
 
   @override
   String get tabSemanticsLabelRaw => r'Flik $tabIndex av $tabCount';
@@ -11626,32 +13153,32 @@ class CupertinoLocalizationSw extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationSw({
-    String localeName = 'sw',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'sw',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Arifa';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Nyuma';
+
+  @override
+  String get cancelButtonLabel => 'Ghairi';
+
+  @override
+  String get clearButtonLabel => 'Futa';
 
   @override
   String get copyButtonLabel => 'Nakili';
@@ -11702,7 +13229,16 @@ class CupertinoLocalizationSw extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Tafuta';
+
+  @override
+  String get menuDismissLabel => 'Ondoa menyu';
+
+  @override
   String get modalBarrierDismissLabel => 'Ondoa';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Hakuna Neno Mbadala Lilopatikana';
 
   @override
   String get pasteButtonLabel => 'Bandika';
@@ -11714,7 +13250,13 @@ class CupertinoLocalizationSw extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Tafuta';
 
   @override
+  String get searchWebButtonLabel => 'Tafuta kwenye Wavuti';
+
+  @override
   String get selectAllButtonLabel => 'Teua Zote';
+
+  @override
+  String get shareButtonLabel => 'Shiriki...';
 
   @override
   String get tabSemanticsLabelRaw => r'Kichupo cha $tabIndex kati ya $tabCount';
@@ -11783,32 +13325,32 @@ class CupertinoLocalizationTa extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationTa({
-    String localeName = 'ta',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ta',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'விழிப்பூட்டல்';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'பின்செல்';
+
+  @override
+  String get cancelButtonLabel => 'ரத்துசெய்';
+
+  @override
+  String get clearButtonLabel => 'அழி';
 
   @override
   String get copyButtonLabel => 'நகலெடு';
@@ -11859,7 +13401,16 @@ class CupertinoLocalizationTa extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'தேடு';
+
+  @override
+  String get menuDismissLabel => 'மெனுவை மூடும்';
+
+  @override
   String get modalBarrierDismissLabel => 'நிராகரிக்கும்';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'மாற்று வார்த்தைகள் கிடைக்கவில்லை';
 
   @override
   String get pasteButtonLabel => 'ஒட்டு';
@@ -11871,7 +13422,13 @@ class CupertinoLocalizationTa extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'தேடுக';
 
   @override
+  String get searchWebButtonLabel => 'இணையத்தில் தேடு';
+
+  @override
   String get selectAllButtonLabel => 'எல்லாம் தேர்ந்தெடு';
+
+  @override
+  String get shareButtonLabel => 'பகிர்...';
 
   @override
   String get tabSemanticsLabelRaw => r'தாவல் $tabIndex / $tabCount';
@@ -11940,26 +13497,17 @@ class CupertinoLocalizationTe extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationTe({
-    String localeName = 'te',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'te',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'అలర్ట్';
@@ -11968,10 +13516,19 @@ class CupertinoLocalizationTe extends GlobalCupertinoLocalizations {
   String get anteMeridiemAbbreviation => 'AM';
 
   @override
+  String get backButtonLabel => 'Back';
+
+  @override
+  String get cancelButtonLabel => 'రద్దు చేయండి';
+
+  @override
+  String get clearButtonLabel => 'క్లియర్ చేయండి';
+
+  @override
   String get copyButtonLabel => 'కాపీ చేయి';
 
   @override
-  String get cutButtonLabel => 'కత్తిరించు';
+  String get cutButtonLabel => 'కత్తిరించండి';
 
   @override
   String get datePickerDateOrderString => 'mdy';
@@ -12016,19 +13573,34 @@ class CupertinoLocalizationTe extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'వెతకండి';
+
+  @override
+  String get menuDismissLabel => 'మెనూను తీసివేయండి';
+
+  @override
   String get modalBarrierDismissLabel => 'విస్మరించు';
 
   @override
-  String get pasteButtonLabel => 'అతికించు';
+  String get noSpellCheckReplacementsLabel => 'రీప్లేస్‌మెంట్‌లు ఏవీ కనుగొనబడలేదు';
+
+  @override
+  String get pasteButtonLabel => 'పేస్ట్ చేయండి';
 
   @override
   String get postMeridiemAbbreviation => 'PM';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'సెర్చ్ చేయండి';
+  String get searchTextFieldPlaceholderLabel => 'సెర్చ్';
+
+  @override
+  String get searchWebButtonLabel => 'వెబ్‌లో సెర్చ్ చేయండి';
 
   @override
   String get selectAllButtonLabel => 'అన్నింటినీ ఎంచుకోండి';
+
+  @override
+  String get shareButtonLabel => 'షేర్ చేయండి...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCountలో $tabIndexవ ట్యాబ్';
@@ -12097,32 +13669,32 @@ class CupertinoLocalizationTh extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationTh({
-    String localeName = 'th',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'th',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'การแจ้งเตือน';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'กลับ';
+
+  @override
+  String get cancelButtonLabel => 'ยกเลิก';
+
+  @override
+  String get clearButtonLabel => 'ล้าง';
 
   @override
   String get copyButtonLabel => 'คัดลอก';
@@ -12173,7 +13745,16 @@ class CupertinoLocalizationTh extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'ค้นหา';
+
+  @override
+  String get menuDismissLabel => 'ปิดเมนู';
+
+  @override
   String get modalBarrierDismissLabel => 'ปิด';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'ไม่พบรายการแทนที่';
 
   @override
   String get pasteButtonLabel => 'วาง';
@@ -12185,7 +13766,13 @@ class CupertinoLocalizationTh extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'ค้นหา';
 
   @override
+  String get searchWebButtonLabel => 'ค้นหาบนอินเทอร์เน็ต';
+
+  @override
   String get selectAllButtonLabel => 'เลือกทั้งหมด';
+
+  @override
+  String get shareButtonLabel => 'แชร์...';
 
   @override
   String get tabSemanticsLabelRaw => r'แท็บที่ $tabIndex จาก $tabCount';
@@ -12254,32 +13841,32 @@ class CupertinoLocalizationTl extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationTl({
-    String localeName = 'tl',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'tl',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Alerto';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Bumalik';
+
+  @override
+  String get cancelButtonLabel => 'Kanselahin';
+
+  @override
+  String get clearButtonLabel => 'I-clear';
 
   @override
   String get copyButtonLabel => 'Kopyahin';
@@ -12330,7 +13917,16 @@ class CupertinoLocalizationTl extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Tumingin sa Itaas';
+
+  @override
+  String get menuDismissLabel => 'I-dismiss ang menu';
+
+  @override
   String get modalBarrierDismissLabel => 'I-dismiss';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Walang Nahanap na Kapalit';
 
   @override
   String get pasteButtonLabel => 'I-paste';
@@ -12339,10 +13935,16 @@ class CupertinoLocalizationTl extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'PM';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Maghanap';
+  String get searchTextFieldPlaceholderLabel => 'Hanapin';
+
+  @override
+  String get searchWebButtonLabel => 'Maghanap sa Web';
 
   @override
   String get selectAllButtonLabel => 'Piliin Lahat';
+
+  @override
+  String get shareButtonLabel => 'Ibahagi...';
 
   @override
   String get tabSemanticsLabelRaw => r'Tab $tabIndex ng $tabCount';
@@ -12411,32 +14013,32 @@ class CupertinoLocalizationTr extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationTr({
-    String localeName = 'tr',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'tr',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Uyarı';
 
   @override
   String get anteMeridiemAbbreviation => 'ÖÖ';
+
+  @override
+  String get backButtonLabel => 'Geri';
+
+  @override
+  String get cancelButtonLabel => 'İptal';
+
+  @override
+  String get clearButtonLabel => 'Temizle';
 
   @override
   String get copyButtonLabel => 'Kopyala';
@@ -12487,7 +14089,16 @@ class CupertinoLocalizationTr extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Ara';
+
+  @override
+  String get menuDismissLabel => 'Menüyü kapat';
+
+  @override
   String get modalBarrierDismissLabel => 'Kapat';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Yerine Kelime Bulunamadı';
 
   @override
   String get pasteButtonLabel => 'Yapıştır';
@@ -12499,7 +14110,13 @@ class CupertinoLocalizationTr extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Ara';
 
   @override
+  String get searchWebButtonLabel => "Web'de Ara";
+
+  @override
   String get selectAllButtonLabel => 'Tümünü Seç';
+
+  @override
+  String get shareButtonLabel => 'Paylaş...';
 
   @override
   String get tabSemanticsLabelRaw => r'Sekme $tabIndex/$tabCount';
@@ -12562,38 +14179,210 @@ class CupertinoLocalizationTr extends GlobalCupertinoLocalizations {
   String get todayLabel => 'Bugün';
 }
 
+/// The translations for Uighur Uyghur (`ug`).
+class CupertinoLocalizationUg extends GlobalCupertinoLocalizations {
+  /// Create an instance of the translation bundle for Uighur Uyghur.
+  ///
+  /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
+  const CupertinoLocalizationUg({
+    super.localeName = 'ug',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get alertDialogLabel => 'ئاگاھلاندۇرۇش';
+
+  @override
+  String get anteMeridiemAbbreviation => 'چۈشتىن بۇرۇن';
+
+  @override
+  String get backButtonLabel => 'Back';
+
+  @override
+  String get cancelButtonLabel => 'بىكار قىلىش';
+
+  @override
+  String get clearButtonLabel => 'تازىلاش';
+
+  @override
+  String get copyButtonLabel => 'كۆچۈرۈش';
+
+  @override
+  String get cutButtonLabel => 'كېسىش';
+
+  @override
+  String get datePickerDateOrderString => 'ymd';
+
+  @override
+  String get datePickerDateTimeOrderString => 'date_dayPeriod_time';
+
+  @override
+  String? get datePickerHourSemanticsLabelFew => null;
+
+  @override
+  String? get datePickerHourSemanticsLabelMany => null;
+
+  @override
+  String? get datePickerHourSemanticsLabelOne => r'سائەت $hour';
+
+  @override
+  String get datePickerHourSemanticsLabelOther => r'سائەت $hour';
+
+  @override
+  String? get datePickerHourSemanticsLabelTwo => null;
+
+  @override
+  String? get datePickerHourSemanticsLabelZero => null;
+
+  @override
+  String? get datePickerMinuteSemanticsLabelFew => null;
+
+  @override
+  String? get datePickerMinuteSemanticsLabelMany => null;
+
+  @override
+  String? get datePickerMinuteSemanticsLabelOne => '1 مىنۇت';
+
+  @override
+  String get datePickerMinuteSemanticsLabelOther => r'$minute مىنۇت';
+
+  @override
+  String? get datePickerMinuteSemanticsLabelTwo => null;
+
+  @override
+  String? get datePickerMinuteSemanticsLabelZero => null;
+
+  @override
+  String get lookUpButtonLabel => 'ئىزدەش';
+
+  @override
+  String get menuDismissLabel => 'تىزىملىكنى بىكار قىلىش';
+
+  @override
+  String get modalBarrierDismissLabel => 'بىكار قىلىش';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'ئالماشتۇرىدىغان مەزمۇن تېپىلمىدى';
+
+  @override
+  String get pasteButtonLabel => 'چاپلاش';
+
+  @override
+  String get postMeridiemAbbreviation => 'چۈشتىن كېيىن';
+
+  @override
+  String get searchTextFieldPlaceholderLabel => 'ئىزدەش';
+
+  @override
+  String get searchWebButtonLabel => 'توردا ئىزدەش';
+
+  @override
+  String get selectAllButtonLabel => 'ھەممىنى تاللاش';
+
+  @override
+  String get shareButtonLabel => 'ھەمبەھرلەش...';
+
+  @override
+  String get tabSemanticsLabelRaw => r'بەتكۈچ $tabIndex جەمئىي $tabCount';
+
+  @override
+  String? get timerPickerHourLabelFew => null;
+
+  @override
+  String? get timerPickerHourLabelMany => null;
+
+  @override
+  String? get timerPickerHourLabelOne => 'سائەت';
+
+  @override
+  String get timerPickerHourLabelOther => 'سائەت';
+
+  @override
+  String? get timerPickerHourLabelTwo => null;
+
+  @override
+  String? get timerPickerHourLabelZero => null;
+
+  @override
+  String? get timerPickerMinuteLabelFew => null;
+
+  @override
+  String? get timerPickerMinuteLabelMany => null;
+
+  @override
+  String? get timerPickerMinuteLabelOne => 'مىنۇت';
+
+  @override
+  String get timerPickerMinuteLabelOther => 'مىنۇت';
+
+  @override
+  String? get timerPickerMinuteLabelTwo => null;
+
+  @override
+  String? get timerPickerMinuteLabelZero => null;
+
+  @override
+  String? get timerPickerSecondLabelFew => null;
+
+  @override
+  String? get timerPickerSecondLabelMany => null;
+
+  @override
+  String? get timerPickerSecondLabelOne => 'سېكۇنت';
+
+  @override
+  String get timerPickerSecondLabelOther => 'سېكۇنت';
+
+  @override
+  String? get timerPickerSecondLabelTwo => null;
+
+  @override
+  String? get timerPickerSecondLabelZero => null;
+
+  @override
+  String get todayLabel => 'بۈگۈن';
+}
+
 /// The translations for Ukrainian (`uk`).
 class CupertinoLocalizationUk extends GlobalCupertinoLocalizations {
   /// Create an instance of the translation bundle for Ukrainian.
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationUk({
-    String localeName = 'uk',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'uk',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Сповіщення';
 
   @override
   String get anteMeridiemAbbreviation => 'дп';
+
+  @override
+  String get backButtonLabel => 'Назад';
+
+  @override
+  String get cancelButtonLabel => 'Скасувати';
+
+  @override
+  String get clearButtonLabel => 'Очистити';
 
   @override
   String get copyButtonLabel => 'Копіювати';
@@ -12644,7 +14433,16 @@ class CupertinoLocalizationUk extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Шукати';
+
+  @override
+  String get menuDismissLabel => 'Закрити меню';
+
+  @override
   String get modalBarrierDismissLabel => 'Закрити';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Замін не знайдено';
 
   @override
   String get pasteButtonLabel => 'Вставити';
@@ -12653,10 +14451,16 @@ class CupertinoLocalizationUk extends GlobalCupertinoLocalizations {
   String get postMeridiemAbbreviation => 'пп';
 
   @override
-  String get searchTextFieldPlaceholderLabel => 'Пошук';
+  String get searchTextFieldPlaceholderLabel => 'Шукайте';
+
+  @override
+  String get searchWebButtonLabel => 'Пошук в Інтернеті';
 
   @override
   String get selectAllButtonLabel => 'Вибрати все';
+
+  @override
+  String get shareButtonLabel => 'Поділитися…';
 
   @override
   String get tabSemanticsLabelRaw => r'Вкладка $tabIndex з $tabCount';
@@ -12725,32 +14529,32 @@ class CupertinoLocalizationUr extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationUr({
-    String localeName = 'ur',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'ur',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'الرٹ';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Back';
+
+  @override
+  String get cancelButtonLabel => 'منسوخ کریں';
+
+  @override
+  String get clearButtonLabel => 'صاف کریں';
 
   @override
   String get copyButtonLabel => 'کاپی کریں';
@@ -12801,7 +14605,16 @@ class CupertinoLocalizationUr extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'تفصیل دیکھیں';
+
+  @override
+  String get menuDismissLabel => 'مینو برخاست کریں';
+
+  @override
   String get modalBarrierDismissLabel => 'برخاست کریں';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'کوئی تبدیلیاں نہیں ملیں';
 
   @override
   String get pasteButtonLabel => 'پیسٹ کریں';
@@ -12813,7 +14626,13 @@ class CupertinoLocalizationUr extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'تلاش کریں';
 
   @override
+  String get searchWebButtonLabel => 'ویب تلاش کریں';
+
+  @override
   String get selectAllButtonLabel => 'سبھی منتخب کریں';
+
+  @override
+  String get shareButtonLabel => 'اشتراک کریں...';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount میں سے $tabIndex ٹیب';
@@ -12882,32 +14701,32 @@ class CupertinoLocalizationUz extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationUz({
-    String localeName = 'uz',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'uz',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Ogohlantirish';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Orqaga';
+
+  @override
+  String get cancelButtonLabel => 'Bekor qilish';
+
+  @override
+  String get clearButtonLabel => 'Tozalash';
 
   @override
   String get copyButtonLabel => 'Nusxa olish';
@@ -12958,7 +14777,16 @@ class CupertinoLocalizationUz extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Tepaga qarang';
+
+  @override
+  String get menuDismissLabel => 'Menyuni yopish';
+
+  @override
   String get modalBarrierDismissLabel => 'Yopish';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Almashtirish uchun soʻz topilmadi';
 
   @override
   String get pasteButtonLabel => 'Joylash';
@@ -12970,7 +14798,13 @@ class CupertinoLocalizationUz extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Qidiruv';
 
   @override
+  String get searchWebButtonLabel => 'Internetdan qidirish';
+
+  @override
   String get selectAllButtonLabel => 'Barchasini tanlash';
+
+  @override
+  String get shareButtonLabel => 'Ulashish…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount varaqdan $tabIndex';
@@ -13039,32 +14873,32 @@ class CupertinoLocalizationVi extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationVi({
-    String localeName = 'vi',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'vi',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Thông báo';
 
   @override
   String get anteMeridiemAbbreviation => 'SÁNG';
+
+  @override
+  String get backButtonLabel => 'Quay lại';
+
+  @override
+  String get cancelButtonLabel => 'Huỷ';
+
+  @override
+  String get clearButtonLabel => 'Xoá';
 
   @override
   String get copyButtonLabel => 'Sao chép';
@@ -13115,7 +14949,16 @@ class CupertinoLocalizationVi extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Tra cứu';
+
+  @override
+  String get menuDismissLabel => 'Đóng trình đơn';
+
+  @override
   String get modalBarrierDismissLabel => 'Bỏ qua';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Không tìm thấy phương án thay thế';
 
   @override
   String get pasteButtonLabel => 'Dán';
@@ -13127,7 +14970,13 @@ class CupertinoLocalizationVi extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Tìm kiếm';
 
   @override
+  String get searchWebButtonLabel => 'Tìm kiếm trên web';
+
+  @override
   String get selectAllButtonLabel => 'Chọn tất cả';
+
+  @override
+  String get shareButtonLabel => 'Chia sẻ...';
 
   @override
   String get tabSemanticsLabelRaw => r'Thẻ $tabIndex/$tabCount';
@@ -13196,32 +15045,32 @@ class CupertinoLocalizationZh extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationZh({
-    String localeName = 'zh',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'zh',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => '提醒';
 
   @override
   String get anteMeridiemAbbreviation => '上午';
+
+  @override
+  String get backButtonLabel => '返回';
+
+  @override
+  String get cancelButtonLabel => '取消';
+
+  @override
+  String get clearButtonLabel => '清除';
 
   @override
   String get copyButtonLabel => '复制';
@@ -13272,7 +15121,16 @@ class CupertinoLocalizationZh extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => '查询';
+
+  @override
+  String get menuDismissLabel => '关闭菜单';
+
+  @override
   String get modalBarrierDismissLabel => '关闭';
+
+  @override
+  String get noSpellCheckReplacementsLabel => '找不到替换文字';
 
   @override
   String get pasteButtonLabel => '粘贴';
@@ -13284,7 +15142,13 @@ class CupertinoLocalizationZh extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => '搜索';
 
   @override
+  String get searchWebButtonLabel => '搜索';
+
+  @override
   String get selectAllButtonLabel => '全选';
+
+  @override
+  String get shareButtonLabel => '共享…';
 
   @override
   String get tabSemanticsLabelRaw => r'第 $tabIndex 个标签，共 $tabCount 个';
@@ -13353,26 +15217,17 @@ class CupertinoLocalizationZhHans extends CupertinoLocalizationZh {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationZhHans({
-    String localeName = 'zh_Hans',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'zh_Hans',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -13381,26 +15236,17 @@ class CupertinoLocalizationZhHant extends CupertinoLocalizationZh {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationZhHant({
-    String localeName = 'zh_Hant',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'zh_Hant',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => '通知';
@@ -13427,7 +15273,16 @@ class CupertinoLocalizationZhHant extends CupertinoLocalizationZh {
   String get datePickerMinuteSemanticsLabelOther => r'$minute 分鐘';
 
   @override
+  String get lookUpButtonLabel => '查詢';
+
+  @override
+  String get menuDismissLabel => '閂選單';
+
+  @override
   String get modalBarrierDismissLabel => '拒絕';
+
+  @override
+  String get noSpellCheckReplacementsLabel => '找不到替換字詞';
 
   @override
   String get pasteButtonLabel => '貼上';
@@ -13436,7 +15291,13 @@ class CupertinoLocalizationZhHant extends CupertinoLocalizationZh {
   String get searchTextFieldPlaceholderLabel => '搜尋';
 
   @override
+  String get searchWebButtonLabel => '搜尋';
+
+  @override
   String get selectAllButtonLabel => '全選';
+
+  @override
+  String get shareButtonLabel => '分享…';
 
   @override
   String get tabSemanticsLabelRaw => r'$tabCount 個分頁中嘅第 $tabIndex 個';
@@ -13460,26 +15321,17 @@ class CupertinoLocalizationZhHantHk extends CupertinoLocalizationZhHant {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationZhHantHk({
-    String localeName = 'zh_Hant_HK',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'zh_Hant_HK',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 }
 
 /// The translations for Chinese, as used in Taiwan, using the Han script (`zh_Hant_TW`).
@@ -13488,26 +15340,23 @@ class CupertinoLocalizationZhHantTw extends CupertinoLocalizationZhHant {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationZhHantTw({
-    String localeName = 'zh_Hant_TW',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'zh_Hant_TW',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
+
+  @override
+  String get noSpellCheckReplacementsLabel => '找不到替代文字';
+
+  @override
+  String get menuDismissLabel => '關閉選單';
 
   @override
   String get tabSemanticsLabelRaw => r'第 $tabIndex 個分頁標籤，共 $tabCount 個';
@@ -13540,32 +15389,32 @@ class CupertinoLocalizationZu extends GlobalCupertinoLocalizations {
   ///
   /// For details on the meaning of the arguments, see [GlobalCupertinoLocalizations].
   const CupertinoLocalizationZu({
-    String localeName = 'zu',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat dayFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat singleDigitHourFormat,
-    required intl.DateFormat singleDigitMinuteFormat,
-    required intl.DateFormat doubleDigitMinuteFormat,
-    required intl.DateFormat singleDigitSecondFormat,
-    required intl.NumberFormat decimalFormat,
-  }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    dayFormat: dayFormat,
-    mediumDateFormat: mediumDateFormat,
-    singleDigitHourFormat: singleDigitHourFormat,
-    singleDigitMinuteFormat: singleDigitMinuteFormat,
-    doubleDigitMinuteFormat: doubleDigitMinuteFormat,
-    singleDigitSecondFormat: singleDigitSecondFormat,
-    decimalFormat: decimalFormat,
-  );
+    super.localeName = 'zu',
+    required super.fullYearFormat,
+    required super.dayFormat,
+    required super.weekdayFormat,
+    required super.mediumDateFormat,
+    required super.singleDigitHourFormat,
+    required super.singleDigitMinuteFormat,
+    required super.doubleDigitMinuteFormat,
+    required super.singleDigitSecondFormat,
+    required super.decimalFormat,
+  });
 
   @override
   String get alertDialogLabel => 'Isexwayiso';
 
   @override
   String get anteMeridiemAbbreviation => 'AM';
+
+  @override
+  String get backButtonLabel => 'Emuva';
+
+  @override
+  String get cancelButtonLabel => 'Khansela';
+
+  @override
+  String get clearButtonLabel => 'Sula';
 
   @override
   String get copyButtonLabel => 'Kopisha';
@@ -13616,7 +15465,16 @@ class CupertinoLocalizationZu extends GlobalCupertinoLocalizations {
   String? get datePickerMinuteSemanticsLabelZero => null;
 
   @override
+  String get lookUpButtonLabel => 'Bheka Phezulu';
+
+  @override
+  String get menuDismissLabel => 'Chitha imenyu';
+
+  @override
   String get modalBarrierDismissLabel => 'Cashisa';
+
+  @override
+  String get noSpellCheckReplacementsLabel => 'Akukho Okuzofakwa Esikhundleni Okutholakele';
 
   @override
   String get pasteButtonLabel => 'Namathisela';
@@ -13628,7 +15486,13 @@ class CupertinoLocalizationZu extends GlobalCupertinoLocalizations {
   String get searchTextFieldPlaceholderLabel => 'Sesha';
 
   @override
+  String get searchWebButtonLabel => 'Sesha Iwebhu';
+
+  @override
   String get selectAllButtonLabel => 'Khetha konke';
+
+  @override
+  String get shareButtonLabel => 'Yabelana...';
 
   @override
   String get tabSemanticsLabelRaw => r'Ithebhu $tabIndex kwangu-$tabCount';
@@ -13711,9 +15575,11 @@ final Set<String> kCupertinoSupportedLanguages = HashSet<String>.from(const <Str
   'be', // Belarusian
   'bg', // Bulgarian
   'bn', // Bengali Bangla
+  'bo', // Tibetan
   'bs', // Bosnian
   'ca', // Catalan Valencian
   'cs', // Czech
+  'cy', // Welsh
   'da', // Danish
   'de', // German
   'el', // Modern Greek
@@ -13725,6 +15591,7 @@ final Set<String> kCupertinoSupportedLanguages = HashSet<String>.from(const <Str
   'fi', // Finnish
   'fil', // Filipino Pilipino
   'fr', // French
+  'ga', // Irish
   'gl', // Galician
   'gsw', // Swiss German Alemannic Alsatian
   'gu', // Gujarati
@@ -13774,6 +15641,7 @@ final Set<String> kCupertinoSupportedLanguages = HashSet<String>.from(const <Str
   'th', // Thai
   'tl', // Tagalog
   'tr', // Turkish
+  'ug', // Uighur Uyghur
   'uk', // Ukrainian
   'ur', // Urdu
   'uz', // Uzbek
@@ -13800,9 +15668,11 @@ final Set<String> kCupertinoSupportedLanguages = HashSet<String>.from(const <Str
 ///  * `be` - Belarusian
 ///  * `bg` - Bulgarian
 ///  * `bn` - Bengali Bangla
+///  * `bo` - Tibetan
 ///  * `bs` - Bosnian
 ///  * `ca` - Catalan Valencian
 ///  * `cs` - Czech
+///  * `cy` - Welsh
 ///  * `da` - Danish
 ///  * `de` - German (plus one country variation)
 ///  * `el` - Modern Greek
@@ -13814,6 +15684,7 @@ final Set<String> kCupertinoSupportedLanguages = HashSet<String>.from(const <Str
 ///  * `fi` - Finnish
 ///  * `fil` - Filipino Pilipino
 ///  * `fr` - French (plus one country variation)
+///  * `ga` - Irish
 ///  * `gl` - Galician
 ///  * `gsw` - Swiss German Alemannic Alsatian
 ///  * `gu` - Gujarati
@@ -13863,6 +15734,7 @@ final Set<String> kCupertinoSupportedLanguages = HashSet<String>.from(const <Str
 ///  * `th` - Thai
 ///  * `tl` - Tagalog
 ///  * `tr` - Turkish
+///  * `ug` - Uighur Uyghur
 ///  * `uk` - Ukrainian
 ///  * `ur` - Urdu
 ///  * `uz` - Uzbek
@@ -13877,6 +15749,7 @@ GlobalCupertinoLocalizations? getCupertinoTranslation(
   Locale locale,
   intl.DateFormat fullYearFormat,
   intl.DateFormat dayFormat,
+  intl.DateFormat weekdayFormat,
   intl.DateFormat mediumDateFormat,
   intl.DateFormat singleDigitHourFormat,
   intl.DateFormat singleDigitMinuteFormat,
@@ -13886,266 +15759,274 @@ GlobalCupertinoLocalizations? getCupertinoTranslation(
 ) {
   switch (locale.languageCode) {
     case 'af':
-      return CupertinoLocalizationAf(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationAf(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'am':
-      return CupertinoLocalizationAm(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationAm(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ar':
-      return CupertinoLocalizationAr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationAr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'as':
-      return CupertinoLocalizationAs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationAs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'az':
-      return CupertinoLocalizationAz(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationAz(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'be':
-      return CupertinoLocalizationBe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationBe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'bg':
-      return CupertinoLocalizationBg(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationBg(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'bn':
-      return CupertinoLocalizationBn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationBn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+    case 'bo':
+      return CupertinoLocalizationBo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'bs':
-      return CupertinoLocalizationBs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationBs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ca':
-      return CupertinoLocalizationCa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationCa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'cs':
-      return CupertinoLocalizationCs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationCs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+    case 'cy':
+      return CupertinoLocalizationCy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'da':
-      return CupertinoLocalizationDa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationDa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'de': {
       switch (locale.countryCode) {
         case 'CH':
-          return CupertinoLocalizationDeCh(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationDeCh(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
       }
-      return CupertinoLocalizationDe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationDe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     }
     case 'el':
-      return CupertinoLocalizationEl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationEl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'en': {
       switch (locale.countryCode) {
         case 'AU':
-          return CupertinoLocalizationEnAu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEnAu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'CA':
-          return CupertinoLocalizationEnCa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEnCa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'GB':
-          return CupertinoLocalizationEnGb(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEnGb(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'IE':
-          return CupertinoLocalizationEnIe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEnIe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'IN':
-          return CupertinoLocalizationEnIn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEnIn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'NZ':
-          return CupertinoLocalizationEnNz(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEnNz(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'SG':
-          return CupertinoLocalizationEnSg(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEnSg(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'ZA':
-          return CupertinoLocalizationEnZa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEnZa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
       }
-      return CupertinoLocalizationEn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationEn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     }
     case 'es': {
       switch (locale.countryCode) {
         case '419':
-          return CupertinoLocalizationEs419(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEs419(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'AR':
-          return CupertinoLocalizationEsAr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsAr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'BO':
-          return CupertinoLocalizationEsBo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsBo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'CL':
-          return CupertinoLocalizationEsCl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsCl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'CO':
-          return CupertinoLocalizationEsCo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsCo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'CR':
-          return CupertinoLocalizationEsCr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsCr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'DO':
-          return CupertinoLocalizationEsDo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsDo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'EC':
-          return CupertinoLocalizationEsEc(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsEc(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'GT':
-          return CupertinoLocalizationEsGt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsGt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'HN':
-          return CupertinoLocalizationEsHn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsHn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'MX':
-          return CupertinoLocalizationEsMx(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsMx(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'NI':
-          return CupertinoLocalizationEsNi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsNi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'PA':
-          return CupertinoLocalizationEsPa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsPa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'PE':
-          return CupertinoLocalizationEsPe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsPe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'PR':
-          return CupertinoLocalizationEsPr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsPr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'PY':
-          return CupertinoLocalizationEsPy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsPy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'SV':
-          return CupertinoLocalizationEsSv(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsSv(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'US':
-          return CupertinoLocalizationEsUs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsUs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'UY':
-          return CupertinoLocalizationEsUy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsUy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'VE':
-          return CupertinoLocalizationEsVe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationEsVe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
       }
-      return CupertinoLocalizationEs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationEs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     }
     case 'et':
-      return CupertinoLocalizationEt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationEt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'eu':
-      return CupertinoLocalizationEu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationEu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'fa':
-      return CupertinoLocalizationFa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationFa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'fi':
-      return CupertinoLocalizationFi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationFi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'fil':
-      return CupertinoLocalizationFil(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationFil(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'fr': {
       switch (locale.countryCode) {
         case 'CA':
-          return CupertinoLocalizationFrCa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationFrCa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
       }
-      return CupertinoLocalizationFr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationFr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     }
+    case 'ga':
+      return CupertinoLocalizationGa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'gl':
-      return CupertinoLocalizationGl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationGl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'gsw':
-      return CupertinoLocalizationGsw(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationGsw(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'gu':
-      return CupertinoLocalizationGu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationGu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'he':
-      return CupertinoLocalizationHe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationHe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'hi':
-      return CupertinoLocalizationHi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationHi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'hr':
-      return CupertinoLocalizationHr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationHr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'hu':
-      return CupertinoLocalizationHu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationHu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'hy':
-      return CupertinoLocalizationHy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationHy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'id':
-      return CupertinoLocalizationId(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationId(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'is':
-      return CupertinoLocalizationIs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationIs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'it':
-      return CupertinoLocalizationIt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationIt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ja':
-      return CupertinoLocalizationJa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationJa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ka':
-      return CupertinoLocalizationKa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationKa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'kk':
-      return CupertinoLocalizationKk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationKk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'km':
-      return CupertinoLocalizationKm(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationKm(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'kn':
-      return CupertinoLocalizationKn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationKn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ko':
-      return CupertinoLocalizationKo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationKo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ky':
-      return CupertinoLocalizationKy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationKy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'lo':
-      return CupertinoLocalizationLo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationLo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'lt':
-      return CupertinoLocalizationLt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationLt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'lv':
-      return CupertinoLocalizationLv(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationLv(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'mk':
-      return CupertinoLocalizationMk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationMk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ml':
-      return CupertinoLocalizationMl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationMl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'mn':
-      return CupertinoLocalizationMn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationMn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'mr':
-      return CupertinoLocalizationMr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationMr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ms':
-      return CupertinoLocalizationMs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationMs(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'my':
-      return CupertinoLocalizationMy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationMy(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'nb':
-      return CupertinoLocalizationNb(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationNb(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ne':
-      return CupertinoLocalizationNe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationNe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'nl':
-      return CupertinoLocalizationNl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationNl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'no':
-      return CupertinoLocalizationNo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationNo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'or':
-      return CupertinoLocalizationOr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationOr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'pa':
-      return CupertinoLocalizationPa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationPa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'pl':
-      return CupertinoLocalizationPl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationPl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'pt': {
       switch (locale.countryCode) {
         case 'PT':
-          return CupertinoLocalizationPtPt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationPtPt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
       }
-      return CupertinoLocalizationPt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationPt(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     }
     case 'ro':
-      return CupertinoLocalizationRo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationRo(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ru':
-      return CupertinoLocalizationRu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationRu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'si':
-      return CupertinoLocalizationSi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationSi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'sk':
-      return CupertinoLocalizationSk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationSk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'sl':
-      return CupertinoLocalizationSl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationSl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'sq':
-      return CupertinoLocalizationSq(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationSq(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'sr': {
       switch (locale.scriptCode) {
         case 'Cyrl': {
-          return CupertinoLocalizationSrCyrl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationSrCyrl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         }
         case 'Latn': {
-          return CupertinoLocalizationSrLatn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationSrLatn(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         }
       }
-      return CupertinoLocalizationSr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationSr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     }
     case 'sv':
-      return CupertinoLocalizationSv(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationSv(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'sw':
-      return CupertinoLocalizationSw(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationSw(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ta':
-      return CupertinoLocalizationTa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationTa(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'te':
-      return CupertinoLocalizationTe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationTe(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'th':
-      return CupertinoLocalizationTh(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationTh(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'tl':
-      return CupertinoLocalizationTl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationTl(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'tr':
-      return CupertinoLocalizationTr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationTr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+    case 'ug':
+      return CupertinoLocalizationUg(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'uk':
-      return CupertinoLocalizationUk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationUk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'ur':
-      return CupertinoLocalizationUr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationUr(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'uz':
-      return CupertinoLocalizationUz(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationUz(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'vi':
-      return CupertinoLocalizationVi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationVi(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     case 'zh': {
       switch (locale.scriptCode) {
         case 'Hans': {
-          return CupertinoLocalizationZhHans(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationZhHans(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         }
         case 'Hant': {
           switch (locale.countryCode) {
             case 'HK':
-              return CupertinoLocalizationZhHantHk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+              return CupertinoLocalizationZhHantHk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
             case 'TW':
-              return CupertinoLocalizationZhHantTw(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+              return CupertinoLocalizationZhHantTw(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
           }
-          return CupertinoLocalizationZhHant(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationZhHant(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         }
       }
       switch (locale.countryCode) {
         case 'HK':
-          return CupertinoLocalizationZhHantHk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationZhHantHk(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
         case 'TW':
-          return CupertinoLocalizationZhHantTw(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+          return CupertinoLocalizationZhHantTw(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
       }
-      return CupertinoLocalizationZh(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationZh(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
     }
     case 'zu':
-      return CupertinoLocalizationZu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
+      return CupertinoLocalizationZu(fullYearFormat: fullYearFormat, dayFormat: dayFormat, weekdayFormat: weekdayFormat, mediumDateFormat: mediumDateFormat, singleDigitHourFormat: singleDigitHourFormat, singleDigitMinuteFormat: singleDigitMinuteFormat, doubleDigitMinuteFormat: doubleDigitMinuteFormat, singleDigitSecondFormat: singleDigitSecondFormat, decimalFormat: decimalFormat);
   }
   assert(false, 'getCupertinoTranslation() called for unsupported locale "$locale"');
   return null;

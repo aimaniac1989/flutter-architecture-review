@@ -7,6 +7,11 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  test('ButtonBarThemeData lerp special cases', () {
+    expect(ButtonBarThemeData.lerp(null, null, 0), null);
+    const ButtonBarThemeData data = ButtonBarThemeData();
+    expect(identical(ButtonBarThemeData.lerp(data, data, 0.5), data), true);
+  });
 
   test('ButtonBarThemeData null fields by default', () {
     const ButtonBarThemeData buttonBarTheme = ButtonBarThemeData();
@@ -70,10 +75,11 @@ void main() {
     final DiagnosticPropertiesBuilder builder = DiagnosticPropertiesBuilder();
     const ButtonBarThemeData().debugFillProperties(builder);
 
-    final List<String> description = builder.properties
-        .where((DiagnosticsNode node) => !node.isFiltered(DiagnosticLevel.info))
-        .map((DiagnosticsNode node) => node.toString())
-        .toList();
+    final List<String> description =
+        builder.properties
+            .where((DiagnosticsNode node) => !node.isFiltered(DiagnosticLevel.info))
+            .map((DiagnosticsNode node) => node.toString())
+            .toList();
 
     expect(description, <String>[]);
   });
@@ -92,10 +98,11 @@ void main() {
       overflowDirection: VerticalDirection.up,
     ).debugFillProperties(builder);
 
-    final List<String> description = builder.properties
-        .where((DiagnosticsNode node) => !node.isFiltered(DiagnosticLevel.info))
-        .map((DiagnosticsNode node) => node.toString())
-        .toList();
+    final List<String> description =
+        builder.properties
+            .where((DiagnosticsNode node) => !node.isFiltered(DiagnosticLevel.info))
+            .map((DiagnosticsNode node) => node.toString())
+            .toList();
 
     expect(description, <String>[
       'alignment: MainAxisAlignment.center',
@@ -110,7 +117,9 @@ void main() {
     ]);
   });
 
-  testWidgets('ButtonBarTheme.of falls back to ThemeData.buttonBarTheme', (WidgetTester tester) async {
+  testWidgets('ButtonBarTheme.of falls back to ThemeData.buttonBarTheme', (
+    WidgetTester tester,
+  ) async {
     const ButtonBarThemeData buttonBarTheme = ButtonBarThemeData(buttonMinWidth: 42.0);
     late BuildContext capturedContext;
     await tester.pumpWidget(
@@ -120,7 +129,7 @@ void main() {
           builder: (BuildContext context) {
             capturedContext = context;
             return Container();
-          }
+          },
         ),
       ),
     );
@@ -146,7 +155,7 @@ void main() {
                 },
               ),
             );
-          }
+          },
         ),
       ),
     );

@@ -9,25 +9,25 @@ description: The Flutter application's synthetic package.
 ''';
 
 const String fileTemplate = '''
-@(header)
-import 'dart:async';
+@(header)import 'dart:async';
 
-// ignore: unused_import
-import 'package:flutter/foundation.dart';
+@(requiresFoundationImport)
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 @(messageClassImports)
 
-/// Callers can lookup localized strings with an instance of @(class) returned
-/// by `@(class).of(context)`.
+// ignore_for_file: type=lint
+
+/// Callers can lookup localized strings with an instance of @(class)
+/// returned by `@(class).of(context)`.
 ///
 /// Applications need to include `@(class).delegate()` in their app's
-/// localizationDelegates list, and the locales they support in the app's
-/// supportedLocales list. For example:
+/// `localizationDelegates` list, and the locales they support in the app's
+/// `supportedLocales` list. For example:
 ///
-/// ```
+/// ```dart
 /// import '@(importFile)';
 ///
 /// return MaterialApp(
@@ -42,14 +42,14 @@ import 'package:intl/intl.dart' as intl;
 /// Please make sure to update your pubspec.yaml to include the following
 /// packages:
 ///
-/// ```
+/// ```yaml
 /// dependencies:
 ///   # Internationalization support.
 ///   flutter_localizations:
 ///     sdk: flutter
-///   intl: ^0.17.0-nullsafety.2
+///   intl: any # Use the pinned version from flutter_localizations
 ///
-///   # rest of dependencies
+///   # Rest of dependencies
 /// ```
 ///
 /// ## iOS Applications
@@ -74,11 +74,10 @@ import 'package:intl/intl.dart' as intl;
 abstract class @(class) {
   @(class)(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
-  // ignore: unused_field
   final String localeName;
 
-  static @(class)? of(BuildContext context) {
-    return Localizations.of<@(class)>(context, @(class));
+  static @(class)@(canBeNullable) of(BuildContext context) {
+    return Localizations.of<@(class)>(context, @(class))@(needsNullCheck);
   }
 
   static const LocalizationsDelegate<@(class)> delegate = _@(class)Delegate();
@@ -110,7 +109,12 @@ abstract class @(class) {
 @(delegateClass)
 ''';
 
-const String numberFormatTemplate = '''
+const String numberFormatPositionalTemplate = '''
+    final intl.NumberFormat @(placeholder)NumberFormat = intl.NumberFormat.@(format)(localeName);
+    final String @(placeholder)String = @(placeholder)NumberFormat.format(@(placeholder));
+''';
+
+const String numberFormatNamedTemplate = '''
     final intl.NumberFormat @(placeholder)NumberFormat = intl.NumberFormat.@(format)(
       locale: localeName,
       @(parameters)
@@ -119,7 +123,14 @@ const String numberFormatTemplate = '''
 ''';
 
 const String dateFormatTemplate = '''
-    final intl.DateFormat @(placeholder)DateFormat = intl.DateFormat.@(format)(localeName);
+    final intl.DateFormat @(placeholder)DateFormat = intl.DateFormat.@(format)(localeName)@(addedFormats);
+    final String @(placeholder)String = @(placeholder)DateFormat.format(@(placeholder));
+''';
+
+const String dateFormatAddFormatTemplate = '''.add_@(format)()''';
+
+const String dateFormatCustomTemplate = '''
+    final intl.DateFormat @(placeholder)DateFormat = intl.DateFormat(@(format), localeName);
     final String @(placeholder)String = @(placeholder)DateFormat.format(@(placeholder));
 ''';
 
@@ -130,36 +141,43 @@ const String getterTemplate = '''
 const String methodTemplate = '''
   @override
   String @(name)(@(parameters)) {
-    return @(message);
-  }''';
-
-const String formatMethodTemplate = '''
-  @override
-  String @(name)(@(parameters)) {
 @(dateFormatting)
 @(numberFormatting)
-    return @(message);
+@(tempVars)    return @(message);
   }''';
 
-const String pluralMethodTemplate = '''
+const String methodWithNamedParameterTemplate = '''
   @override
-  String @(name)(@(parameters)) {
+  String @(name)({@(parameters)}) {
 @(dateFormatting)
 @(numberFormatting)
-    return intl.Intl.pluralLogic(
+@(tempVars)    return @(message);
+  }''';
+
+const String pluralVariableTemplate = '''
+    String @(varName) = intl.Intl.pluralLogic(
       @(count),
       locale: localeName,
-@(pluralLogicArgs),
-    );
-  }''';
+@(pluralLogicArgs)
+    );''';
+
+const String selectVariableTemplate = '''
+    String @(varName) = intl.Intl.selectLogic(
+      @(choice),
+      {
+@(selectCases)
+      },
+    );''';
+
+const String dateVariableTemplate = '''
+    String @(varName) = intl.DateFormat.@(formatType)(localeName).format(@(argument));''';
 
 const String classFileTemplate = '''
-@(header)
-// ignore: unused_import
+@(header)// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 import '@(fileName)';
 
-// ignore_for_file: unnecessary_brace_in_string_interps
+// ignore_for_file: type=lint
 
 /// The translations for @(language) (`@(localeName)`).
 class @(class) extends @(baseClass) {
@@ -180,17 +198,24 @@ class @(class) extends @(baseLanguageClassName) {
 ''';
 
 const String baseClassGetterTemplate = '''
-  /// @(comment)
+@(comment)
   ///
 @(templateLocaleTranslationComment)
   String get @(name);
 ''';
 
 const String baseClassMethodTemplate = '''
-  /// @(comment)
+@(comment)
   ///
 @(templateLocaleTranslationComment)
   String @(name)(@(parameters));
+''';
+
+const String baseClassMethodWithNamedParameterTemplate = '''
+@(comment)
+  ///
+@(templateLocaleTranslationComment)
+  String @(name)({@(parameters)});
 ''';
 
 // DELEGATE CLASS TEMPLATES
@@ -251,7 +276,8 @@ const String lookupBodyTemplate = '''
 
 const String switchClauseTemplate = '''case '@(case)': return @(localeClass)();''';
 
-const String switchClauseDeferredLoadingTemplate = '''case '@(case)': return @(library).loadLibrary().then((dynamic _) => @(library).@(localeClass)());''';
+const String switchClauseDeferredLoadingTemplate =
+    '''case '@(case)': return @(library).loadLibrary().then((dynamic _) => @(library).@(localeClass)());''';
 
 const String nestedSwitchTemplate = '''
 case '@(languageCode)': {
@@ -262,15 +288,15 @@ case '@(languageCode)': {
 }''';
 
 const String languageCodeSwitchTemplate = '''
-@(comment)
-switch (locale.languageCode) {
-  @(switchClauses)
-}
+  @(comment)
+  switch (locale.languageCode) {
+    @(switchClauses)
+  }
 ''';
 
 const String allCodesLookupTemplate = '''
-// Lookup logic when language+script+country codes are specified.
-switch (locale.toString()) {
-  @(allCodesSwitchClauses)
-}
+  // Lookup logic when language+script+country codes are specified.
+  switch (locale.toString()) {
+    @(allCodesSwitchClauses)
+  }
 ''';

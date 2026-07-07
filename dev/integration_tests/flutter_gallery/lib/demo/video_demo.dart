@@ -4,14 +4,12 @@
 
 import 'dart:async';
 import 'dart:io';
-import 'package:connectivity/connectivity.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:device_info/device_info.dart';
 
 class VideoCard extends StatelessWidget {
-  const VideoCard({ Key? key, this.controller, this.title, this.subtitle }) : super(key: key);
+  const VideoCard({super.key, this.controller, this.title, this.subtitle});
 
   final VideoPlayerController? controller;
   final String? title;
@@ -23,10 +21,7 @@ class VideoCard extends StatelessWidget {
       child: Center(
         child: AspectRatio(
           aspectRatio: 3 / 2,
-          child: Hero(
-            tag: controller!,
-            child: VideoPlayerLoading(controller),
-          ),
+          child: Hero(tag: controller!, child: VideoPlayerLoading(controller)),
         ),
       ),
     );
@@ -34,16 +29,11 @@ class VideoCard extends StatelessWidget {
 
   Widget _buildFullScreenVideo() {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title!),
-      ),
+      appBar: AppBar(title: Text(title!)),
       body: Center(
         child: AspectRatio(
           aspectRatio: 3 / 2,
-          child: Hero(
-            tag: controller!,
-            child: VideoPlayPause(controller),
-          ),
+          child: Hero(tag: controller!, child: VideoPlayPause(controller)),
         ),
       ),
     );
@@ -80,10 +70,7 @@ class VideoCard extends StatelessWidget {
         child: Column(
           children: <Widget>[
             ListTile(title: Text(title!), subtitle: Text(subtitle!)),
-            GestureDetector(
-              onTap: pushFullScreenWidget,
-              child: _buildInlineVideo(),
-            ),
+            GestureDetector(onTap: pushFullScreenWidget, child: _buildInlineVideo()),
           ],
         ),
       ),
@@ -92,12 +79,12 @@ class VideoCard extends StatelessWidget {
 }
 
 class VideoPlayerLoading extends StatefulWidget {
-  const VideoPlayerLoading(this.controller);
+  const VideoPlayerLoading(this.controller, {super.key});
 
   final VideoPlayerController? controller;
 
   @override
-  _VideoPlayerLoadingState createState() => _VideoPlayerLoadingState();
+  State<VideoPlayerLoading> createState() => _VideoPlayerLoadingState();
 }
 
 class _VideoPlayerLoadingState extends State<VideoPlayerLoading> {
@@ -126,17 +113,17 @@ class _VideoPlayerLoadingState extends State<VideoPlayerLoading> {
       return VideoPlayer(widget.controller!);
     }
     return Stack(
+      fit: StackFit.expand,
       children: <Widget>[
         VideoPlayer(widget.controller!),
         const Center(child: CircularProgressIndicator()),
       ],
-      fit: StackFit.expand,
     );
   }
 }
 
 class VideoPlayPause extends StatefulWidget {
-  const VideoPlayPause(this.controller);
+  const VideoPlayPause(this.controller, {super.key});
 
   final VideoPlayerController? controller;
 
@@ -147,8 +134,9 @@ class VideoPlayPause extends StatefulWidget {
 class _VideoPlayPauseState extends State<VideoPlayPause> {
   _VideoPlayPauseState() {
     listener = () {
-      if (mounted)
-        setState(() { });
+      if (mounted) {
+        setState(() {});
+      }
     };
   }
 
@@ -182,14 +170,10 @@ class _VideoPlayPauseState extends State<VideoPlayPause> {
               return;
             }
             if (controller!.value.isPlaying) {
-              imageFadeAnimation = const FadeAnimation(
-                child: Icon(Icons.pause, size: 100.0),
-              );
+              imageFadeAnimation = const FadeAnimation(child: Icon(Icons.pause, size: 100.0));
               controller!.pause();
             } else {
-              imageFadeAnimation = const FadeAnimation(
-                child: Icon(Icons.play_arrow, size: 100.0),
-              );
+              imageFadeAnimation = const FadeAnimation(child: Icon(Icons.play_arrow, size: 100.0));
               controller!.play();
             }
           },
@@ -201,16 +185,13 @@ class _VideoPlayPauseState extends State<VideoPlayPause> {
 }
 
 class FadeAnimation extends StatefulWidget {
-  const FadeAnimation({
-    this.child,
-    this.duration = const Duration(milliseconds: 500),
-  });
+  const FadeAnimation({super.key, this.child, this.duration = const Duration(milliseconds: 500)});
 
   final Widget? child;
   final Duration duration;
 
   @override
-  _FadeAnimationState createState() => _FadeAnimationState();
+  State<FadeAnimation> createState() => _FadeAnimationState();
 }
 
 class _FadeAnimationState extends State<FadeAnimation> with SingleTickerProviderStateMixin {
@@ -219,13 +200,10 @@ class _FadeAnimationState extends State<FadeAnimation> with SingleTickerProvider
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(
-      duration: widget.duration,
-      vsync: this,
-    );
+    animationController = AnimationController(duration: widget.duration, vsync: this);
     animationController.addListener(() {
       if (mounted) {
-        setState(() { });
+        setState(() {});
       }
     });
     animationController.forward(from: 0.0);
@@ -254,106 +232,18 @@ class _FadeAnimationState extends State<FadeAnimation> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     return animationController.isAnimating
-        ? Opacity(
-            opacity: 1.0 - animationController.value,
-            child: widget.child,
-          )
+        ? Opacity(opacity: 1.0 - animationController.value, child: widget.child)
         : Container();
   }
 }
 
-class ConnectivityOverlay extends StatefulWidget {
-  const ConnectivityOverlay({
-    this.child,
-    this.connectedCompleter,
-  });
-
-  final Widget? child;
-  final Completer<void>? connectedCompleter;
-
-  @override
-  _ConnectivityOverlayState createState() => _ConnectivityOverlayState();
-}
-
-class _ConnectivityOverlayState extends State<ConnectivityOverlay> {
-  StreamSubscription<ConnectivityResult>? connectivitySubscription;
-  bool connected = true;
-
-  static const SnackBar errorSnackBar = SnackBar(
-    backgroundColor: Colors.red,
-    content: ListTile(
-      title: Text('No network'),
-      subtitle: Text(
-        'To load the videos you must have an active network connection',
-      ),
-    ),
-  );
-
-  Stream<ConnectivityResult> connectivityStream() async* {
-    final Connectivity connectivity = Connectivity();
-    ConnectivityResult previousResult = await connectivity.checkConnectivity();
-    yield previousResult;
-    await for (final ConnectivityResult result in connectivity.onConnectivityChanged) {
-      if (result != previousResult) {
-        yield result;
-        previousResult = result;
-      }
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    if (kIsWeb) {
-      // Assume connectivity
-      // TODO(ditman): Remove this shortcut when `connectivity` support for web
-      // lands, https://github.com/flutter/flutter/issues/46735
-      if (!widget.connectedCompleter!.isCompleted) {
-        widget.connectedCompleter!.complete();
-      }
-      return;
-    }
-    connectivitySubscription = connectivityStream().listen(
-      (ConnectivityResult connectivityResult) {
-        if (!mounted) {
-          return;
-        }
-        if (connectivityResult == ConnectivityResult.none) {
-          ScaffoldMessenger.of(context).showSnackBar(errorSnackBar);
-        } else {
-          if (!widget.connectedCompleter!.isCompleted) {
-            widget.connectedCompleter!.complete();
-          }
-        }
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    connectivitySubscription?.cancel();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) => widget.child!;
-}
-
 class VideoDemo extends StatefulWidget {
-  const VideoDemo({ Key? key }) : super(key: key);
+  const VideoDemo({super.key});
 
   static const String routeName = '/video';
 
   @override
-  _VideoDemoState createState() => _VideoDemoState();
-}
-
-final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
-
-Future<bool> isIOSSimulator() async {
-  return !kIsWeb &&
-      Platform.isIOS &&
-      !(await deviceInfoPlugin.iosInfo).isPhysicalDevice;
+  State<VideoDemo> createState() => _VideoDemoState();
 }
 
 class _VideoDemoState extends State<VideoDemo> with SingleTickerProviderStateMixin {
@@ -363,82 +253,70 @@ class _VideoDemoState extends State<VideoDemo> with SingleTickerProviderStateMix
     videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
   );
 
-  // TODO(sigurdm): This should not be stored here.
-  static const String beeUri = 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4';
-  final VideoPlayerController beeController = VideoPlayerController.network(
-    beeUri,
+  final VideoPlayerController beeController = VideoPlayerController.asset(
+    'videos/bee.mp4',
+    package: 'flutter_gallery_assets',
     videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
   );
 
-  final Completer<void> connectedCompleter = Completer<void>();
-  bool isSupported = true;
   bool isDisposed = false;
+
+  // Only non-test mobile environments are supported for this demo.
+  bool isSupported = Platform.isAndroid || Platform.isIOS;
 
   @override
   void initState() {
     super.initState();
+    if (!isSupported) {
+      return;
+    }
 
     Future<void> initController(VideoPlayerController controller, String name) async {
-      print('> VideoDemo initController "$name" ${isDisposed ? "DISPOSED" : ""}');
       controller.setLooping(true);
       controller.setVolume(0.0);
       controller.play();
-      await connectedCompleter.future;
       await controller.initialize();
       if (mounted) {
-        print('< VideoDemo initController "$name" done ${isDisposed ? "DISPOSED" : ""}');
-        setState(() { });
+        setState(() {});
       }
     }
 
     initController(butterflyController, 'butterfly');
     initController(beeController, 'bee');
-    isIOSSimulator().then((bool result) {
-      isSupported = !result;
-    });
   }
 
   @override
   void dispose() {
-    print('> VideoDemo dispose');
-    isDisposed  = true;
+    isDisposed = true;
     butterflyController.dispose();
     beeController.dispose();
-    print('< VideoDemo dispose');
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Videos'),
-      ),
-      body: isSupported
-        ? ConnectivityOverlay(
-            child: Scrollbar(
-              child: ListView(
-                children: <Widget>[
-                  VideoCard(
-                    title: 'Butterfly',
-                    subtitle: '… flutters by',
-                    controller: butterflyController,
-                  ),
-                  VideoCard(
-                    title: 'Bee',
-                    subtitle: '… gently buzzing',
-                    controller: beeController,
-                  ),
-                ],
-              ),
-            ),
-            connectedCompleter: connectedCompleter,
-          )
-        : const Center(
-            child: Text(
-              'Video playback not supported on the iOS Simulator.',
-            ),
-          ),
+      appBar: AppBar(title: const Text('Videos')),
+      body:
+          isSupported
+              ? Scrollbar(
+                child: ListView(
+                  primary: true,
+                  children: <Widget>[
+                    VideoCard(
+                      title: 'Butterfly',
+                      subtitle: '… flutters by',
+                      controller: butterflyController,
+                    ),
+                    VideoCard(
+                      title: 'Bee',
+                      subtitle: '… gently buzzing',
+                      controller: beeController,
+                    ),
+                  ],
+                ),
+              )
+              : const Placeholder(),
     );
   }
 }

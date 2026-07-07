@@ -2,11 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// @dart = 2.8
-
-import 'package:flutter_driver/driver_extension.dart';
 import 'package:flutter_driver/flutter_driver.dart';
-import 'package:flutter_driver/src/common/find.dart';
 
 import '../../common.dart';
 
@@ -17,12 +13,7 @@ void main() {
     const SerializableFinder of = ByType('Text');
     final SerializableFinder matching = ByValueKey('hello');
 
-    final Ancestor a = Ancestor(
-      of: of,
-      matching: matching,
-      matchRoot: true,
-      firstMatchOnly: true,
-    );
+    final Ancestor a = Ancestor(of: of, matching: matching, matchRoot: true, firstMatchOnly: true);
     expect(a.serialize(), <String, String>{
       'finderType': 'Ancestor',
       'of': '{"finderType":"ByType","type":"Text"}',
@@ -84,4 +75,4 @@ void main() {
   });
 }
 
-class FakeDeserialize extends Fake with DeserializeFinderFactory { }
+class FakeDeserialize extends Fake with DeserializeFinderFactory {}

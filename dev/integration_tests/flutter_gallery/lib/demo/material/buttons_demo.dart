@@ -12,7 +12,8 @@ const String _elevatedText =
 
 const String _elevatedCode = 'buttons_elevated';
 
-const String _textText = 'A text button displays an ink splash on press '
+const String _textText =
+    'A text button displays an ink splash on press '
     'but does not lift. Use text buttons on toolbars, in dialogs and '
     'inline with padding';
 
@@ -46,10 +47,12 @@ const String _actionText =
 const String _actionCode = 'buttons_action';
 
 class ButtonsDemo extends StatefulWidget {
+  const ButtonsDemo({super.key});
+
   static const String routeName = '/material/buttons';
 
   @override
-  _ButtonsDemoState createState() => _ButtonsDemoState();
+  State<ButtonsDemo> createState() => _ButtonsDemoState();
 }
 
 class _ButtonsDemoState extends State<ButtonsDemo> {
@@ -98,7 +101,8 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
         description: _actionText,
         demoWidget: buildActionButton(),
         exampleCodeTag: _actionCode,
-        documentationUrl: 'https://api.flutter.dev/flutter/material/FloatingActionButton-class.html',
+        documentationUrl:
+            'https://api.flutter.dev/flutter/material/FloatingActionButton-class.html',
       ),
     ];
 
@@ -125,8 +129,9 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          ButtonBar(
-            mainAxisSize: MainAxisSize.min,
+          const SizedBox(height: 2),
+          OverflowBar(
+            spacing: 8,
             children: <Widget>[
               ElevatedButton(
                 style: style,
@@ -136,13 +141,14 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
                 },
               ),
               const ElevatedButton(
-                child: Text('DISABLED', semanticsLabel: 'DISABLED BUTTON 1'),
                 onPressed: null,
+                child: Text('DISABLED', semanticsLabel: 'DISABLED BUTTON 1'),
               ),
             ],
           ),
-          ButtonBar(
-            mainAxisSize: MainAxisSize.min,
+          const SizedBox(height: 16),
+          OverflowBar(
+            spacing: 8,
             children: <Widget>[
               ElevatedButton.icon(
                 style: style,
@@ -172,8 +178,9 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          ButtonBar(
-            mainAxisSize: MainAxisSize.min,
+          const SizedBox(height: 2),
+          OverflowBar(
+            spacing: 8,
             children: <Widget>[
               TextButton(
                 style: style,
@@ -183,13 +190,13 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
                 },
               ),
               const TextButton(
-                child: Text('DISABLED', semanticsLabel: 'DISABLED BUTTON 3',),
                 onPressed: null,
+                child: Text('DISABLED', semanticsLabel: 'DISABLED BUTTON 3'),
               ),
             ],
           ),
-          ButtonBar(
-            mainAxisSize: MainAxisSize.min,
+          OverflowBar(
+            spacing: 8,
             children: <Widget>[
               TextButton.icon(
                 style: style,
@@ -219,8 +226,9 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          ButtonBar(
-            mainAxisSize: MainAxisSize.min,
+          const SizedBox(height: 2),
+          OverflowBar(
+            spacing: 8,
             children: <Widget>[
               OutlinedButton(
                 style: style,
@@ -231,13 +239,14 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
               ),
               OutlinedButton(
                 style: style,
-                child: const Text('DISABLED', semanticsLabel: 'DISABLED BUTTON 5'),
                 onPressed: null,
+                child: const Text('DISABLED', semanticsLabel: 'DISABLED BUTTON 5'),
               ),
             ],
           ),
-          ButtonBar(
-            mainAxisSize: MainAxisSize.min,
+          const SizedBox(height: 16),
+          OverflowBar(
+            spacing: 8,
             children: <Widget>[
               OutlinedButton.icon(
                 style: style,
@@ -268,7 +277,6 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           ListTile(
             title: const Text('Simple dropdown:'),
@@ -279,17 +287,15 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
                   dropdown1Value = newValue;
                 });
               },
-              items: <String>['One', 'Two', 'Free', 'Four'].map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
+              items:
+                  <String>['One', 'Two', 'Free', 'Four'].map<DropdownMenuItem<String>>((
+                    String value,
+                  ) {
+                    return DropdownMenuItem<String>(value: value, child: Text(value));
+                  }).toList(),
             ),
           ),
-          const SizedBox(
-            height: 24.0,
-          ),
+          const SizedBox(height: 24.0),
           ListTile(
             title: const Text('Dropdown with a hint:'),
             trailing: DropdownButton<String>(
@@ -300,17 +306,15 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
                   dropdown2Value = newValue;
                 });
               },
-              items: <String>['One', 'Two', 'Free', 'Four'].map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
+              items:
+                  <String>['One', 'Two', 'Free', 'Four'].map<DropdownMenuItem<String>>((
+                    String value,
+                  ) {
+                    return DropdownMenuItem<String>(value: value, child: Text(value));
+                  }).toList(),
             ),
           ),
-          const SizedBox(
-            height: 24.0,
-          ),
+          const SizedBox(height: 24.0),
           ListTile(
             title: const Text('Scrollable dropdown:'),
             trailing: DropdownButton<String>(
@@ -320,18 +324,29 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
                   dropdown3Value = newValue;
                 });
               },
-              items: <String>[
-                  'One', 'Two', 'Free', 'Four', 'Can', 'I', 'Have', 'A', 'Little',
-                  'Bit', 'More', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten',
-                 ]
-                .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                })
-                .toList(),
-             ),
+              items:
+                  <String>[
+                    'One',
+                    'Two',
+                    'Free',
+                    'Four',
+                    'Can',
+                    'I',
+                    'Have',
+                    'A',
+                    'Little',
+                    'Bit',
+                    'More',
+                    'Five',
+                    'Six',
+                    'Seven',
+                    'Eight',
+                    'Nine',
+                    'Ten',
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(value: value, child: Text(value));
+                  }).toList(),
+            ),
           ),
         ],
       ),
@@ -345,27 +360,22 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
       alignment: const Alignment(0.0, -0.2),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.thumb_up,
-              semanticLabel: 'Thumbs up',
-            ),
-            onPressed: () {
-              setState(() => iconButtonToggle = !iconButtonToggle);
-            },
-            color: iconButtonToggle ? Theme.of(context).primaryColor : null,
-          ),
-          const IconButton(
-            icon: Icon(
-              Icons.thumb_up,
-              semanticLabel: 'Thumbs not up',
-            ),
-            onPressed: null,
-          ),
-        ]
-        .map<Widget>((Widget button) => SizedBox(width: 64.0, height: 64.0, child: button))
-        .toList(),
+        children:
+            <Widget>[
+                  IconButton(
+                    icon: const Icon(Icons.thumb_up, semanticLabel: 'Thumbs up'),
+                    onPressed: () {
+                      setState(() => iconButtonToggle = !iconButtonToggle);
+                    },
+                    color: iconButtonToggle ? Theme.of(context).primaryColor : null,
+                  ),
+                  const IconButton(
+                    icon: Icon(Icons.thumb_up, semanticLabel: 'Thumbs not up'),
+                    onPressed: null,
+                  ),
+                ]
+                .map<Widget>((Widget button) => SizedBox(width: 64.0, height: 64.0, child: button))
+                .toList(),
       ),
     );
   }
@@ -374,11 +384,11 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
     return Align(
       alignment: const Alignment(0.0, -0.2),
       child: FloatingActionButton(
+        tooltip: 'floating action button',
         child: const Icon(Icons.add),
         onPressed: () {
           // Perform some action
         },
-        tooltip: 'floating action button',
       ),
     );
   }

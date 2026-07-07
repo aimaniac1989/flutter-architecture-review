@@ -10,15 +10,14 @@ import 'package:flutter_driver/driver_extension.dart';
 /// license in it.
 void main() {
   enableFlutterDriverExtension();
-  runApp(ShowLicenses());
+  runApp(const ShowLicenses());
 }
 
 class ShowLicenses extends StatelessWidget {
-  Widget _buildTestResultWidget(
-    BuildContext context,
-    AsyncSnapshot<List<LicenseEntry>> snapshot,
-  ) {
-    final List<LicenseEntry> entries = snapshot.data;
+  const ShowLicenses({super.key});
+
+  Widget _buildTestResultWidget(BuildContext context, AsyncSnapshot<List<LicenseEntry>> snapshot) {
+    final List<LicenseEntry> entries = snapshot.data ?? <LicenseEntry>[];
     String flutterPackage = '';
     final List<String> flutterParagraphs = <String>[];
     String enginePackage = '';
@@ -32,28 +31,22 @@ class ShowLicenses extends StatelessWidget {
       }
       if (entry.packages.contains('engine')) {
         enginePackage = 'engine';
-        engineParagraphs.addAll(
-          entry.paragraphs.map<String>((LicenseParagraph para) => para.text),
-        );
+        engineParagraphs.addAll(entry.paragraphs.map<String>((LicenseParagraph para) => para.text));
       }
     }
 
     final List<Widget> result = <Widget>[];
-    if (entries.isNotEmpty) {
-      result.addAll(<Widget>[
-        const Text('License Check Test', key: ValueKey<String>('Header')),
-        Text(flutterPackage, key: const ValueKey<String>('FlutterPackage')),
-        Text(flutterParagraphs.join(' '), key: const ValueKey<String>('FlutterLicense')),
-        Text('${flutterParagraphs.length}', key: const ValueKey<String>('FlutterCount')),
-        Text(enginePackage, key: const ValueKey<String>('EnginePackage')),
-        Text(engineParagraphs.join(' '), key: const ValueKey<String>('EngineLicense')),
-        Text('${engineParagraphs.length}', key: const ValueKey<String>('EngineCount')),
-      ]);
-    }
+    result.addAll(<Widget>[
+      const Text('License Check Test', key: ValueKey<String>('Header')),
+      Text(flutterPackage, key: const ValueKey<String>('FlutterPackage')),
+      Text(flutterParagraphs.join(' '), key: const ValueKey<String>('FlutterLicense')),
+      Text('${flutterParagraphs.length}', key: const ValueKey<String>('FlutterCount')),
+      Text(enginePackage, key: const ValueKey<String>('EnginePackage')),
+      Text(engineParagraphs.join(' '), key: const ValueKey<String>('EngineLicense')),
+      Text('${engineParagraphs.length}', key: const ValueKey<String>('EngineCount')),
+    ]);
 
-    return ListView(
-      children: result,
-    );
+    return ListView(children: result);
   }
 
   @override

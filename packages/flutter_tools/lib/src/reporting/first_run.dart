@@ -4,7 +4,6 @@
 
 import 'package:convert/convert.dart';
 import 'package:crypto/crypto.dart';
-import 'package:meta/meta.dart';
 
 import '../convert.dart';
 import '../persistent_tool_state.dart';
@@ -26,26 +25,27 @@ const String _kFlutterFirstRunMessage = '''
   ║ Flutter tool.                                                              ║
   ║                                                                            ║
   ║ By downloading the Flutter SDK, you agree to the Google Terms of Service.  ║
-  ║ Note: The Google Privacy Policy describes how data is handled in this      ║
-  ║ service.                                                                   ║
+  ║ The Google Privacy Policy describes how data is handled in this service.   ║
   ║                                                                            ║
   ║ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  ║
   ║ crash reports to Google.                                                   ║
   ║                                                                            ║
   ║ Read about data we send with crash reports:                                ║
-  ║ https://flutter.dev/docs/reference/crash-reporting                         ║
+  ║ https://flutter.dev/to/crash-reporting                                     ║
   ║                                                                            ║
   ║ See Google's privacy policy:                                               ║
   ║ https://policies.google.com/privacy                                        ║
+  ║                                                                            ║
+  ║ To disable animations in this tool, use                                    ║
+  ║ 'flutter config --no-cli-animations'.                                      ║
   ╚════════════════════════════════════════════════════════════════════════════╝
 ''';
 
 /// The first run messenger determines whether the first run license terms
 /// need to be displayed.
 class FirstRunMessenger {
-  FirstRunMessenger({
-    @required PersistentToolState persistentToolState
-  }) : _persistentToolState = persistentToolState;
+  FirstRunMessenger({required PersistentToolState persistentToolState})
+    : _persistentToolState = persistentToolState;
 
   final PersistentToolState _persistentToolState;
 
@@ -59,20 +59,20 @@ class FirstRunMessenger {
   /// that the license terms are not printed during a `flutter upgrade`, until the
   /// user manually runs the tool.
   bool shouldDisplayLicenseTerms() {
-    if (_persistentToolState.redisplayWelcomeMessage == false) {
+    if (_persistentToolState.shouldRedisplayWelcomeMessage == false) {
       return false;
     }
-    final String oldHash = _persistentToolState.lastActiveLicenseTerms;
+    final String? oldHash = _persistentToolState.lastActiveLicenseTermsHash;
     return oldHash != _currentHash;
   }
 
   /// Update the cached license terms hash once the new terms have been displayed.
   void confirmLicenseTermsDisplayed() {
-    _persistentToolState.lastActiveLicenseTerms = _currentHash;
+    _persistentToolState.setLastActiveLicenseTermsHash(_currentHash);
   }
 
   /// The hash of the current license representation.
-  String get _currentHash =>  hex.encode(md5.convert(utf8.encode(licenseTerms)).bytes);
+  String get _currentHash => hex.encode(md5.convert(utf8.encode(licenseTerms)).bytes);
 
   /// The current license terms.
   String get licenseTerms => _kFlutterFirstRunMessage;

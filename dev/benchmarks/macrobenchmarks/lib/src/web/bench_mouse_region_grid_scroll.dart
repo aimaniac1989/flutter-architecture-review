@@ -7,8 +7,8 @@ import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'recorder.dart';
@@ -21,7 +21,7 @@ class BenchMouseRegionGridScroll extends WidgetRecorder {
 
   static const String benchmarkName = 'bench_mouse_region_grid_scroll';
 
-  final _Tester tester = _Tester();
+  final _Tester _tester = _Tester();
 
   // Use a non-trivial border to force Web to switch painter
   Border _getBorder(int columnIndex, int rowIndex) {
@@ -42,8 +42,8 @@ class BenchMouseRegionGridScroll extends WidgetRecorder {
     if (!started) {
       started = true;
       SchedulerBinding.instance.addPostFrameCallback((Duration timeStamp) async {
-        tester.start();
-        registerDidStop(tester.stop);
+        _tester.start();
+        registerDidStop(_tester.stop);
       });
     }
     super.frameDidDraw();
@@ -65,22 +65,23 @@ class BenchMouseRegionGridScroll extends WidgetRecorder {
             itemCount: rowsCount,
             cacheExtent: rowsCount * containerSize,
             physics: const ClampingScrollPhysics(),
-            itemBuilder: (BuildContext context, int rowIndex) => Row(
-              children: List<Widget>.generate(
-                columnsCount,
-                (int columnIndex) => MouseRegion(
-                  onEnter: (_) {},
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: _getBorder(columnIndex, rowIndex),
-                      color: Color.fromARGB(255, rowIndex * 20 % 256, 127, 127),
+            itemBuilder:
+                (BuildContext context, int rowIndex) => Row(
+                  children: List<Widget>.generate(
+                    columnsCount,
+                    (int columnIndex) => MouseRegion(
+                      onEnter: (_) {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: _getBorder(columnIndex, rowIndex),
+                          color: Color.fromARGB(255, rowIndex * 20 % 256, 127, 127),
+                        ),
+                        width: containerSize,
+                        height: containerSize,
+                      ),
                     ),
-                    width: containerSize,
-                    height: containerSize,
                   ),
                 ),
-              ),
-            ),
           ),
         ),
       ),
@@ -88,20 +89,18 @@ class BenchMouseRegionGridScroll extends WidgetRecorder {
   }
 }
 
-class _UntilNextFrame {
-  _UntilNextFrame._();
-
-  static Completer<void> _completer;
+abstract final class _UntilNextFrame {
+  static Completer<void>? _completer;
 
   static Future<void> wait() {
     if (_UntilNextFrame._completer == null) {
       _UntilNextFrame._completer = Completer<void>();
       SchedulerBinding.instance.addPostFrameCallback((_) {
-        _UntilNextFrame._completer.complete(null);
+        _UntilNextFrame._completer!.complete();
         _UntilNextFrame._completer = null;
       });
     }
-    return _UntilNextFrame._completer.future;
+    return _UntilNextFrame._completer!.future;
   }
 }
 
@@ -122,7 +121,8 @@ class _Tester {
       kind: PointerDeviceKind.mouse,
     );
   }
-  TestGesture _gesture;
+
+  TestGesture? _gesture;
 
   Duration currentTime = Duration.zero;
 
@@ -132,10 +132,10 @@ class _Tester {
     final int frameDurationMs = fullFrameDuration.inMilliseconds;
 
     final int fullFrames = duration.inMilliseconds ~/ frameDurationMs;
-    final Offset fullFrameOffset = offset * ((frameDurationMs as double) / durationMs);
+    final Offset fullFrameOffset = offset * (frameDurationMs.toDouble() / durationMs);
 
     final Duration finalFrameDuration = duration - fullFrameDuration * fullFrames;
-    final Offset finalFrameOffset = offset - fullFrameOffset * (fullFrames as double);
+    final Offset finalFrameOffset = offset - fullFrameOffset * fullFrames.toDouble();
 
     await gesture.down(start, timeStamp: currentTime);
 

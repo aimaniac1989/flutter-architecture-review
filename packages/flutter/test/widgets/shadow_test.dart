@@ -2,8 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter_test/flutter_test.dart';
+// This file is run as part of a reduced test set in CI on Mac and Windows
+// machines.
+@Tags(<String>['reduced-test-set'])
+library;
+
 import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   tearDown(() {
@@ -16,9 +21,7 @@ void main() {
         child: RepaintBoundary(
           child: Container(
             margin: const EdgeInsets.all(50.0),
-            decoration: BoxDecoration(
-              boxShadow: kElevationToShadow[9],
-            ),
+            decoration: BoxDecoration(boxShadow: kElevationToShadow[9]),
             height: 100.0,
             width: 100.0,
           ),
@@ -46,7 +49,9 @@ void main() {
           child: Container(
             margin: const EdgeInsets.all(150.0),
             decoration: ShapeDecoration(
-              shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              shape: const BeveledRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20.0)),
+              ),
               shadows: kElevationToShadow[elevation],
             ),
             height: 100.0,
@@ -55,6 +60,7 @@ void main() {
         ),
       );
     }
+
     for (final int elevation in kElevationToShadow.keys) {
       testWidgets('elevation $elevation', (WidgetTester tester) async {
         debugDisableShadows = false;
@@ -78,10 +84,7 @@ void main() {
             child: PhysicalModel(
               elevation: 9.0,
               color: Colors.blue[900]!,
-              child: const SizedBox(
-                height: 100.0,
-                width: 100.0,
-              ),
+              child: const SizedBox(height: 100.0, width: 100.0),
             ),
           ),
         ),
@@ -110,13 +113,13 @@ void main() {
             color: Colors.yellow[200],
             child: PhysicalShape(
               color: Colors.green[900]!,
-              clipper: ShapeBorderClipper(shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0))),
-              elevation: elevation,
-              child: const SizedBox(
-                height: 100.0,
-                width: 100.0,
+              clipper: const ShapeBorderClipper(
+                shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                ),
               ),
+              elevation: elevation,
+              child: const SizedBox(height: 100.0, width: 100.0),
             ),
           ),
         ),
