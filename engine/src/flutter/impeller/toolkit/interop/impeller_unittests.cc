@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 #include "flutter/fml/native_library.h"
+#include "flutter/fml/string_conversion.h"
 #include "flutter/testing/testing.h"
 #include "impeller/base/allocation.h"
 #include "impeller/renderer/backend/gles/context_gles.h"
@@ -501,6 +502,94 @@ TEST_P(InteropPlaygroundTest, CanRenderShadows) {
         window.Draw(dl);
         return true;
       }));
+}
+
+TEST_P(InteropPlaygroundTest, CanMeasureText) {
+  hpp::TypographyContext type_context;
+  hpp::ParagraphBuilder paragraph_builder(type_context);
+  hpp::ParagraphStyle paragraph_style;
+  paragraph_style.SetFontSize(50);
+  paragraph_builder.PushStyle(paragraph_style);
+  const std::string text =
+      "🏁 Can 👨‍👨‍👦‍👦 Measure 🔍 Text\nAnd this is line "
+      "two.\nWhoa! Three lines. How high does this go?\r\nI stopped counting.";
+  const auto u16text = fml::Utf8ToUtf16(text);
+  ASSERT_NE(text.size(), u16text.size());
+  paragraph_builder.AddText(reinterpret_cast<const uint8_t*>(text.data()),
+                            text.size());
+  hpp::DisplayListBuilder builder;
+  // Don't rely on implicit line breaks in this test to make it less brittle to
+  // different fonts being picked.
+  hpp::Paragraph paragraph = paragraph_builder.Build(FLT_MAX);
+  const auto line_count = paragraph.GetLineCount();
+  ASSERT_EQ(line_count, 4u);
+
+  // Line Metrics.
+  {
+    auto metrics = paragraph.GetLineMetrics();
+    ASSERT_GT(metrics.GetAscent(0), 0.0);
+    ASSERT_GT(metrics.GetUnscaledAscent(0), 0.0);
+    ASSERT_GT(metrics.GetDescent(0), 0.0);
+    ASSERT_GT(metrics.GetBaseline(0), 0.0);
+    ASSERT_TRUE(metrics.IsHardbreak(0));
+    ASSERT_DOUBLE_EQ(metrics.GetLeft(0), 0.0);
+    ASSERT_EQ(metrics.GetCodeUnitStartIndex(0), 0u);
+    ASSERT_EQ(metrics.GetCodeUnitEndIndexIncludingNewline(0),
+              metrics.GetCodeUnitEndIndex(0) + 1u);
+    ASSERT_GT(metrics.GetCodeUnitStartIndex(1), 0u);
+    // Last line should cover the entire range.
+    ASSERT_EQ(metrics.GetCodeUnitEndIndex(3), u16text.size());
+  }
+
+  // Glyph info by code point.
+  {
+    auto glyph = paragraph.GlyphInfoAtCodeUnitIndex(0u);
+    ASSERT_TRUE(glyph);
+    ASSERT_EQ(glyph.GetGraphemeClusterCodeUnitRangeBegin(), 0u);
+    ASSERT_EQ(glyph.GetGraphemeClusterCodeUnitRangeEnd(),
+              fml::Utf8ToUtf16("🏁").size());
+    auto bounds = glyph.GetGraphemeClusterBounds();
+    ASSERT_GT(bounds.width, 0.0);
+    ASSERT_GT(bounds.height, 0.0);
+    ASSERT_FALSE(glyph.IsEllipsis());
+    ASSERT_EQ(glyph.GetTextDirection(), kImpellerTextDirectionLTR);
+  }
+
+  // Glyph info by coordinates.
+  {
+    auto glyph = paragraph.GlyphInfoAtParagraphCoordinates(0.0, 0.0);
+    ASSERT_TRUE(glyph);
+    ASSERT_EQ(glyph.GetGraphemeClusterCodeUnitRangeEnd(),
+              fml::Utf8ToUtf16("🏁").size());
+  }
+
+  // Glyph Figure out word boundaries.
+  {
+    auto glyph = paragraph.GlyphInfoAtCodeUnitIndex(0u);
+    ASSERT_TRUE(glyph);
+    auto range =
+        paragraph.GetWordBoundary(glyph.GetGraphemeClusterCodeUnitRangeEnd());
+    ASSERT_GT(range.end, 0u);
+  }
+
+  builder.DrawParagraph(paragraph, ImpellerPoint{100, 100});
+  auto dl = builder.Build();
+  ASSERT_TRUE(
+      OpenPlaygroundHere([&](const auto& context, const auto& surface) -> bool {
+        hpp::Surface window(surface.GetC());
+        window.Draw(dl);
+        return true;
+      }));
+}
+
+TEST_P(InteropPlaygroundTest, CanGetPathBounds) {
+  const auto path =
+      hpp::PathBuilder{}.MoveTo({100, 100}).LineTo({200, 200}).Build();
+  const auto bounds = path.GetBounds();
+  ASSERT_EQ(bounds.x, 100);
+  ASSERT_EQ(bounds.y, 100);
+  ASSERT_EQ(bounds.width, 100);
+  ASSERT_EQ(bounds.height, 100);
 }
 
 }  // namespace impeller::interop::testing
